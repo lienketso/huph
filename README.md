@@ -7,6 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Hướng dẫn cài đặt
+
+- Bước 1 : Chạy command "composer install" để cài đặt thư viện laravel
+- Bước 2 : Chạy command "npm install" để cài  đặt thư viện javacript
+- Bước 3 : Cấu hình kết nối cơ sở dữ liệu bằng file .env ( Đổi tên file .env.example )
+- Bước 4 : import cơ sở dữ liệu trong folder root (tuyensinh-huph.sql)
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
