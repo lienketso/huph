@@ -301,6 +301,7 @@ section#header-gioithieu .title {
     width: 100%;
     position: absolute;
     top: 34%;
+    text-align: center;
 }
 section#header-gioithieu .title h1{
     text-shadow: none;
