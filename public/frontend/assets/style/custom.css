@@ -5,6 +5,9 @@ p {
   font-family: "Inter", sans-serif;
   color: #393d40;
 }
+img{
+    max-width: 100%;
+}
 h1 {
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
     -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
