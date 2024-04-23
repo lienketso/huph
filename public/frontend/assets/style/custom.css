@@ -395,6 +395,33 @@ section#header-gioithieu .title h1 {
 section#header-gioithieu img {
     border-radius: 12px;
 }
+
+section#header-tuyensinh .detail-img {
+    margin-top: 25px;
+    position: relative;
+}
+section#header-tuyensinh .logo {
+    position: absolute;
+    padding: 20px;
+}
+section#header-tuyensinh .title {
+    width: 100%;
+    position: absolute;
+    top: 34%;
+    text-align: center;
+}
+section#header-tuyensinh .title h1 {
+    text-shadow: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+section#header-tuyensinh .title h5{
+    color: #ffffff
+}
+section#header-tuyensinh img {
+    border-radius: 12px;
+}
 section#gioithieu {
     margin-top: 30px;
 }
