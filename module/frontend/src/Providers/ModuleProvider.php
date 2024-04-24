@@ -78,11 +78,11 @@ class ModuleProvider extends \Illuminate\Support\ServiceProvider
                 $videoHome = $postRepository->findWhere(['status'=>'active','display'=>1,'post_type'=>'video','lang_code'=>$lang])->take(6);
                 $views->with(['videoHome'=>$videoHome]);
             }
-            // banner ads
-            if(!$views->offsetExists('banner')){
+            // partner
+            if(!$views->offsetExists('partners')){
                 $lang = \session('lang');
-                $banner = $galleryRepository->findWhere(['status'=>'active','group_id'=>3,'lang_code'=>$lang])->take(10);
-                $views->with(['banner'=>$banner]);
+                $partners = $galleryRepository->findWhere(['status'=>'active','group_id'=>1,'lang_code'=>$lang])->take(50);
+                $views->with(['partners'=>$partners]);
             }
             //social
             if(!$views->offsetExists('social')){

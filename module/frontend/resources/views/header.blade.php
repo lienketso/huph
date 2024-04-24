@@ -20,7 +20,7 @@
     <div class="container">
         <nav class="nav navbar nav-fill snip1135">
             @foreach($menus as $key=>$menu)
-                <a class="nav-link {{($key==0) ? 'active' : ''}}" aria-current="page" href="{{$menu->link}}"
+                <a class="nav-link {{ (request()->is($menu->link)) ? 'active' : '' }}" aria-current="page" href="{{$menu->link}}"
                 >
                     @if($menu->thumbnail!='')
                         <img src="{{upload_url($menu->thumbnail)}}" alt="{{$menu->name}}">
