@@ -54,7 +54,7 @@ class HomeController extends BaseController
         $gallery = $this->ga->scopeQuery(function ($e){
             return $e->orderBy('sort_order','asc')
                 ->where('status','active')
-                ->where('group_id',1);
+                ->where('group_id',2);
         })->limit(50);
 
         $popups = $this->ga->scopeQuery(function ($e){
@@ -70,9 +70,9 @@ class HomeController extends BaseController
                 ->where('lang_code',$this->lang)
                 ->where('status','active')
                 ->where('post_type','blog')
-                ->where('display',1)
+                ->where('is_hot',1)
                 ->get();
-        })->limit(5);
+        })->limit(8);
 
         //Tin Slider
         $sliderNews= $postRepository->scopeQuery(function ($e){

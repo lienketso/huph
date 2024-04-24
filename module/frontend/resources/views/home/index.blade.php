@@ -1,21 +1,26 @@
 @extends('frontend::master')
 @section('content')
+
+    @if($gallery)
 <section id="carousel">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="owl-carousel  owl-theme owl-top">
+                    @foreach($gallery as $d)
                     <div class="item">
-                        <img src="{{asset('frontend/assets/image/Poster.png')}}" alt="" />
+                        <a href="{{$d->link}}">
+                            <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/Poster.png')}}" alt="" />
+                        </a>
                     </div>
-                    <div class="item">
-                        <img src="{{asset('frontend/assets/image/Poster.png')}}" alt="" />
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </section>
+    @endif
+
 <section id="enrollment">
     <div class="container">
         <div class="row">
@@ -125,35 +130,8 @@
         </div>
     </div>
 </section>
-<section id="vendor">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <h2>Đối tác và nhà tài trợ quốc tế</h2>
-            </div>
-        </div>
-    </div>
-    <div class="owl-carousel owl-vendor owl-theme">
-        <div class="item">
-            <img src="{{asset('frontend/assets/image/04/partner01.png')}}" width="187" />
-        </div>
-        <div class="item">
-            <img src="{{asset('frontend/assets/image/04/partner03-1.png')}}" width="187" />
-        </div>
-        <div class="item">
-            <img src="{{asset('frontend/assets/image/04/partner06-1.png')}}" width="187" />
-        </div>
-        <div class="item">
-            <img src="{{asset('frontend/assets/image/04/partner07-1.png')}}" width="187" />
-        </div>
-        <div class="item">
-            <img src="{{asset('frontend/assets/image/04/partner09-1.png')}}" width="187" />
-        </div>
-        <div class="item">
-            <img src="{{asset('frontend/assets/image/04/partner10-1.png')}}" width="187" />
-        </div>
-    </div>
-</section>
+{{--partner--}}
+    @include('frontend::partner')
 <section id="contact">
     <div class="container">
         <div class="row">
@@ -183,74 +161,40 @@
             </div>
         </div>
         <div class="row">
+            @foreach($latestNews as $d)
             <div class="col-md-3">
                 <div class="card">
-                    <img src="{{asset('frontend/assets/image/card4.png')}}" class="card-img-top" alt="..." />
+                    <div class="border-img">
+                        <div class="border-tag">
+                            @if($d->categories()->exists())
+                                @foreach($d->categories as $c)
+                                    <span class="badge rounded-pill text-bg-tag">{{$c->name}}</span>
+                                @endforeach
+                            @endif
+
+                        </div>
+                        <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
+                            <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
+                                 class="card-img-top" alt="{{$d->name}}" /></a>
+                    </div>
+
                     <div class="card-body">
                         <h5 class="card-title">
-                            Sự chuyển mình mạnh mẽ của Công tác xã hội trong bệnh viện
+                            {{$d->name}}
                         </h5>
+
                         <h6 class="card-subtitle mb-2 text-body-secondary">
-                            by Dung Nguyen - ngày 20 tháng 04 năm 2024
+                            by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
                         </h6>
+
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing
-                            andtypesetting industry. Lorem Ipsum .......
+                            {{cut_string($d->description,100)}}
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <img src="{{asset('frontend/assets/image/card2.png')}}" class="card-img-top" alt="..." />
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Sự chuyển mình mạnh mẽ của Công tác xã hội trong bệnh viện
-                        </h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">
-                            by Dung Nguyen - ngày 20 tháng 04 năm 2024
-                        </h6>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing
-                            andtypesetting industry. Lorem Ipsum .......
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <img src="{{asset('frontend/assets/image/card3.png')}}" class="card-img-top" alt="..." />
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Sự chuyển mình mạnh mẽ của Công tác xã hội trong bệnh viện
-                        </h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">
-                            by Dung Nguyen - ngày 20 tháng 04 năm 2024
-                        </h6>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing
-                            andtypesetting industry. Lorem Ipsum .......
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <img src="{{asset('frontend/assets/image/card4.png')}}" class="card-img-top" alt="..." />
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Sự chuyển mình mạnh mẽ của Công tác xã hội trong bệnh viện
-                        </h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">
-                            by Dung Nguyen - ngày 20 tháng 04 năm 2024
-                        </h6>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing
-                            andtypesetting industry. Lorem Ipsum .......
-                        </p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
         <div class="row">
             <div class="col text-center">

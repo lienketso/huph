@@ -10,23 +10,20 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <h4>Linh nhanh</h4>
+                <h4>Link nhanh</h4>
                 <ul class="list-group list-custom">
-                    <li class="list-group-item"><a href="#">Trang chủ</a></li>
-                    <li class="list-group-item"><a href="#"> Giới thiệu</a></li>
-                    <li class="list-group-item">
-                        <a href="#"> Thông tin tuyển sinh</a>
-                    </li>
-                    <li class="list-group-item"><a href="#">Tin tức</a></li>
+                    @foreach($quicklinks as $d)
+                    <li class="list-group-item"><a href="{{$d->link}}">{{$d->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="col-md-3">
                 <h4>Liên hệ</h4>
                 <ul class="list-group list-custom">
                     <li class="list-group-item">
-                        024.62 66 22 99
+                        {{$setting['site_hotline_'.$lang]}}
                         <br />
-                        tuyensinh@huph.edu.vn
+                        {{$setting['site_email_'.$lang]}}
                     </li>
                 </ul>
             </div>
@@ -34,8 +31,7 @@
                 <h4>Liên hệ</h4>
                 <ul class="list-group list-custom">
                     <li class="list-group-item">
-                        Số 1A, đường Đức Thắng, phường Đức Thắng, quận Bắc Từ Liêm, Hà
-                        Nội
+                        {{$setting['site_address_'.$lang]}}
                     </li>
                 </ul>
             </div>
