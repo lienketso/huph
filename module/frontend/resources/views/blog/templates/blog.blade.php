@@ -174,7 +174,9 @@
 
                     </div>
                 </div>
+
                 <div class="col-md-8">
+                    @if($hotBlogCategory)
                     <div class="hot-content">
                         <div class="row">
                             <div class="col-md-6">
@@ -194,8 +196,12 @@
                             </div>
                         </div>
                     </div>
+                    @else
+                        <h4>Không có bài viết nổi bật nào !</h4>
+                    @endif
                 </div>
             </div>
+
         </div>
     </section>
 
