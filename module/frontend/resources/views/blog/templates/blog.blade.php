@@ -64,9 +64,11 @@
                 <div class="row">
                     <div class="col">
                         <div class="owl-carousel owl-theme owl-top">
+                            @if($data->banner!='')
                             <div class="item">
                                 <img src="{{upload_url($data->banner)}}" alt="{{$data->name}}" />
                             </div>
+                            @endif
                             @if($data->banner_1!='')
                                 <div class="item">
                                     <img src="{{upload_url($data->banner_1)}}" alt="{{$data->name}}" />
