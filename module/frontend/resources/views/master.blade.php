@@ -40,6 +40,9 @@
         href="{{asset('frontend/assets/style/custom.css')}}"/>
     <link
         rel="stylesheet"
+        href="{{asset('frontend/assets/style/fix.css')}}"/>
+    <link
+        rel="stylesheet"
         href="{{asset('frontend/assets/owlcarousel/dist/assets/owl.theme.default.min.css')}}"
     />
     <script
@@ -89,6 +92,50 @@
 
 </script>
 
+<script type="text/javascript">
+
+    $('#successForm').hide();
+
+    $('#btnForm').on('click',function(e){
+       e.preventDefault();
+       let _this = $(e.currentTarget);
+       let url = _this.attr('data-url');
+       let name = $('input[name="name"]').val();
+       let phone = $('input[name="phone"]').val();
+       let mess = '';
+       if(name.length<=0){
+           mess += 'error Name';
+           $('#txtName').text('Họ tên bắt buộc nhập !');
+       }else{
+           $('#txtName').text('');
+       }
+       if(phone.length<=8 || phone.length>= 15){
+            mess += 'error Phone';
+            $('#txtPhone').text('Điện thoại bắt buộc nhập !');
+       }else{
+           $('#txtPhone').text('');
+       }
+
+       if(mess.length===0){
+           $.ajax({
+                   url: url,
+                   type: "GET",
+                   data: {
+                       name: name,
+                       phone: phone
+                   },
+                   success: function(response) {
+                       $('#successForm').show(200);
+                       $('input[name="name"]').val('');
+                       $('input[name="phone"]').val('');
+                   },
+                   error: function(xhr, status, error) {
+                       console.error(xhr.responseText); // Hiá»ƒn thá»‹ lá»—i náº¿u cĂ³
+                   }
+               });
+       }
+    });
+</script>
 
 @yield("js")
 @yield("js-init")

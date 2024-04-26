@@ -97,10 +97,12 @@ class PostsController extends BaseController
             $input = $request->except(['_token','continue_post']);
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['file_attach'] = replace_thumbnail($input['file_attach']);
+            $input['banner'] = replace_thumbnail($input['banner']);
             $input['post_type'] = 'blog';
             $input['slug'] = $request->name;
             $input['user_post'] = Auth::id();
             $input['lang_code'] = $this->langcode;
+            $input['created_at'] = input_format_date($request->created_at);
             $category = $request->input('category');
             //cấu hình seo
             if($request->meta_title==''){
@@ -170,9 +172,11 @@ class PostsController extends BaseController
             $input = $request->except(['_token']);
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['file_attach'] = replace_thumbnail($input['file_attach']);
+            $input['banner'] = replace_thumbnail($input['banner']);
             $input['post_type'] = 'blog';
             $input['slug'] = $request->name;
             $input['user_edit'] = Auth::id();
+
             $input['created_at'] = input_format_date($request->created_at);
             // dd($input['created_at']);
             //cấu hình seo
@@ -185,6 +189,10 @@ class PostsController extends BaseController
             $category = $request->input('category');
 
             $update = $this->model->update($input, $id);
+            if($update->user_post==0){
+                $update->user_post = Auth::id();
+                $update->save();
+            }
             $this->model->sync($update->id,'categories',$category);
 
             //update meta for post

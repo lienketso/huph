@@ -73,44 +73,37 @@ class HomeController extends BaseController
                 ->where('is_hot',1)
                 ->get();
         })->limit(8);
-
+        //tuyển sinh trang chủ
+        $categoryTuyensinh = $this->catnews->orderBy('sort_order','asc')
+            ->where('cat_type','tuyensinh')
+            ->where('parent','>',0)->get();
         //Tin Slider
-        $sliderNews= $postRepository->scopeQuery(function ($e){
-            return $e->orderBy('created_at','desc')
-                ->where('status','active')
-                ->where('post_type','blog')
-                ->where('lang_code',$this->lang)
-                ->where('is_slider',1)->get();
-        })->limit(20);
+
 
         //danh mục tin trang chủ
-        $catnewsHome = $this->catnews->with(['childs'=>function($e){
-            return $e->where('display',1);
-        },'postCat','postHot'])->scopeQuery(function($e){
+        $catnewsHomes = $this->catnews->findWhere([
+            'status'=>'active',
+            'cat_type'=>'post',
+            'display'=>1
+        ])->first();
+
+
+        $catTT = $this->catnews->scopeQuery(function($e){
             return $e->orderBy('sort_order','asc')
                 ->where('parent',0)
                 ->where('status','active')
+                ->where('cat_type','post')
                 ->where('lang_code',$this->lang)
-                ->where('display',1)->get();
-        })->limit(10);
-
-        $catBottom = $this->catnews->with(['childs'])->scopeQuery(function($e){
-            return $e->orderBy('sort_order','asc')
-                ->where('parent',0)
-                ->where('status','active')
-                ->where('lang_code',$this->lang)
-                ->where('display',1)->get();
-        })->limit(10);
-
+                ->where('display',1);
+        })->first();
 
         return view('frontend::home.index',[
             'gallery'=>$gallery,
-            'sliderNews'=>$sliderNews,
-            'catBottom'=>$catBottom,
+            'catTT'=>$catTT,
             'latestNews'=>$latestNews,
             'pageAbout'=>$pageAbout,
-            'catnewsHome'=>$catnewsHome,
-            'popups'=>$popups
+            'popups'=>$popups,
+            'categoryTuyensinh'=>$categoryTuyensinh
         ]);
     }
     public function about(SettingRepositories $settingRepositories, PostRepository $postRepository){
@@ -168,6 +161,32 @@ class HomeController extends BaseController
         $input = $request->except(['_token']);
         try{
             $create = $transactionRepository->create($input);
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function submitForm(Request $request, ContactRepository $contactRepository, SettingRepositories $settingRepositories){
+        $name = $request->name;
+        $phone = $request->phone;
+        $data = [
+            'name'=>$name,
+            'phone'=>$phone,
+            'title'=>'Form liên hệ',
+            'messenger'=>'Thông tin liên hệ từ form tuyển sinh'
+        ];
+        try {
+            $contactRepository->create($data);
+            $details = [
+                'name'=> $name,
+                'phone'=> $phone,
+                'title'=>'Form liên hệ',
+                'messenger'=>'Thông tin liên hệ từ form tuyển sinh'
+            ];
+            //send mail
+            $emailSetting = $settingRepositories->getSettingMeta('site_email_vn');
+            Mail::to($emailSetting)
+                ->send(new SendMail($details));
         }catch (\Exception $e){
             return $e->getMessage();
         }

@@ -211,14 +211,19 @@ function youtubeToembed($link){
     $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_]+)\??/i';
     $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))(\w+)/i';
 
-    if (preg_match($longUrlRegex, $link, $matches)) {
-        $youtube_id = $matches[count($matches) - 1];
+    $videoId = '';
+    if (preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $link, $matches)) {
+        $videoId = $matches[1];
     }
 
-    if (preg_match($shortUrlRegex, $link, $matches)) {
-        $youtube_id = $matches[count($matches) - 1];
-    }
-    $fullEmbedUrl = 'https://www.youtube.com/embed/' . $youtube_id ;
+//    if (preg_match($longUrlRegex, $link, $matches)) {
+//        $youtube_id = $matches[count($matches) - 1];
+//    }
+//
+//    if (preg_match($shortUrlRegex, $link, $matches)) {
+//        $youtube_id = $matches[count($matches) - 1];
+//    }
+    $fullEmbedUrl = 'https://www.youtube.com/embed/' . $videoId ;
     return $fullEmbedUrl;
 }
 

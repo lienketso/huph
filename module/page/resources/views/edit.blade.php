@@ -102,7 +102,12 @@
                             <select id="" name="display" class="form-control" style="width: 100%" data-placeholder="Trạng thái">
                                 <option value="0" {{ ($data->display==0) ? 'selected' : ''}}>Không chọn</option>
                                 <option value="1" {{ ($data->display==1) ? 'selected' : ''}}>Trang chủ</option>
+                                <option value="2" {{ ($data->display==2) ? 'selected' : ''}}>Trang chủ 2</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Thứ tự ưu tiên</label>
+                            <input type="number" class="form-control" name="is_slider" value="{{$data->is_slider}}">
                         </div>
                         @if($permissionPost->contains('name','status_active'))
                             <div class="form-group">
@@ -143,6 +148,15 @@
                             </div>
                             <div class="col-xs-12">
                                 <img src="{{($data->banner!='') ? upload_url($data->banner) : public_url('admin/themes/images/no-image.png')}}" id="imgreview" style="width: 100px; padding: 10px 0;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Link video youtube</label>
+                            <div class="input-group col-xs-12" style="display: flex">
+                                <input type="text" name="file_attach"
+                                       value="{{$data->file_attach}}"  class="form-control" placeholder="Nhập link youtube">
+
                             </div>
                         </div>
 

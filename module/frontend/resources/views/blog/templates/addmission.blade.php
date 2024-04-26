@@ -158,7 +158,7 @@
                                                     by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
                                                 </h6>
                                                 <p>
-                                                    {{cut_string($d->description,100)}}
+                                                    {!! cut_string($d->description,100) !!}
                                                 </p>
                                             </div>
                                         </div>

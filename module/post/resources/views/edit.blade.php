@@ -229,6 +229,19 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label>Banner</label>
+                            <div class="input-group col-xs-12" style="display: flex">
+                                <input type="text" name="banner" value="{{$data->banner}}" id="ckfinder-input-3" class="form-control file-upload-info" placeholder="Upload Image">
+                                <span class="input-group-append">
+								<button class="file-upload-browse btn btn-primary" id="ckfinder-popup-3"  type="button">Chọn ảnh</button>
+							</span>
+                            </div>
+                            <div class="col-xs-12">
+                                <img src="{{($data->banner!='') ? upload_url($data->banner) : public_url('admin/themes/images/no-image.png')}}" id="imgreview" style="width: 100px; padding: 10px 0;">
+                            </div>
+                        </div>
+
                         <div class="form-group" >
                             <label style="padding-top: 20px">QR Code cho bài viết</label>
                             <div class="qr-code" id="svgID" style="position: relative">

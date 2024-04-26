@@ -1,0 +1,17 @@
+.input-group{
+    position: relative;
+}
+.input-group span{
+    color: #c00;
+    font-size: 13px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#successForm{
+    background: #fff;
+    padding: 5px 10px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
