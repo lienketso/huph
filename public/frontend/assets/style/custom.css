@@ -108,9 +108,9 @@ h1 {
     padding: 20px;
     margin: 20px 0;
     font-size: 28px;
-    left: 50%;
+    left: 51%;
     position: absolute;
-    width: 31%;
+    padding: 20px 50px;
     border-radius: 12px;
     text-align: center;
     font-weight: 500;
