@@ -56,7 +56,7 @@ class AdmissionController extends BaseController
         $roles = $userLog->load('roles.perms');
         $permissionPost = $roles->roles->first()->perms;
         $category = $this->cat->orderBy('created_at','desc')
-            ->findWhere(['lang_code'=>$this->langcode,'cat_type'=>'tuyensinh'])->all();
+            ->findWhere(['lang_code'=>$this->langcode,'cat_type'=>'tuyensinh','parent'=>0])->all();
         $userPost = Users::where('status','active')->get();
         return view('wadmin-post::product.index',compact('data','permissionPost','category','userPost'));
     }
@@ -107,7 +107,7 @@ class AdmissionController extends BaseController
     function getEditProduct($id){
         $data = $this->model->find($id);
         $category = $this->cat->orderBy('created_at','desc')
-            ->findWhere(['lang_code'=>$this->langcode,'cat_type'=>'tuyensinh'])->all();
+            ->findWhere(['lang_code'=>$this->langcode,'cat_type'=>'tuyensinh','parent'=>0])->all();
         $userLog = Auth::user();
         $roles = $userLog->load('roles.perms');
         $permissionPost = $roles->roles->first()->perms;
@@ -123,6 +123,7 @@ class AdmissionController extends BaseController
         try{
             $input = $request->except(['_token']);
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
+            $input['banner'] = replace_thumbnail($input['banner']);
             $input['post_type'] = 'tuyensinh';
             $input['slug'] = $request->name;
             $input['user_edit'] = Auth::id();

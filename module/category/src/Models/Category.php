@@ -41,9 +41,9 @@ class Category extends Model
     }
 
     public function postCat(){
-        return $this->hasMany(Post::class,'category')
+        return $this->belongsToMany(Post::class,'post_category')
             ->orderBy('created_at','desc')
-            ->where('status','active')->where('is_home',1)->limit(5);
+            ->where('status','active')->where('is_home',1)->limit(20);
     }
     public function postHot(){
         return $this->hasMany(Post::class,'category')

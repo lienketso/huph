@@ -207,6 +207,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Banner</label>
+                            <div class="input-group col-xs-12" style="display: flex">
+                                <input type="text" name="banner" value="<?= old('banner'); ?>" id="ckfinder-input-3" class="form-control file-upload-info" placeholder="Upload Image">
+                                <span class="input-group-append">
+								<button class="file-upload-browse btn btn-primary" id="ckfinder-popup-3"  type="button">Chọn ảnh</button>
+							</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <button class="btn btn-primary">Lưu lại</button>
                             <button class="btn btn-success" name="continue_post" value="1">Lưu và tiếp tục thêm</button>
                         </div>

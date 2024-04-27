@@ -100,9 +100,13 @@
                             <select id="" name="display" class="form-control" style="width: 100%" data-placeholder="Trạng thái">
                                 <option value="0" {{ (old('display') ==0 ) ? 'selected' : ''}}>Không chọn</option>
                                 <option value="1" {{ (old('display') ==1 ) ? 'selected' : ''}}>Trang chủ</option>
+                                <option value="2" {{ (old('display') ==2 ) ? 'selected' : ''}}>Trang chủ 2</option>
                             </select>
                         </div>
-
+                        <div class="form-group">
+                            <label>Thứ tự ưu tiên</label>
+                           <input type="number" class="form-control" name="is_slider" value="{{(old('is_slider',0))}}">
+                        </div>
                         @if($permissionPost->contains('name','status_active'))
                             <div class="form-group">
                                 <label>Trạng thái</label>
@@ -133,6 +137,14 @@
                                 <span class="input-group-append">
 								<button class="file-upload-browse btn btn-primary" id="ckfinder-popup-2"  type="button">Chọn ảnh</button>
 							</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Link video youtube</label>
+                            <div class="input-group col-xs-12" style="display: flex">
+                                <input type="text" name="file_attach"
+                                       value="<?= old('file_attach'); ?>"  class="form-control" placeholder="Nhập link youtube">
+
                             </div>
                         </div>
 

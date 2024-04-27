@@ -61,7 +61,7 @@ class PageController extends BaseController
             $input['slug'] = $request->name;
             $input['post_type'] = $request->get('post_type');
             $input['user_post'] = Auth::id();
-            
+
             //cấu hình seo
             if($request->meta_title==''){
                 $input['meta_title'] = $request->name;
