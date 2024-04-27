@@ -98,8 +98,8 @@ h1 {
 }
 #nav-tabContent .home-tab-1 .content .show-more {
     position: relative;
-    left: 50%;
-    bottom: -15%;
+    left: 32%;
+    bottom: -36%;
     color: #fff;
     text-decoration: none;
 }
@@ -482,9 +482,10 @@ section#about h5{
 section#about h2{
     text-shadow: 0px 0px 4px #282828;
     color: #205c40;
-    font-size: 50px;
+    font-size: 56px;
     font-weight: 900;
     -webkit-text-stroke: 1px #fff;
+    font-family: roboto;
 }
 section#about p{
    padding: 0 30px;
