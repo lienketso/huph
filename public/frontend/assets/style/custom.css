@@ -631,7 +631,7 @@ section#package h2 span{
     background-position: center 7px;
 }
 .timeline-show p{
-    padding: 10px;
+    padding: 10px 20px ;
 }
 .timeline-show .owl-item:hover{
     border-radius: 8px;
