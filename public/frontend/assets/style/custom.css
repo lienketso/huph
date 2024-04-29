@@ -305,6 +305,9 @@ section#hot-new .btn-outline-tag:hover {
     background-color: #ecf8df !important;
     color: #205c40 !important;
 }
+section#hot-new .btn-check{
+    width: auto;
+}
 section#hot-new .btn-check:checked + .btn {
     color: #205c40 !important;
     background-color: #81cf28;
