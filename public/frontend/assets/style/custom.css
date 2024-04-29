@@ -188,13 +188,13 @@ section#enrollment h2 {
 section#enrollment .sologan {
     text-align: center;
     font-weight: bold;
-    font-size: 36px;
-    color: 393D40;
+    font-size: 32px;
+    color: #393D40;
 }
 section#enrollment .sologan span {
     display: inline-block;
-    color: #205c40;
-    text-shadow: 1px 3px 10px #bdbdbd;
+    color: #389C6D;
+    /* text-shadow: 1px 3px 10px #bdbdbd; */
 }
 section#vendor .owl-carousel {
     margin: 20px 0;
@@ -270,7 +270,7 @@ section#hot-new input {
     font-size: 16px;
     background-color: white;
     background-image: url(../image/search.png);
-    background-position: 10px 10px;
+    background-position: 10px 16px;
     background-repeat: no-repeat;
     padding: 18px 18px 18px 47px;
     box-shadow: 7px 5px 20px #bbbec7;
@@ -476,16 +476,18 @@ footer ul.list-custom li a {
 section#about h5{
     text-align: center;
     color:#205C40;
-    font-size: 22px;
+    font-size: 24px;
     margin: 30px 0 50px;
+    font-weight: bolder;
 }
 section#about h2{
-    text-shadow: 0px 0px 4px #282828;
+    /* text-shadow: 0px 0px 4px #282828; */
     color: #205c40;
     font-size: 56px;
     font-weight: 900;
-    -webkit-text-stroke: 1px #fff;
-    font-family: roboto;
+    font-style: italic;
+    /* -webkit-text-stroke: 1px #fff; */
+    /* font-family: roboto; */
 }
 section#about p{
    padding: 0 30px;
@@ -498,6 +500,7 @@ section#about a.show-more{
     text-decoration: none;
     float: right;
     margin: 35px;
+    font-size: 18px;
 }
 section#about .img-border{
     position: relative;
@@ -544,6 +547,9 @@ section#package h2 span{
 .marquee-item {
     flex: 0 0 16vw;
     margin: 0 1vw;
+    color: #205C40;
+    font-weight: bold;
+    font-size: 20px;
     /*   flex: 0 0 20vw; */
     /*   margin: 0 2vw; */
 }
@@ -599,6 +605,50 @@ section#package h2 span{
     max-width: 300px;
     height: 400px;
     transform: rotate(5deg);
+}
+.timeline{
+    text-align: end;
+}
+.timeline span{
+    display: inline-block;
+    cursor: pointer;
+}
+.timeline span:nth-child(1){
+    margin-right: 10px;
+}
+.timeline-show{
+    margin-top: 30px;
+}
+.timeline-show h4{
+    margin: 20px;
+    text-align: center;
+}
+.timeline-show .separate{
+    border-bottom: 1px solid #205C40;
+    background-image: url(../image/dot1.png);
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center 7px;
+}
+.timeline-show p{
+    padding: 10px;
+}
+.timeline-show .owl-item:hover{
+    border-radius: 8px;
+    background-color: #205C40;
+    cursor: pointer;
+    color: #fff;
+
+}
+.timeline-show .owl-item:hover .separate{
+    border-bottom: 1px solid #fff;
+    background-image: url(../image/dot2.png);
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center 7px;
+}
+.timeline-show .owl-item:hover p{
+    color:#fff;
 }
 @keyframes scrolling {
     0% { transform: translateX(0); }
