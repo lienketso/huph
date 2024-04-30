@@ -214,6 +214,7 @@
                 @foreach($post as $d)
                     <div class="col-md-3">
                         <div class="card">
+                            <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
                             <div class="border-img">
                                 <div class="border-tag">
                                     @if($d->categories()->exists())
@@ -223,9 +224,9 @@
                                     @endif
 
                                 </div>
-                                <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
+
                                     <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
-                                         class="card-img-top" alt="{{$d->name}}" /></a>
+                                         class="card-img-top" alt="{{$d->name}}" />
                             </div>
 
                             <div class="card-body">
@@ -241,6 +242,7 @@
                                     {{cut_string($d->description,100)}}
                                 </p>
                             </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach
