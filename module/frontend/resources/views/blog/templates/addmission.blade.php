@@ -165,7 +165,7 @@
                                     @endforeach
 
                                 </div>
-
+                                @if($post instanceof LengthAwarePaginator || $post instanceof Paginator)
                                 <div class="row">
                                     <div class="col text-center">
                                         <button
@@ -177,6 +177,7 @@
                                         </button>
                                     </div>
                                 </div>
+                                @endif
 
                             </div>
                         @endforeach

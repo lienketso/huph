@@ -266,15 +266,18 @@ section#news .new-related {
 .text-bg-tag {
     background-color: #81cf28;
     color: #092b1b;
+    padding: 5px 12px;
 }
 .card img {
-    border-radius: 10px 10px 0px 0;
+    border-radius: 10px 10px 0 0;
 }
 .card .card-body {
     border: none;
 }
 h5.card-title {
     color: #205c40;
+    line-height: 22px;
+    font-size: 16px;
 }
 section#hot-new {
     margin: 50px 0;
