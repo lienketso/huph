@@ -109,7 +109,7 @@
     @if($catTT)
     <section id="package">
         <div class="img-bgg-package">
-            <img src="{{asset('frontend/assets/image/logo2.png')}}">
+            <img src="{{asset('frontend/assets/image/logo3.png')}}">
         </div>
         <div class="container">
             <div class="row">
