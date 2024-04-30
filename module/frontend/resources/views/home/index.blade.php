@@ -72,23 +72,26 @@
                                 <div class="home-tab-1">
                                     @foreach($postHome as $p)
                                         <div class="item-tuyen-sinh-home">
-                                            <a href="{{route('frontend::blog.detail.get',$p->slug)}}">
-                                                <img src="{{ ($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('admin/themes/images/no-image.png')}}" />
-                                            </a>
-                                        <div class="content">
-                                            <h1>
-                                                {{$p->name}}
-                                            </h1>
-                                            <p>
-                                               {!! cut_string($p->description,300) !!}
-                                            </p>
-                                            <a href="{{route('frontend::blog.index.get',$d->slug)}}" class="show-more"
-                                            >Xem thêm các tin liên quan
-                                                -></a>
-                                        </div>
-                                        <div class="let-go">
-                                            " {!! $setting['keyword_3_'.$lang] !!} "
-                                        </div>
+                                            <div class="logo-am">
+                                                <img src="{{asset('frontend/assets/image/am-ban.png')}}" alt="Logo âm bản">
+                                            </div>
+                                                <a href="{{route('frontend::blog.detail.get',$p->slug)}}">
+                                                    <img src="{{ ($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('admin/themes/images/no-image.png')}}" />
+                                                </a>
+                                                <div class="content">
+                                                    <h1>
+                                                        {{$p->name}}
+                                                    </h1>
+                                                    <p>
+                                                       {!! cut_string($p->description,300) !!}
+                                                    </p>
+                                                    <a href="{{route('frontend::blog.index.get',$d->slug)}}" class="show-more"
+                                                    >Xem thêm các tin liên quan
+                                                        -></a>
+                                                </div>
+                                            <div class="let-go">
+                                                " {!! $setting['keyword_3_'.$lang] !!} "
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
@@ -105,6 +108,9 @@
 
     @if($catTT)
     <section id="package">
+        <div class="img-bgg-package">
+            <img src="{{asset('frontend/assets/image/logo2.png')}}">
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col">

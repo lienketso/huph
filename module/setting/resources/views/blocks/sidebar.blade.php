@@ -27,7 +27,6 @@
 <li class="{{in_array(Route::currentRouteName(), $AboutRoute) ? 'active' : '' }}"><a href="{{route('wadmin::factory.index.get')}}">Lịch sử hình thành</a></li>
         <li class="{{in_array(Route::currentRouteName(), $indexRoute) ? 'active' : '' }}"><a href="{{route('wadmin::setting.index.get')}}">Cấu hình chung</a></li>
         <li class="{{in_array(Route::currentRouteName(), $LinkRoute) ? 'active' : '' }}"><a href="{{route('wadmin::link.index.get')}}">Link nhanh</a></li>
-        <li class="{{in_array(Route::currentRouteName(), $LinkRoute) ? 'active' : '' }}"><a href="{{route('wadmin::search.index.get')}}">Form tìm kiếm</a></li>
         <li class="{{in_array(Route::currentRouteName(), $keywordRoute) ? 'active' : '' }}"><a href="{{route('wadmin::setting.keyword.get')}}">Từ khóa trên trang</a></li>
     </ul>
 </li>

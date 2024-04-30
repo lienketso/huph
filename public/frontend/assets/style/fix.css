@@ -31,6 +31,15 @@
 .btn-show{
     line-height: 40px;
 }
+.item-tuyen-sinh-home{
+    position: relative;
+}
+.item-tuyen-sinh-home .logo-am{
+    position: absolute;
+    right: 0;
+    opacity: 0.5;
+}
+
 @media (min-width: 768px) {
     .map-company{
         width: 50%;
