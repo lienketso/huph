@@ -8,12 +8,12 @@
 @section('content')
     <ol class="breadcrumb breadcrumb-quirk">
         <li><a href="{{route('wadmin::dashboard.index.get')}}"><i class="fa fa-home mr5"></i> Dashboard</a></li>
-        <li><a href="">Danh sách nhóm chủ trị</a></li>
+        <li><a href="">Danh sách lịch sử hình thành</a></li>
     </ol>
     <div class="panel">
         <div class="panel-heading">
-            <h4 class="panel-title">Danh sách nhóm chủ trị</h4>
-            <p>Danh sách nhóm chủ trị trên trang</p>
+            <h4 class="panel-title">Danh sách lịch sử hình thành</h4>
+            <p>Danh sách lịch sử hình thành trên trang</p>
         </div>
 
         <div class="search_page">
@@ -52,7 +52,7 @@
                 <table class="table nomargin">
                     <thead>
                     <tr>
-                        <th>Tên nhóm chủ trị</th>
+                        <th>Tiêu đề</th>
                         <th>thứ tự</th>
                         <th class="">Ngày tạo</th>
                         <th class="">Trạng thái</th>

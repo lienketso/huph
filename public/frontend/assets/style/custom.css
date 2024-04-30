@@ -12,6 +12,7 @@ h1 {
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
         -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     color: #205c40;
+    font-weight: 900;
 }
 .hot-line {
     color: #205c40;
@@ -224,6 +225,7 @@ section h2 {
     color: #205c40;
     margin: 30px;
     font-size: 24px;
+    font-weight: 600;
 }
 section#news {
     margin-bottom: 40px;
@@ -358,7 +360,7 @@ section#hot-new p {
 }
 
 section#contact {
-    padding: 30px 0;
+    padding: 50px 0;
     background-color: #205c40;
     background-image: url("../image/bg-section.jpg");
 }
@@ -558,6 +560,7 @@ section#about .content-top-1 .top-title {
     padding-top: 58px;
     color: #828282;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
 section#about .content-top-3 .top-title {

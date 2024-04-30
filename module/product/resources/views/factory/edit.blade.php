@@ -26,8 +26,8 @@
 
     <ol class="breadcrumb breadcrumb-quirk">
         <li><a href="{{route('wadmin::dashboard.index.get')}}"><i class="fa fa-home mr5"></i> Dashboard</a></li>
-        <li><a href="{{route('wadmin::factory.index.get')}}">Nhóm chủ trị</a></li>
-        <li class="active">Sửa nhóm chủ trị</li>
+        <li><a href="{{route('wadmin::factory.index.get')}}">Lịch sử hình thành</a></li>
+        <li class="active">Sửa lịch sử hình thành</li>
     </ol>
 
     <div class="row">
@@ -45,12 +45,12 @@
             <div class="col-sm-8">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Sửa nhóm chủ trị</h4>
+                        <h4 class="panel-title">Sửa lịch sử hình thành</h4>
                         <p>Bạn cần nhập đầy đủ các thông tin để sửa thông tin</p>
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <label>Tên nhóm chủ trị</label>
+                            <label>Tiêu đề</label>
                             <input class="form-control"
                                    name="name"
                                    type="text"
@@ -61,7 +61,7 @@
                             <label>Mô tả ngắn</label>
                             <textarea id="" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{$data->description}}</textarea>
                         </div>
-                      
+
 
                         <div class="form-group">
                             <button class="btn btn-primary">Lưu lại</button>

@@ -42,7 +42,7 @@
                                            name="keyword_1_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_1_'.$language)}}"
-                                           placeholder="Nhập từ khóa">
+                                           placeholder="Thông tin tuyển sinh">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -51,7 +51,7 @@
                                            name="keyword_2_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_2_'.$language)}}"
-                                           placeholder="Thông báo">
+                                           placeholder="Bạn đã sẵn sàng">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -60,7 +60,7 @@
                                            name="keyword_3_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_3_'.$language)}}"
-                                           placeholder="Tin tức mới nhất">
+                                           placeholder="Tham gia ngay với chúng tôi nào!">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -69,7 +69,7 @@
                                            name="keyword_4_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_4_'.$language)}}"
-                                           placeholder="Video nổi bật">
+                                           placeholder="Nguyện vọng của bạn là gì">
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                            name="keyword_5_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_5_'.$language)}}"
-                                           placeholder="Liên kết khác">
+                                           placeholder="Khám phá Trường Đại học Y tế công cộng">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -92,7 +92,7 @@
                                            name="keyword_6_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_6_'.$language)}}"
-                                           placeholder="Viện NC Y Dược Tuệ Tĩnh">
+                                           placeholder="Đối tác và nhà tài trợ quốc tế">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -102,7 +102,7 @@
                                            name="keyword_7_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_7_'.$language)}}"
-                                           placeholder="Liên hệ viện nghiên cứu">
+                                           placeholder="CÒN CHỜ GÌ NỮA HÃY LIÊN HỆ NGAY VỚI CHÚNG TÔI ĐỂ ĐƯỢC TƯ VẤN CÁC HUPHERS TƯƠNG LAI NHÉ!">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -112,7 +112,7 @@
                                            name="keyword_8_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_8_'.$language)}}"
-                                           placeholder="Mạng xã hội">
+                                           placeholder="Tin tức nổi bật và các bài báo, học bổng">
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                                            name="keyword_9_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_9_'.$language)}}"
-                                           placeholder="Trang chủ">
+                                           placeholder="Link nhanh">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -135,7 +135,7 @@
                                            name="keyword_10_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_10_'.$language)}}"
-                                           placeholder="Xem thêm">
+                                           placeholder="Liên hệ">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -145,7 +145,7 @@
                                            name="keyword_11_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_11_'.$language)}}"
-                                           placeholder="Danh mục">
+                                           placeholder="Địa chỉ">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -155,7 +155,7 @@
                                            name="keyword_12_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_12_'.$language)}}"
-                                           placeholder="Tác giả">
+                                           placeholder="Trường Đại học Y tế công cộng">
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                                            name="keyword_13_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_13_'.$language)}}"
-                                           placeholder="Bài viết liên quan">
+                                           placeholder="Lịch sử hình thành và phát triển">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -178,7 +178,7 @@
                                            name="keyword_14_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_14_'.$language)}}"
-                                           placeholder="Bài trước">
+                                           placeholder="Mô tả lịch sử hình thành">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
@@ -188,7 +188,7 @@
                                            name="keyword_15_{{$language}}"
                                            type="text"
                                            value="{{$setting->getSettingMeta('keyword_15_'.$language)}}"
-                                           placeholder="Bài tiếp theo">
+                                           placeholder="TIN TỨC NỔI BẬT">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">

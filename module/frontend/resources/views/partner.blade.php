@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h2>Đối tác và nhà tài trợ quốc tế</h2>
+                <h2>{!! $setting['keyword_6_'.$lang] !!}</h2>
             </div>
         </div>
     </div>

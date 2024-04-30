@@ -64,6 +64,8 @@ class HomeController extends BaseController
         })->first();
 
         $pageAbout = $postRepository->findWhere(['lang_code'=>$this->lang,'status'=>'active','display'=>1,'post_type'=>'page'])->first();
+        //page home 2
+        $pageHome = $postRepository->findWhere(['lang_code'=>$this->lang,'status'=>'active','display'=>2,'post_type'=>'page'])->all();
 
         $latestNews = $postRepository->scopeQuery(function($e){
             return $e->orderBy('created_at','desc')
@@ -103,7 +105,8 @@ class HomeController extends BaseController
             'latestNews'=>$latestNews,
             'pageAbout'=>$pageAbout,
             'popups'=>$popups,
-            'categoryTuyensinh'=>$categoryTuyensinh
+            'categoryTuyensinh'=>$categoryTuyensinh,
+            'pageHome'=>$pageHome
         ]);
     }
     public function about(SettingRepositories $settingRepositories, PostRepository $postRepository){

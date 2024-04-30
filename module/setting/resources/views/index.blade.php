@@ -72,17 +72,20 @@
                                    value="{{$setting->getSettingMeta('site_name_'.$language)}}"
                                    placeholder="Tên website">
                         </div>
-                        <div class="form-group">
-                            <label>Tiêu đề header</label>
-                                    <textarea id="editor1" name="site_top_name_{{$language}}"
-                                      class="form-control makeMeRichTextarea" rows="3"
-                                      placeholder="">{{$setting->getSettingMeta('site_top_name_'.$language)}}</textarea>
-                        </div>
+
                         <div class="form-group">
                             <label>Mô tả trang web</label>
                             <textarea id="" name="site_description_{{$language}}" class="form-control" rows="3"
                                       placeholder="Mô tả website">{{$setting->getSettingMeta('site_description_'.$language)}}</textarea>
                         </div>
+
+                        <div class="form-group">
+                            <label>Sơ đồ tổ chức</label>
+                            <textarea id="editor1" name="site_top_name_{{$language}}"
+                                      class="form-control makeMeRichTextarea" rows="3"
+                                      placeholder="">{{$setting->getSettingMeta('site_top_name_'.$language)}}</textarea>
+                        </div>
+
                         <div class="form-group">
                             <label>Mô tả mục sản phẩm</label>
                             <textarea id="" name="site_p_description_{{$language}}" class="form-control" rows="3"

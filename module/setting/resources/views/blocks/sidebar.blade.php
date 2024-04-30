@@ -1,7 +1,7 @@
 @php
     $listRoute = [
-        'wadmin::setting.index.get', 
-        'wadmin::setting.fact.get', 
+        'wadmin::setting.index.get',
+        'wadmin::setting.fact.get',
         'wadmin::setting.keyword.get',
         'wadmin::factory.index.get',
         'wadmin::factory.create.get',
@@ -24,7 +24,7 @@
 <li class="nav-parent {{in_array(Route::currentRouteName(), $listRoute) ? 'nav-active active' : '' }}">
     <a href="" ><i class="fa fa-gears"></i> <span>Cấu hình</span></a>
     <ul class="children">
-<li class="{{in_array(Route::currentRouteName(), $AboutRoute) ? 'active' : '' }}"><a href="{{route('wadmin::factory.index.get')}}">Nhóm chủ trị ( bài thuốc )</a></li>
+<li class="{{in_array(Route::currentRouteName(), $AboutRoute) ? 'active' : '' }}"><a href="{{route('wadmin::factory.index.get')}}">Lịch sử hình thành</a></li>
         <li class="{{in_array(Route::currentRouteName(), $indexRoute) ? 'active' : '' }}"><a href="{{route('wadmin::setting.index.get')}}">Cấu hình chung</a></li>
         <li class="{{in_array(Route::currentRouteName(), $LinkRoute) ? 'active' : '' }}"><a href="{{route('wadmin::link.index.get')}}">Link nhanh</a></li>
         <li class="{{in_array(Route::currentRouteName(), $LinkRoute) ? 'active' : '' }}"><a href="{{route('wadmin::search.index.get')}}">Form tìm kiếm</a></li>

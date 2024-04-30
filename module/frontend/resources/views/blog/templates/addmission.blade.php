@@ -86,8 +86,7 @@
         <div class="row ">
             <div class="col">
                 <div class="sologan mb-3">
-                    Bạn đã <span> sẵn sàng</span> để trở thành 1
-                    <span>thành viên của HUPH</span> chưa ?
+                    {!! $setting['keyword_2_'.$lang] !!}
                 </div>
             </div>
         </div>

@@ -56,6 +56,7 @@ class PageController extends BaseController
             $input = $request->except(['_token','continue_post']);
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['banner'] = replace_thumbnail($input['banner']);
+            $input['address'] = replace_thumbnail($input['address']);
 
             $input['lang_code'] = $this->langcode;
             $input['slug'] = $request->name;
@@ -98,6 +99,7 @@ class PageController extends BaseController
 
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['banner'] = replace_thumbnail($input['banner']);
+            $input['address'] = replace_thumbnail($input['address']);
             $input['slug'] = $request->name;
             $input['user_edit'] = Auth::id();
             $input['post_type'] = 'page';

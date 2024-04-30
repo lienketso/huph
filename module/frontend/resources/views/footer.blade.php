@@ -10,7 +10,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <h4>Link nhanh</h4>
+                <h4>{!! $setting['keyword_9_'.$lang] !!}</h4>
                 <ul class="list-group list-custom">
                     @foreach($quicklinks as $d)
                     <li class="list-group-item"><a href="{{$d->link}}">{{$d->name}}</a></li>
@@ -18,7 +18,7 @@
                 </ul>
             </div>
             <div class="col-md-3">
-                <h4>Liên hệ</h4>
+                <h4>{!! $setting['keyword_10_'.$lang] !!}</h4>
                 <ul class="list-group list-custom">
                     <li class="list-group-item">
                         {{$setting['site_hotline_'.$lang]}}
@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <div class="col-md-3">
-                <h4>Liên hệ</h4>
+                <h4>{!! $setting['keyword_11_'.$lang] !!}</h4>
                 <ul class="list-group list-custom">
                     <li class="list-group-item">
                         {{$setting['site_address_'.$lang]}}

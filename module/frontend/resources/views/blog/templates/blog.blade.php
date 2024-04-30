@@ -97,7 +97,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h1>TIN TỨC NỔI BẬT</h1>
+                    <h1>{!! $setting['keyword_15_'.$lang] !!}</h1>
                     <form>
                         <input
                             type="text"

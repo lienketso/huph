@@ -25,10 +25,9 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>Thông tin tuyển sinh</h2>
+                    <h2>{{$setting['keyword_1_'.$lang]}}</h2>
                     <div class="sologan">
-                        Bạn đã <span> sẵn sàng</span> để trở thành 1
-                        <span>thành viên của HUPH</span> chưa ?
+                        {!! $setting['keyword_2_'.$lang] !!}
                     </div>
                 </div>
             </div>
@@ -88,7 +87,7 @@
                                                 -></a>
                                         </div>
                                         <div class="let-go">
-                                            " Tham gia ngay với chúng tôi nào! "
+                                            " {!! $setting['keyword_3_'.$lang] !!} "
                                         </div>
                                         </div>
                                     @endforeach
@@ -111,8 +110,7 @@
                 <div class="col">
                     <h5>{{$catTT->name}}</h5>
                     <h2>
-                        <span>Nguyện vọng</span> của bạn là gì hãy cùng tìm
-                        hiểu nào!
+                        {!! $setting['keyword_4_'.$lang] !!}
                     </h2>
                 </div>
             </div>
@@ -153,7 +151,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Khám phá Trường Đại học Y tế công cộng</h2>
+                    <h2>{!! $setting['keyword_5_'.$lang] !!}</h2>
                     <p>
                         {!! $pageAbout->description !!}
                     </p>
@@ -187,21 +185,41 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <img src="{{asset('frontend/assets/image/139.png')}}" width="100%" class="mt-3" />
+            @foreach($pageHome as $key=>$d)
+                @php
+                    $count = $key+1;
+                @endphp
+                @if($key%2==0)
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-7">
+                        <div class="content-top-1" style="background-image: url('{{asset('frontend/assets/image/0'.$count.'.png')}}')">
+                            <div class="top-title">
+                                <span></span> {{$d->name}}
+                            </div>
+                            <h2>
+                                {{$d->description}}
+                            </h2>
+                            <div class="content-page-home">
+                                {!! $d->content !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/img1.png')}}" width="100%" class="mt-3" />
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <img src="{{asset('frontend/assets/image/138.png')}}" width="100%" class="mt-3" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <img src="{{asset('frontend/assets/image/141.png')}}" width="100%" class="mt-3" />
-                </div>
-            </div>
+                @else
+                    <div class="row mt-5 mb-5">
+                        <div class="col-md-6">
+                            <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/img2.png')}}" width="100%" class="mt-3" />
+                        </div>
+                        <div class="col-md-6">
+                            {!! $d->content !!}
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+
         </div>
     </section>
 {{--partner--}}
@@ -212,7 +230,7 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h2>Tin tức nổi bật và các bài báo, học bổng</h2>
+                <h2>{!! $setting['keyword_8_'.$lang] !!}</h2>
             </div>
         </div>
         <div class="row">
@@ -253,7 +271,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <button type="button" class="btn btn-light btn-show">Xem thêm</button>
+                <a href="{{route('frontend::blog.index.get','tin-tuc')}}" class="btn btn-light btn-show">Xem thêm</a>
             </div>
         </div>
     </div>

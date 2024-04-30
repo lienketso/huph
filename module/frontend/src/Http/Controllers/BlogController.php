@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Post\Models\Post;
 use Post\Models\PostMeta;
 use Post\Repositories\PostRepository;
+use Product\Models\Factory;
 
 class BlogController extends BaseController
 {
@@ -41,6 +42,7 @@ class BlogController extends BaseController
             $view->with(['meta_title'=>$meta_title,'meta_desc'=>$meta_desc,'meta_url'=>$meta_url,'meta_thumbnail'=>$meta_thumbnail]);
         });
         //end cấu hình thẻ meta
+        $historyList = Factory::orderBy('sort_order','asc')->where('status','active')->where('lang_code',$this->lang)->get();
 
         //update count view
         $input['count_view'] = $data->count_view+1;
@@ -57,7 +59,8 @@ class BlogController extends BaseController
 
         return view('frontend::blog.page',[
             'data'=>$data,
-            'related'=>$related
+            'related'=>$related,
+            'historyList'=>$historyList
         ]);
     }
 
