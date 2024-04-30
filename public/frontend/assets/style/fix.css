@@ -39,6 +39,9 @@
     right: 0;
     opacity: 0.5;
 }
+section#hot-new h1{
+    font-weight: 300 !important;
+}
 
 @media (min-width: 768px) {
     .map-company{

@@ -103,6 +103,7 @@
                             type="text"
                             name="search"
                             placeholder="Tìm kiếm "
+                            value="{{(request()->search)}}"
                             class="form-control"
                         />
                     </form>

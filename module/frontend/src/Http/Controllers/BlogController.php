@@ -99,8 +99,16 @@ class BlogController extends BaseController
     public function index($slug, Request $request){
         $data = $this->cat->with(['childs'])->findWhere(['slug'=>$slug])->first();
         if($data) {
-            $post = $data->posts()->where('status','active')->paginate(16);
-
+            $postQuery = $data->posts()->where('status','active');
+            // Kiểm tra nếu tồn tại từ khóa tìm kiếm
+            if (!empty($request->search)) {
+                $search = $request->search;
+                $postQuery->where(function($query) use ($search) {
+                    $query->where('name', 'like', '%'.$search.'%')
+                        ->orWhere('content', 'like', '%'.$search.'%');
+                });
+            }
+            $post = $postQuery->paginate(16);
         } else {
             return response()->json([
                 'error' => 'Category not found'
@@ -115,7 +123,7 @@ class BlogController extends BaseController
         }else{
             $meta_thumbnail = public_url('admin/themes/images/no-image.png');
         }
-        $formSearch = CategoryMeta::where('category',$data->id)->where('status','active')->first();
+
         view()->composer('frontend:*', function($view) use ($meta_title,$meta_desc,$meta_url,$meta_thumbnail){
             $view->with(['meta_title'=>$meta_title,'meta_desc'=>$meta_desc,'meta_url'=>$meta_url,'meta_thumbnail'=>$meta_thumbnail]);
         });
@@ -128,7 +136,6 @@ class BlogController extends BaseController
         return view('frontend::blog.index',[
             'data'=>$data,
             'post'=>$post,
-            'formSearch'=>$formSearch,
             'hotBlogCategory'=>$hotBlogCategory
         ]);
     }
