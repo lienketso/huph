@@ -20,13 +20,12 @@
     <div class="container">
         <nav class="nav navbar nav-fill snip1135">
             @foreach($menus as $key=>$menu)
-                <a class="nav-link {{ (request()->is($menu->link)) ? 'active' : '' }}" aria-current="page" href="{{$menu->link}}"
-                >
+                <a class="nav-link item-menu" aria-current="" href="{{$menu->link}}">
                     @if($menu->thumbnail!='')
                         <i class="{{$menu->thumbnail}}"></i>
                     @endif
-                        {{$menu->name}}</a
-                >
+                        {{$menu->name}}</a>
+
             @endforeach
                 <a
                     class="nav-link"
@@ -35,7 +34,9 @@
                     data-bs-target="#formModal"
                 ><i class="fa-regular fa-calendar-check"></i>Kết quả
                     tuyển sinh</a>
+
         </nav>
+
     </div>
 </header>
 

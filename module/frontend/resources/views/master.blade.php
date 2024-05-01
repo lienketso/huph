@@ -195,6 +195,18 @@
     });
 </script>
 
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentUrls = window.location.href;
+        var menuLinks = document.querySelectorAll('.item-menu');
+        menuLinks.forEach(function(link) {
+            if (link.getAttribute('href') === currentUrls) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
 @yield("js")
 @yield("js-init")
 @stack("js")
