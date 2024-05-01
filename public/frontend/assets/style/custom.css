@@ -744,6 +744,86 @@ section#package h2 span {
 .timeline-show .owl-item:hover p {
     color: #fff;
 }
+.btn-modal-close{
+    text-align: right;
+    cursor: pointer;
+}
+.modal-dialog.modal-md{
+    width: 444px;
+}
+.input-result{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(../image/CCCD.png);
+    background-position: 10px 16px;
+    background-repeat: no-repeat;
+    padding: 14px 14px 14px 45px;
+    box-shadow: 7px 5px 20px #bbbec7;
+    border: 3px solid #fff;
+}
+.input-result:focus-visible{
+    border: 3px solid #81cf28;
+}
+.btn-result{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: #81cf28;
+    color:#fff;
+    padding: 14px;
+    font-weight: 500;
+    font-size: 21px;
+}
+.btn-result:hover{
+    background-color: #81cf28;
+    color:#fff;
+}
+.modal-result .modal-content{
+    background-color: #F5F5F5;
+}
+.modal-result h2{
+    font-size: 24px;
+    color: #205c40;
+    margin-bottom: 40px;
+}
+.form-result{
+    background-color: #fff;
+    width: 944px;
+    height: 387px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 4%;
+    margin-bottom: 60px;
+    padding: 30px;
+}
+.form-rejected{
+    background-image: url('../image/Rejected.png');
+}
+.form-approved{
+    background-image: url('../image/Approved.png');
+}
+.form-result td{
+    padding: 8px 0;
+}
+span.rejected{
+    color: #C84F4D;
+    font-weight: 600;
+}
+span.approved{
+    color: #389c6d;
+    font-weight: 600;
+}
+.form-result .note-admission p{
+    color: #DE4747;
+    opacity: 0.8;
+}
 @keyframes scrolling {
     0% {
         transform: translateX(0);

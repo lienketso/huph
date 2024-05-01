@@ -86,11 +86,7 @@
                                       placeholder="">{{$setting->getSettingMeta('site_top_name_'.$language)}}</textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label>Mô tả mục sản phẩm</label>
-                            <textarea id="" name="site_p_description_{{$language}}" class="form-control" rows="3"
-                                      placeholder="Mô tả mục sản phẩm trang chủ">{{$setting->getSettingMeta('site_p_description_'.$language)}}</textarea>
-                        </div>
+
 
                         <div class="form-group">
                             <label>Số hotline</label>
@@ -155,24 +151,36 @@
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Nội dung chân trang 1</label>
-                            <textarea id="editor2" name="banner_factory_{{$language}}"
-                                      class="form-control makeMeRichTextarea" rows="3"
-                                      placeholder="Nội dung mục chân trang 1">{{$setting->getSettingMeta('banner_factory_'.$language)}}</textarea>
+                            <label>Tiêu đề popup kết quả xét tuyển</label>
+                            <textarea id="" name="site_p_description_{{$language}}" class="form-control" rows="3"
+                                      placeholder="TRƯỜNG ĐẠI HỌC Y TẾ CÔNG CỘNG THÔNG BÁO KẾT QUẢ XÉT TUYỂN ĐẠI HỌC HỆ CHÍNH QUY NĂM HỌC 2023 ĐỢT 2">{{$setting->getSettingMeta('site_p_description_'.$language)}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Nội dung chân trang 2</label>
+                            <label>Nội dung trúng tuyển</label>
+                            <textarea id="editor4" name="site_contact_info_{{$language}}"
+                                      class="form-control makeMeRichTextarea" rows="3"
+                                      placeholder="Nội dung trang liên hệ">{{$setting->getSettingMeta('site_contact_info_'.$language)}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung không trúng tuyển</label>
+                            <textarea id="editor2" name="site_reject_info_{{$language}}"
+                                      class="form-control makeMeRichTextarea" rows="3"
+                                      placeholder="">{{$setting->getSettingMeta('site_reject_info_'.$language)}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Cấu hình thông tin thời gian nhập học</label>
+                            <textarea name="banner_factory_{{$language}}"
+                                      class="form-control " rows="3"
+                                      placeholder="Từ 8h00 ngày 10/10/2023 đến 17h00 ngày 16/10/2023">{{$setting->getSettingMeta('banner_factory_'.$language)}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Thông tin lưu ý nhập học</label>
                             <textarea id="editor3" name="site_footer_info_1_{{$language}}"
                                       class="form-control makeMeRichTextarea" rows="3"
                                       placeholder="Nội dung mục chân trang 2">{{$setting->getSettingMeta('site_footer_info_1_'.$language)}}</textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label>Nội dung trang liên hệ</label>
-                            <textarea id="editor4" name="site_contact_info_{{$language}}"
-                                      class="form-control makeMeRichTextarea" rows="3"
-                                      placeholder="Nội dung trang liên hệ">{{$setting->getSettingMeta('site_contact_info_'.$language)}}</textarea>
-                        </div>
+
 
                         <div class="form-group">
                             <label>Script dưới chân trang</label>

@@ -27,6 +27,9 @@ class Scores extends Model
         'priority_food_safety_scores',
         'total_scores',
         'admission_year',
-        'comment'
+        'comment',
+        'gender',
+        'industry_code',
+        'status'
     ];
 }

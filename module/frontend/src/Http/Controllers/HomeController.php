@@ -18,6 +18,8 @@ use Newsletter\Repositories\NewsletterRepository;
 use Post\Repositories\PostRepository;
 use Product\Repositories\CatproductRepository;
 use Product\Repositories\ProductRepository;
+use Scores\Models\Scores;
+use Scores\Repositories\ScoresRepository;
 use Setting\Models\Setting;
 use Setting\Repositories\SettingRepositories;
 use Transaction\Http\Requests\TransactionCreateRequest;
@@ -192,6 +194,22 @@ class HomeController extends BaseController
                 ->send(new SendMail($details));
         }catch (\Exception $e){
             return $e->getMessage();
+        }
+    }
+
+    public function findAdmission(Request $request, ScoresRepository $scoresRepository){
+        $cccd = $request->cccd;
+        try {
+            $thisinh = null;
+            $listThisinh = Scores::where('cccd_number',$cccd)->first();
+            if(!is_null($listThisinh)){
+                $thisinh = response()->json($listThisinh);
+            }else{
+                $thisinh = '404';
+            }
+            return $thisinh;
+        }catch (\Exception $e){
+            return response()->json($e->getMessage());
         }
     }
 

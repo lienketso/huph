@@ -28,7 +28,173 @@
                         {{$menu->name}}</a
                 >
             @endforeach
-
+                <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#formModal"
+                ><i class="fa-regular fa-calendar-check"></i>Kết quả
+                    tuyển sinh</a>
         </nav>
     </div>
 </header>
+
+{{--modal tra cuu--}}
+<div
+    class="modal fade"
+    id="formModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 text-end">
+                        <img
+                            src="{{asset('frontend/assets/image/close.png')}}"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            alt="Close"
+                            class="btn-modal-close"
+                            width="40"
+                        />
+                    </div>
+                    <div class="col-12 text-center">
+                        <img src="{{asset('frontend/assets/image/logo.png')}}" width="255" />
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group mb-3 mt-3 relative-active">
+                            <input class="input-result" name="cccd" placeholder="Căn cước công dân*"/>
+                            <span id="txtCccd"></span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button
+                            type="button"
+                            id="btnTracuu"
+                            class="btn btn-result"
+                            data-url="{{route('ajax.result.admissions.get')}}"
+                        >
+                            Xác nhận gửi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{--Modal trả kết quả--}}
+<!-- Modal -->
+<div
+    class="modal fade "
+    id="resultModal"
+    tabindex="-1"
+    aria-labelledby="resultModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-result modal-xl">
+        <div class="modal-content">
+            <div class="modal-body position-relative">
+                <div class="row">
+                    <div class="col-12 text-end">
+                        <img
+                            src="{{asset('frontend/assets/image/close.png')}}"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            alt="Close"
+                            class="btn-modal-close"
+                            width="40"
+                        />
+                    </div>
+                    <div class="col-12 text-center">
+                        <h2>
+                            {!! $setting['site_p_description_'.$lang] !!}
+                        </h2>
+                    </div>
+                    <div class="col-12">
+                        <div id="frmResult" class="form-result">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table-content">
+                                        <tbody>
+                                        <tr>
+                                            <td style="width: 100px;">
+                                                <label
+                                                >Thí sinh:
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <strong id="resultName">Nguyễn Việt Dũng</strong>
+                                            </td>
+                                            <td style="width: 100px;">
+                                                <label>Giới tính:</label>
+                                            </td>
+                                            <td>
+                                                <strong id="resultGender">Nữ</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Sinh ngày: </label>
+                                            </td>
+                                            <td>
+                                                <strong id="resultBirthday">29/09/1999</strong>
+                                            </td>
+                                            <td>
+                                                <label>CMND/CCCD:</label>
+                                            </td>
+                                            <td>
+                                                <strong id="resultCCCD">017305009518</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="contentApproved">
+                                                    {!! $setting['site_contact_info_'.$lang] !!}
+                                                </div>
+                                                <div id="contentRejected">
+                                                    {!! $setting['site_reject_info_'.$lang] !!}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Mã ngành:</label>
+                                            </td>
+                                            <td>
+                                                <strong id="resultManganh">7510406</strong>
+                                            </td>
+                                            <td>
+                                                <label>Tên ngành:</label>
+                                            </td>
+                                            <td>
+                                                <strong id="resultTennganh">Công nghệ kỹ thuật môi trường</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <strong class="me-3">Thời gian nhập học:</strong>
+                                                {!! $setting['banner_factory_'.$lang] !!}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <strong class="me-3">Lưu ý:</strong>
+                                                <div class="note-admission">
+                                                    {!! $setting['site_footer_info_1_'.$lang] !!}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

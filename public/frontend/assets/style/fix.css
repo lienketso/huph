@@ -42,7 +42,20 @@
 section#hot-new h1{
     font-weight: 300 !important;
 }
-
+.relative-active{
+    position: relative;
+}
+.relative-active span{
+    color: #c00;
+    font-size: 14px;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    font-style: italic;
+}
+#contentApproved, #contentRejected{
+    display: none;
+}
 @media (min-width: 768px) {
     .map-company{
         width: 50%;

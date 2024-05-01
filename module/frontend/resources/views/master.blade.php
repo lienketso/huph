@@ -130,10 +130,68 @@
                        $('input[name="phone"]').val('');
                    },
                    error: function(xhr, status, error) {
-                       console.error(xhr.responseText); // Hiá»ƒn thá»‹ lá»—i náº¿u cĂ³
+                       console.error(xhr.responseText);
                    }
                });
        }
+    });
+</script>
+{{--tra cứu kết quả--}}
+<script type="text/javascript">
+    $('#btnTracuu').on('click',function (e){
+       e.preventDefault();
+       let _this = $(e.currentTarget);
+       let url = _this.attr('data-url');
+       let cccd = $('input[name="cccd"]').val();
+       let mess = '';
+        if(cccd.length<=0){
+            mess += 'error Name';
+            $('#txtCccd').text('Số CCCD không hợp lệ !');
+            $('input[name="cccd"]').focus();
+        }else{
+            $('#txtCccd').text('');
+        }
+
+        if(mess.length===0){
+            $.ajax({
+                url: url,
+                type: "GET",
+                data: {
+                    cccd: cccd
+                },
+                success: function(response) {
+                    console.log(response);
+                    if(response==='404'){
+                        $('#txtCccd').text('Thí sinh không có trên hệ thống !');
+                    }else{
+                        $('#formModal').modal('hide');
+                        $('#resultModal').modal('show');
+                        $('input[name="cccd"]').val('');
+                        //add class
+                        if(response.status==='approved'){
+                            $('#frmResult').addClass('form-approved');
+                            $('#contentApproved').show();
+                            $('#contentRejected').hide();
+                        }else{
+                            $('#frmResult').addClass('form-rejected');
+                            $('#contentRejected').show();
+                            $('#contentApproved').hide();
+                        }
+                        //cho thêm vào các id nào
+                        $('#resultName').text(response.name);
+                        $('#resultBirthday').text(response.birthday);
+                        $('#resultCCCD').text(response.cccd_number);
+                        $('#resultManganh').text(response.identification_number);
+                        $('#resultTennganh').text(response.test_subject);
+                        $('#resultGender').text(response.gender);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+
     });
 </script>
 
