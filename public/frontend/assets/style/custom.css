@@ -172,6 +172,9 @@ margin-right: 15px;
     max-width: 0%;
     overflow: hidden;
 }
+.snip1135 a.active{
+    color: #205c40;
+}
 .snip1135 a:hover:before,
 .snip1135 a.active:before {
     opacity: 1;
