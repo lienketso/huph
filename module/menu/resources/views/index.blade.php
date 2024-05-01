@@ -253,14 +253,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Icon menu</label>
-                        <div class="col-sm-8" style="display: flex">
-                            <input type="text" name="thumbnail" value="<?= old('thumbnail'); ?>" id="ckfinder-input-1" class="form-control file-upload-info" placeholder="Upload Image">
-                            <span class="input-group-append">
-								<button class="file-upload-browse btn btn-primary" id="ckfinder-popup-1"  type="button">Chọn ảnh</button>
-							</span>
+                        <label class="col-sm-3 control-label">Icon Font awesome</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="thumbnail" value="<?= old('thumbnail'); ?>" class="form-control" placeholder="Ex : fa fa-home">
+
                         </div>
                     </div>
+
+
 
                     <hr>
 

@@ -10,7 +10,7 @@
     <title>Hệ thống quản trị web</title>
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="{{asset('admin/themes/lib/Hover/hover.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/themes/lib/fontawesome/css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/themes/lib/fontawesome/css/font-awesome.css')}}">}"  />--}}
     <link rel="stylesheet" href="{{asset('admin/themes/lib/weather-icons/css/weather-icons.css')}}">
     <link rel="stylesheet" href="{{asset('admin/themes/lib/ionicons/css/ionicons.css')}}">
     <link rel="stylesheet" href="{{asset('admin/themes/lib/jquery-toggles/toggles-full.css')}}">

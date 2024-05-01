@@ -23,7 +23,7 @@
                 <a class="nav-link {{ (request()->is($menu->link)) ? 'active' : '' }}" aria-current="page" href="{{$menu->link}}"
                 >
                     @if($menu->thumbnail!='')
-                        <img src="{{upload_url($menu->thumbnail)}}" alt="{{$menu->name}}">
+                        <i class="{{$menu->thumbnail}}"></i>
                     @endif
                         {{$menu->name}}</a
                 >
