@@ -35,7 +35,7 @@
                             <input type="file" name="file" class="form-control">
                             <br>
                             <button class="btn btn-success"><i class="fa fa-file-image-o"></i> Import Excel Data</button>
-{{--                            <a class="btn btn-warning" href="">Export Excel Data</a>--}}
+                            <a class="btn btn-warning" href="{{asset('admin/themes/File-import-mau.xls')}}"><i class="fa fa-download"></i> File dữ liệu mẫu</a>
                         </form>
                     </div>
                 </div>

@@ -47,6 +47,9 @@ class ScoresImport implements ToModel
             'priority_food_safety_scores' => (!empty($row[17]) ? $row[17] : "0"),
             'total_scores' => (!empty($row[18]) ? $row[18] : "0"),
             'comment' => (!empty($row[19]) ? $row[19] : "-"),
+            'cccd_number' => (!empty($row[20]) ? $row[20] : "-"),
+            'industry_code' => (!empty($row[21]) ? $row[21] : "-"),
+            'status' => (!empty($row[22]) ? $row[22] : "-"),
         ]);
     }
 }

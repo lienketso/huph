@@ -75,7 +75,7 @@
                                             <div class="logo-am">
                                                 <img src="{{asset('frontend/assets/image/am-ban.png')}}" alt="Logo âm bản">
                                             </div>
-                                                <a href="{{route('frontend::blog.detail.get',$p->slug)}}">
+                                                <a class="img-hot-new" href="{{route('frontend::blog.detail.get',$p->slug)}}">
                                                     <img src="{{ ($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('admin/themes/images/no-image.png')}}" />
                                                 </a>
                                                 <div class="content">
