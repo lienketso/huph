@@ -651,10 +651,6 @@ section#package h2 span {
     padding: 40px 0;
 }
 
-.marquee-content:hover {
-    animation: scrolling 100s linear infinite;
-}
-
 .marquee-item {
     flex: 0 0 16vw;
     margin: 0 1vw;
