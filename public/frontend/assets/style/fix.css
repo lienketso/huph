@@ -59,6 +59,15 @@ section#hot-new h1{
 #contact h1{
     font-style: italic;
 }
+.card-body p{
+    font-size: 14px;
+}
+.title-main-site{
+    color: #205C40;
+    padding-top: 30px;
+    font-weight: 600;
+    font-size: 24px;
+}
 @media (min-width: 768px) {
     .map-company{
         width: 50%;

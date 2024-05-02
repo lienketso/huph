@@ -193,7 +193,7 @@
                                     by <strong>Dung Nguyen</strong> - {{datetoString($hotBlogCategory->created_at)}}
                                 </h4>
                                 <p>
-                                    {{cut_string($hotBlogCategory->description,100)}}
+                                    {!! ($hotBlogCategory->description!='') ? cut_string($hotBlogCategory->description,200) : cut_string(strip_tags($hotBlogCategory->content),200) !!}
                                 </p>
                                 <div class="show-more"><a href="{{route('frontend::blog.detail.get',$hotBlogCategory->slug)}}">Xem thêm</a></div>
                             </div>
@@ -240,7 +240,7 @@
                                 </h6>
 
                                 <p>
-                                    {{cut_string($d->description,100)}}
+                                    {!! ($d->description!='') ? cut_string($d->description,100) : cut_string(strip_tags($d->content),100) !!}
                                 </p>
                             </div>
                             </a>

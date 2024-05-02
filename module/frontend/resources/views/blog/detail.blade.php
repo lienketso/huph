@@ -38,7 +38,7 @@
         </div>
     </section>
 
-    @if(!empty($related))
+    @if(!is_null($related))
     <section id="news">
         <div class="container">
             <h3 class="title-main-site">Các tin liên quan</h3>
@@ -67,7 +67,7 @@
                                 by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
                             </h6>
                             <p>
-                                {{cut_string($d->description,100)}}
+                                {!! ($d->description!='') ? cut_string($d->description,100) : cut_string(strip_tags($d->content),100) !!}
                             </p>
                         </div>
                     </div>

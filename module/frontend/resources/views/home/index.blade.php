@@ -268,7 +268,7 @@
                         </h6>
 
                         <p>
-                            {{cut_string($d->description,100)}}
+                            {!! ($d->description!='') ? cut_string($d->description,100) : cut_string(strip_tags($d->content),100) !!}
                         </p>
                     </div>
                     </a>
