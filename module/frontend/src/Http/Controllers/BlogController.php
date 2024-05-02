@@ -148,7 +148,7 @@ class BlogController extends BaseController
             $data = $infoCategory->posts()->offset($start)->limit(1)->get();
             return response()->json([
                 'data' => $data,
-                'next' => $start + 1
+                'next' => $start + 4
             ]);
         } else {
             return response()->json([

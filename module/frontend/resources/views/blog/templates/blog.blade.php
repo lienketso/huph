@@ -37,9 +37,9 @@
                             var html = '';
                             for (var i = 0; i < data.data.length; i++) {
                                 let img = data.data[i].thumbnail;
-                                let imgUrl = '/uploads/'+img;
+                                let imgUrl = '/upload/'+img;
                                 let link = '/post/'+data.data[i].slug;
-                                html += '<div class="col-md-3"><div class="card"><div class="border-img"><a href="'+link+'"><img src="'+imgUrl+'" class="card-img-top" alt="" /></a></div><div  class="card-body"><h5 class="card-title">'+ data.data[i].name + '</h5><h6 class="card-subtitle mb-2 text-body-secondary">by <strong>Dung Nguyen</strong> - ngày 20 tháng 04 năm 2024</h6><p>'+ data.data[i].description + '</p></div></div></div>';
+                                html += '<div class="col-md-3"><div class="card"><div class="border-img"><a href="'+link+'"><img src="'+imgUrl+'" class="card-img-top" alt="" /></a></div><div  class="card-body"><h5 class="card-title">'+ data.data[i].name + '</h5><h6 class="card-subtitle mb-2 text-body-secondary">by <strong>Admin</strong> - ngày 20 tháng 04 năm 2024</h6><p>'+ data.data[i].description + '</p></div></div></div>';
                             }
                             //append data with fade in effect
                             $('#items_container').append($(html).hide().fadeIn(1000));
