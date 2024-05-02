@@ -173,7 +173,7 @@
                                         <button
                                             type="button"
                                             class="btn btn-light btn-show btn_load_more"
-                                            id="load_more_button_{{$child->id}}" data-category="{{$child->id}}" data-page="{{ $postChild->currentPage() + 1 }}"
+                                            id="load_more_button_{{$child->id}}" data-category="{{$child->id}}" data-page="{{ $postChild->currentPage() + 4 }}"
                                         >
                                             Xem thêm
                                         </button>

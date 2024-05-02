@@ -253,7 +253,7 @@
 
             <div class="row">
                 <div class="col text-center">
-                    <button type="button" id="load_more_button" data-category="{{$data->id}}" data-page="{{ $post->currentPage() + 1 }}" class="btn btn-light btn-show">
+                    <button type="button" id="load_more_button" data-category="{{$data->id}}" data-page="{{ $post->currentPage() + 4 }}" class="btn btn-light btn-show">
                         Xem thêm
                     </button>
                 </div>
