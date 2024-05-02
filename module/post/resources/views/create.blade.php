@@ -168,10 +168,10 @@
                                 <input type="checkbox" name="display" id="display" value="1" >
                                 <label for="display">Tin mới</label>
                             </div>
-                            <div class="checkbox-inline">
-                                <input type="checkbox" name="is_slider" id="is_slider" value="1" >
-                                <label for="is_slider">Hiển thị tại slider</label>
-                            </div>
+{{--                            <div class="checkbox-inline">--}}
+{{--                                <input type="checkbox" name="is_slider" id="is_slider" value="1" >--}}
+{{--                                <label for="is_slider">Hiển thị tại slider</label>--}}
+{{--                            </div>--}}
                             <div class="checkbox-inline">
                                 <input type="checkbox" name="is_hot" id="is_hot" value="1" >
                                 <label for="is_hot">Hiển thị nổi bật</label>

@@ -74,7 +74,7 @@ class HomeController extends BaseController
                 ->where('lang_code',$this->lang)
                 ->where('status','active')
                 ->where('post_type','blog')
-                ->where('is_hot',1)
+                ->where('is_home',1)
                 ->get();
         })->limit(8);
         //tuyển sinh trang chủ
