@@ -250,7 +250,7 @@
 
             </div>
 
-            @if($post instanceof LengthAwarePaginator || $post instanceof Paginator)
+
             <div class="row">
                 <div class="col text-center">
                     <button type="button" id="load_more_button" data-category="{{$data->id}}" data-page="{{ $post->currentPage() + 1 }}" class="btn btn-light btn-show">
@@ -258,7 +258,7 @@
                     </button>
                 </div>
             </div>
-            @endif
+
 
         </div>
     </section>
