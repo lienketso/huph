@@ -78,4 +78,8 @@ section#hot-new h1{
         height: 100%;
         object-fit: cover;
     }
+    h5.card-title{
+        height: 50px;
+        overflow: hidden;
+    }
 }
