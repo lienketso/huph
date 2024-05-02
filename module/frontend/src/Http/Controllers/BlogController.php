@@ -145,7 +145,7 @@ class BlogController extends BaseController
         $category = $request->input('category');
         $infoCategory = $this->cat->find($category);
         if($infoCategory){
-            $data = $infoCategory->posts()->offset($start)->limit(1)->get();
+            $data = $infoCategory->posts()->offset($start)->limit(4)->get();
             return response()->json([
                 'data' => $data,
                 'next' => $start + 4

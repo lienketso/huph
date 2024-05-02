@@ -47,7 +47,7 @@
                             $('#load_more_button').attr('disabled', false);
                             start = data.next;
                         } else {
-                            $('#load_more_button').html('No More Data Available');
+                            $('#load_more_button').html('No More Data');
                             $('#load_more_button').attr('disabled', true);
                         }
                     }
