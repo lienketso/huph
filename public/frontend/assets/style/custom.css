@@ -529,9 +529,10 @@ section#about h2 {
     /* -webkit-text-stroke: 1px #fff; */
     /* font-family: roboto; */
 }
-section#about p {
+section#about p, .content-page-home {
     padding: 0 30px;
     text-align: justify;
+    font-size: 18px;
 }
 section#about a.show-more {
     color: #205c40;
@@ -637,6 +638,7 @@ section#package h2 span {
         -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     color: #205c40;
     font-size: 36px;
+    font-weight: 700;
 }
 .marquee {
     overflow: hidden;
@@ -649,6 +651,10 @@ section#package h2 span {
     padding: 40px 0;
 }
 
+.marquee-content:hover {
+    animation: scrolling 100s linear infinite;
+}
+
 .marquee-item {
     flex: 0 0 16vw;
     margin: 0 1vw;
@@ -658,7 +664,9 @@ section#package h2 span {
     /*   flex: 0 0 20vw; */
     /*   margin: 0 2vw; */
 }
-
+.marquee-item:hover img{
+    box-shadow: 0 2px 5px #D7D9E9;
+}
 .marquee-item figure {
     display: block;
     width: 100%;
