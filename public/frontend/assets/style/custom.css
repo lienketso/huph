@@ -14,6 +14,9 @@ h1 {
     color: #205c40;
     font-weight: 900;
 }
+header{
+    box-shadow: 0 20px 35px #e0e0e0e0;
+}
 .hot-line {
     color: #205c40;
     font-size: 14px;
@@ -196,7 +199,7 @@ margin-right: 15px;
     width: 100%;
 }
 section#carousel {
-    box-shadow: inset 0 20px 35px #e0e0e0e0;
+    /* box-shadow: inset 0 20px 35px #e0e0e0e0; */
     padding-top: 40px;
 }
 section#enrollment {
@@ -269,9 +272,13 @@ section#news .new-related {
 .card a{
     text-decoration: none;
 }
-.card .border-tag {
+.border-img{
+    position: relative;
+}
+.border-tag {
     position: absolute;
     padding: 10px;
+    z-index: 2;
 }
 .text-bg-tag {
     background-color: #81cf28;
@@ -280,14 +287,19 @@ section#news .new-related {
 }
 .card img {
     border-radius: 10px 10px 0 0;
+    min-height: 174px;
 }
 .card .card-body {
     border: none;
+}
+.card p{
+    min-width: 72px;
 }
 h5.card-title {
     color: #205c40;
     line-height: 22px;
     font-size: 16px;
+    min-height: 44px;
 }
 section#hot-new {
     margin: 50px 0;
@@ -357,6 +369,8 @@ section#hot-new .hot-content {
 }
 section#hot-new img {
     width: 100%;
+    border-radius: 8px;
+    min-height: 335px;
 }
 section#hot-new h2 {
     margin: 0;
@@ -485,7 +499,7 @@ section#diagram h2 {
 footer {
     background-image: url("../image/76.png");
     background-position: center;
-    padding: 128px 0 92px;
+    padding: 114px 0 88px;
     background-size: cover;
     background-color: #205c40;
 }
@@ -838,11 +852,11 @@ span.approved{
     color: #DE4747;
     opacity: 0.8;
 }
-@keyframes scrolling {
+/* @keyframes scrolling {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translatex(-60vw);
     }
-}
+} */
