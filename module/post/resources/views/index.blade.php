@@ -104,7 +104,7 @@
                                     @endforeach
                                 @endif
                             </td>
-                            <td>{{($d->getUserPost()->exists()) ? $d->getUserPost->full_name : 'Null'}}</td>
+                            <td>{{($d->user()->exists()) ? $d->getUserPost->full_name : 'Null'}}</td>
                             <td>{{$d->count_view}}</td>
                             <td>{{format_date($d->created_at)}}</td>
                             <td>

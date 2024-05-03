@@ -28,21 +28,26 @@ Route::group(['prefix'=>$adminRoute],function(Router $router) use($adminRoute,$m
     });
 });
 
-Route::get('tuyen-sinh/index','AdmissionController@getIndexProduct')
-    ->name('wadmin::tuyen-sinh.index.get')->middleware('permission:addmission_index');
-Route::get('/tuyen-sinh/create','AdmissionController@getCreateProduct')
-    ->name('wadmin::tuyen-sinh.create.get')->middleware('permission:addmission_create');
-Route::post('/tuyen-sinh/create','AdmissionController@postCreateProduct')
-    ->name('wadmin::tuyen-sinh.create.post')->middleware('permission:addmission_create');
-Route::get('/tuyen-sinh/edit/{id}','AdmissionController@getEditProduct')
-    ->name('wadmin::tuyen-sinh.edit.get')->middleware('permission:addmission_edit');
-Route::post('/tuyen-sinh/edit/{id}','AdmissionController@postEditProduct')
-    ->name('wadmin::tuyen-sinh.edit.post')->middleware('permission:addmission_edit');
-Route::get('/tuyen-sinh/clone/{id}','AdmissionController@cloneProduct')
-    ->name('wadmin::tuyen-sinh.clone.get')->middleware('permission:addmission_edit');
-Route::get('tuyen-sinh/remove/{id}','AdmissionController@removeTuyensinh')
-    ->name('wadmin::tuyen-sinh.remove.get')->middleware('permission:addmission_delete');
+$moduleRoute2 = 'tuyen-sinh';
+Route::group(['prefix'=>$adminRoute],function(Router $router) use($adminRoute,$moduleRoute2){
+    $router->group(['prefix'=>$moduleRoute2],function(Router $router) use ($adminRoute,$moduleRoute2){
 
+        $router->get('index','AdmissionController@getIndexProduct')
+    ->name('wadmin::tuyen-sinh.index.get')->middleware('permission:addmission_index');
+        $router->get('create','AdmissionController@getCreateProduct')
+    ->name('wadmin::tuyen-sinh.create.get')->middleware('permission:addmission_create');
+        $router->post('create','AdmissionController@postCreateProduct')
+    ->name('wadmin::tuyen-sinh.create.post')->middleware('permission:addmission_create');
+        $router->get('edit/{id}','AdmissionController@getEditProduct')
+    ->name('wadmin::tuyen-sinh.edit.get')->middleware('permission:addmission_edit');
+        $router->post('edit/{id}','AdmissionController@postEditProduct')
+    ->name('wadmin::tuyen-sinh.edit.post')->middleware('permission:addmission_edit');
+        $router->get('clone/{id}','AdmissionController@cloneProduct')
+    ->name('wadmin::tuyen-sinh.clone.get')->middleware('permission:addmission_edit');
+        $router->get('remove/{id}','AdmissionController@removeTuyensinh')
+    ->name('wadmin::tuyen-sinh.remove.get')->middleware('permission:addmission_delete');
+    });
+});
 //comment
 Route::get('comment/index','CommentController@getIndex')
     ->name('wadmin::comment.index.get')->middleware('permission:post_index');
