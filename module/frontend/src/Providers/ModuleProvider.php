@@ -59,7 +59,7 @@ class ModuleProvider extends \Illuminate\Support\ServiceProvider
                 $lang = \session('lang');
                 $quicklinks = DB::table('quicklinks')->orderBy('sort_order')
                     ->where('status','active')
-                    ->where('display',1)
+                    ->where('display',2)
                     ->where('lang_code',$lang)->limit(10)->get();
                 $views->with(['quicklinks'=>$quicklinks]);
             }

@@ -36,5 +36,17 @@
                 </ul>
             </div>
         </div>
+        <div class="row pdt50">
+            <div class="col-lg-6">
+                <div class="copyright-huph">
+                    © {{date('Y')}} — Copyright
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="privacy-huph">
+                    Privacy
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
