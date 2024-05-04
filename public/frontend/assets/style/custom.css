@@ -17,6 +17,17 @@ h1 {
 header{
     box-shadow: 0 20px 35px #e0e0e0e0;
 }
+header.fixed-header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: #fff;
+}
+main{
+    margin-top: 120px;
+}
 .hot-line {
     color: #205c40;
     font-size: 14px;
@@ -310,6 +321,7 @@ section#hot-new h1 {
     font-size: 48px;
     border-bottom: 2px solid #205c40;
     margin-bottom: 20px;
+    font-weight: 300;
 }
 section#hot-new input {
     width: 100%;
@@ -319,11 +331,17 @@ section#hot-new input {
     font-size: 16px;
     background-color: white;
     background-image: url(../image/search.png);
-    background-position: 10px 16px;
+    background-position: 10px 14px;
     background-repeat: no-repeat;
     padding: 18px 18px 18px 47px;
     box-shadow: 7px 5px 20px #bbbec7;
     margin-bottom: 20px;
+    border: 3px solid #fff;
+}
+section#hot-new input::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+    color: #BBBEC7;
 }
 section#hot-new .btn-outline-tag {
     border-radius: 30px;
