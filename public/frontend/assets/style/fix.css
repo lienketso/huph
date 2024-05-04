@@ -89,6 +89,11 @@ footer ul.list-custom li a, .list-group-item{
 .card-subtitle strong{
     text-decoration: underline;
 }
+#nav-program .nav .nav-link{
+    font-weight: 600;
+    padding: 12px 30px;
+    margin-right: 20px;
+}
 @media (min-width: 768px) {
     .map-company{
         width: 50%;
