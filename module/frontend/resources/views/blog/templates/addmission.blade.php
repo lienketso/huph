@@ -150,7 +150,7 @@
 
                                             <div class="card-body">
                                                 <h5 class="card-title">
-                                                    {{$d->name}}
+                                                    {{cut_string($d->name,100)}}
                                                 </h5>
                                                 <h6
                                                     class="card-subtitle mb-2 text-body-secondary"
@@ -158,7 +158,7 @@
                                                     by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
                                                 </h6>
                                                 <p>
-                                                    {!! ($d->description!='') ? cut_string($d->description,100) : cut_string(strip_tags($d->content),100) !!}
+                                                    {!! ($d->description!='') ? cut_string($d->description,150) : cut_string(strip_tags($d->content),150) !!}
                                                 </p>
                                             </div>
                                             </a>
