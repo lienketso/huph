@@ -157,10 +157,9 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <h2>{!! $setting['keyword_5_'.$lang] !!}</h2>
-                    <p>
+                    <div class="info-about-home">
                         {!! $pageAbout->description !!}
-                    </p>
+                    </div>
                     <a href="{{route('frontend::page.index.get',$pageAbout->slug)}}" class="show-more">Tìm hiểu thêm -></a>
                 </div>
                 <div class="col-md-6">

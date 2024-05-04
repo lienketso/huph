@@ -12,6 +12,12 @@
             filebrowserUploadUrl: '{{route('ckeditor.upload',['_token' => csrf_token() ])}}', //route dashboard/upload
             filebrowserUploadMethod: 'form'
         });
+        CKEDITOR.replace( 'editor2', {
+            filebrowserBrowseUrl: '{{asset("admin/libs/ckfinder/ckfinder.html")}}',
+            filebrowserImageBrowseUrl: '{{asset("admin/libs/ckfinder/ckfinder.html?type=Images")}}',
+            filebrowserUploadUrl: '{{route('ckeditor.upload',['_token' => csrf_token() ])}}', //route dashboard/upload
+            filebrowserUploadMethod: 'form'
+        });
     </script>
 
 @endsection
@@ -53,11 +59,11 @@
                         </div>
                         <div class="form-group">
                             <label>Mô tả</label>
-                            <textarea id="" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{old('description')}}</textarea>
+                            <textarea id="editor1" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{old('description')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Nội dung bài viết</label>
-                            <textarea id="editor1" name="content" class="form-control makeMeRichTextarea" rows="3" placeholder="Nội dung bài viết">{{old('content')}}</textarea>
+                            <textarea id="editor2" name="content" class="form-control makeMeRichTextarea" rows="3" placeholder="Nội dung bài viết">{{old('content')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Tags (Từ khóa)</label>
