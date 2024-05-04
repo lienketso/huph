@@ -109,4 +109,13 @@ footer ul.list-custom li a, .list-group-item{
         height: 50px;
         overflow: hidden;
     }
+    .no-desktop{
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .no-mobile{
+        display: none;
+    }
 }

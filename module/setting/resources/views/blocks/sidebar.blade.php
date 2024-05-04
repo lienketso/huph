@@ -28,6 +28,7 @@
         <li class="{{in_array(Route::currentRouteName(), $indexRoute) ? 'active' : '' }}"><a href="{{route('wadmin::setting.index.get')}}">Cấu hình chung</a></li>
         <li class="{{in_array(Route::currentRouteName(), $LinkRoute) ? 'active' : '' }}"><a href="{{route('wadmin::link.index.get')}}">Link nhanh</a></li>
         <li class="{{in_array(Route::currentRouteName(), $keywordRoute) ? 'active' : '' }}"><a href="{{route('wadmin::setting.keyword.get')}}">Từ khóa trên trang</a></li>
+        <li class="{{in_array(Route::currentRouteName(), $factRoute) ? 'active' : '' }}"><a href="{{route('wadmin::setting.fact.get')}}">Section trang chủ</a></li>
     </ul>
 </li>
 @endif

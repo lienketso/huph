@@ -191,40 +191,42 @@
 
                 </div>
             </div>
-            @foreach($pageHome as $key=>$d)
-                @php
-                    $count = $key+1;
-                @endphp
-                @if($key%2==0)
+
                 <div class="row mt-5 mb-5">
-                    <div class="col-md-7">
-                        <div class="content-top-1" style="background-image: url('{{asset('frontend/assets/image/0'.$count.'.png')}}')">
-                            <div class="top-title">
-                                <span></span> {{$d->name}}
-                            </div>
-                            <h2>
-                                {{$d->description}}
-                            </h2>
-                            <div class="content-page-home">
-                                {!! $d->content !!}
-                            </div>
+                    <div class="col-lg-12 no-mobile">
+                        <div class="section-about-home ">
+                            {!! $setting['about_section_1_pc'] !!}
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/img1.png')}}" width="100%" class="mt-3" />
+                    <div class="col-lg-12 no-mobile">
+                        <div class="section-about-home">
+                            {!! $setting['about_section_2_pc'] !!}
+                        </div>
                     </div>
+                    <div class="col-lg-12 no-mobile">
+                        <div class="section-about-home">
+                            {!! $setting['about_section_3_pc'] !!}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 no-desktop">
+                        <div class="section-about-home ">
+                            {!! $setting['about_section_1_mobile'] !!}
+                        </div>
+                    </div>
+                    <div class="col-lg-12 no-desktop">
+                        <div class="section-about-home">
+                            {!! $setting['about_section_2_mobile'] !!}
+                        </div>
+                    </div>
+                    <div class="col-lg-12 no-desktop">
+                        <div class="section-about-home">
+                            {!! $setting['about_section_3_mobile'] !!}
+                        </div>
+                    </div>
+
                 </div>
-                @else
-                    <div class="row mt-5 mb-5">
-                        <div class="col-md-6">
-                            <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/img2.png')}}" width="100%" class="mt-3" />
-                        </div>
-                        <div class="col-md-6">
-                            {!! $d->content !!}
-                        </div>
-                    </div>
-                @endif
-            @endforeach
+
 
         </div>
     </section>
