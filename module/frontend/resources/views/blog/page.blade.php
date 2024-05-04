@@ -34,12 +34,12 @@
             <div class="row">
                 <div class="col">
                     <div class="detail-img">
-                        <div class="logo">
-                            <img src="{{asset('frontend/assets/image/section.png')}}" alt="Logo huph"/>
-                        </div>
-                        <div class="title">
-                            <h1>{{$data->name}}</h1>
-                        </div>
+{{--                        <div class="logo">--}}
+{{--                            <img src="{{asset('frontend/assets/image/section.png')}}" alt="Logo huph"/>--}}
+{{--                        </div>--}}
+{{--                        <div class="title">--}}
+{{--                            <h1>{{$data->name}}</h1>--}}
+{{--                        </div>--}}
                         <img src="{{ ($data->banner!='') ? upload_url($data->banner) : asset('frontend/assets/image/top-gt.jpg')}}" width="100%" alt="{{$data->name}}" />
                     </div>
                 </div>

@@ -72,12 +72,28 @@
                                    placeholder="">
                         </div>
                         <div class="form-group">
+                            <label>Giới tính</label>
+                            <select name="gender" class="form-control">
+                                <option value="Nam" {{(old('gender')=='Nam') ? 'selected' : ''}}>Nam</option>
+                                <option value="Nữ" {{(old('gender')=='Nữ') ? 'selected' : ''}}>Nữ</option>
+                                <option value="Khác" {{(old('gender')=='Khác') ? 'selected' : ''}}>Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Đối tượng dự thi</label>
                             <input class="form-control"
                                    name="test_subject"
                                    type="text"
                                    value="{{old('test_subject')}}"
                                    placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Mã ngành</label>
+                            <input class="form-control"
+                                   name="industry_code"
+                                   type="text"
+                                   value="{{old('industry_code')}}"
+                                   placeholder="Mã ngành đăng ký tuyển sinh">
                         </div>
                         <div class="form-group">
                             <label>Năm tuyển sinh</label>
@@ -90,6 +106,13 @@
                         <div class="form-group">
                             <label>Ghi chú</label>
                             <textarea id="" name="comment" class="form-control" rows="3" placeholder="Ghi chú">{{old('comment')}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Tình trạng</label>
+                            <select name="status" class="form-control">
+                                <option value="approved" {{(old('status')=='approved') ? 'selected' : ''}}>Đỗ</option>
+                                <option value="reject" {{((old('status')=='reject') ? 'selected' : ''}}>Trượt</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
