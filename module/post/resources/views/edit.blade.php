@@ -67,6 +67,7 @@
                         <div class="form-group">
                             <label>Mô tả</label>
                             <textarea id="" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{$data->description}}</textarea>
+                            <p>Số ký tự : {{countStringVietnam($data->description)}}</p>
                         </div>
                         <div class="form-group">
                             <label>Nội dung bài viết</label>

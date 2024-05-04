@@ -85,7 +85,8 @@
                         <th class="">Ngày tạo</th>
                         <th class="">Trạng thái</th>
                         <th class="">Nhân bản</th>
-                        <th></th>
+                        <th>Seo</th>
+                        <th style="width: 90px"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -123,6 +124,18 @@
                                     <a href="{{route('wadmin::post.clone.get',$d->id)}}"
                                    class="btn btn-sm btn-info radius-30">Nhân bản</a>
                                 </td>
+                            <td style="font-weight: bold">
+                                @if(calculateSEOScore($d->content,$d->description)<=50)
+                                    <span style="color:red">{{calculateSEOScore($d->content,$d->description)}}</span>
+                                @endif
+                                    @if(calculateSEOScore($d->content,$d->description)>71)
+                                        <span style="color:green">{{calculateSEOScore($d->content,$d->description)}}</span>
+                                    @endif
+                                    @if(calculateSEOScore($d->content,$d->description)>=60 && calculateSEOScore($d->content,$d->description)<=70)
+                                        <span style="color:chocolate">{{calculateSEOScore($d->content,$d->description)}}</span>
+                                    @endif
+                                / 100
+                            </td>
                             <td>
 
                                 <ul class="table-options">
