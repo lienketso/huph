@@ -86,6 +86,9 @@ footer ul.list-custom li a, .list-group-item{
 .privacy-huph{
     text-align: right;
 }
+.card-subtitle strong{
+    text-decoration: underline;
+}
 @media (min-width: 768px) {
     .map-company{
         width: 50%;
