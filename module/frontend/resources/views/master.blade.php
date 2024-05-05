@@ -57,9 +57,9 @@
 <body>
 {{--header--}}
 @include('frontend::header')
-
+<main role="main">
 @yield('content')
-
+</main>
 @include('frontend::footer')
 <script>
     $(document).ready(function () {

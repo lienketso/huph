@@ -88,9 +88,6 @@ class SettingController extends BaseController
 
     public function postFact(Request $request){
         $data = $request->except(['_token']);
-        $data['fact_image'] = replace_thumbnail($data['fact_image']);
-        $data['fact_background'] = replace_thumbnail($data['fact_background']);
-
         $this->saveSetting($data);
         return redirect()->back()->with('edit','Sửa cấu hình thành công !');
     }

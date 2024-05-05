@@ -1,7 +1,7 @@
 @php
     $menus = getAllmenu();
 @endphp
-<header class="py-2 mb-2">
+<header class="py-2 mb-2 fixed-header">
     <div class="container d-flex flex-wrap justify-content-center hot-line">
         <a
             href="{{route('frontend::home')}}"
