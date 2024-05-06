@@ -163,28 +163,19 @@
                     <a href="{{route('frontend::page.index.get',$pageAbout->slug)}}" class="show-more">Tìm hiểu thêm -></a>
                 </div>
                 <div class="col-md-6">
-                    <div class="img-border">
-                        <img src="{{ ($pageAbout->thumbnail!='') ? upload_url($pageAbout->thumbnail) : asset('frontend/assets/image/135.png')}}"
-                             width="100%" alt="{{$pageAbout->name}}" />
-                        <a href="javascript:void()" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <img src="{{asset('frontend/assets/image/136.png')}}" alt="play">
-                        </a>
-                    </div>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="iframe-video-home">
-                                        <iframe width="100%" height="315" src="{{youtubeToembed($pageAbout->file_attach)}}?si=RSRlL8AMtaPzU-Qr&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                                    </div>
-                                </div>
-
+                    <div class="right-top-1">
+                        <img src="{{asset('frontend/assets/image/img-top-right.png')}}" class="img-top-right" alt="img top right"/>
+                        <img src="{{asset('frontend/assets/image/logo-top-right.png')}}" class="img-logo-top-right" alt="logo-top-right"/>
+                        <img src="{{asset('frontend/assets/image/best.png')}}" class="img-best" alt="best choice"/>
+                        <div class="video-container" >
+                            <video width="555" height="310">
+                                <source src="{{asset('frontend/assets/video/video.mp4')}}" type="video/mp4" >
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-control">
+                                <img src="{{asset('frontend/assets/image/136.png')}}" alt="Play">
                             </div>
+
                         </div>
                     </div>
 

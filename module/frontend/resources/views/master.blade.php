@@ -52,7 +52,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"
     ></script>
-    <script src="{{asset('frontend/assets/owlcarousel/dist/owl.carousel.min.js')}}"></script>
+
 </head>
 <body>
 {{--header--}}
@@ -61,6 +61,9 @@
 @yield('content')
 </main>
 @include('frontend::footer')
+<script src="{{asset('frontend/assets/owlcarousel/dist/owl.carousel.min.js')}}"></script>
+<script src="{{asset('frontend/assets/marquee/jquery.marquee.min.js')}}"></script>
+<script src="{{asset('frontend/assets/lib/video/video.js')}}"></script>
 <script>
     $(document).ready(function () {
         var owl = $(".owl-vendor");
