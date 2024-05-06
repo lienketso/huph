@@ -120,6 +120,10 @@ footer ul.list-custom li a, .list-group-item{
     .no-desktop{
         display: none;
     }
+    .card-body p{
+        height: 62px;
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 767px) {
