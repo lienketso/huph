@@ -1085,22 +1085,29 @@ video {
     .sub-menu span {
         display: inline;
     }
-}
-.sub-menu a#result {
-    position: relative;
-    left: 33px;
-}
-.sub-menu a#post {
-    position: relative;
-    left: -38px;
-}
-.sub-menu a#info {
-    position: relative;
-    top: -60px;
-}
-section#detail .title h1{
-    font-size: 18px;
-}
-section#detail .title h4 {
-    font-size: 16px;
-}
+    section#detail .title h1{
+        font-size: 18px;
+    }
+    section#detail .title h4 {
+        font-size: 16px;
+    }
+    .sub-menu a#result {
+        position: relative;
+        left: 33px;
+    }
+    .sub-menu a#post {
+        position: relative;
+        left: -38px;
+    }
+    .sub-menu a#info {
+        position: relative;
+        top: -60px;
+    }
+    section#header-tuyensinh .title h1{
+        font-size: 24px;
+    }
+    section#header-tuyensinh .title h5{
+        font-size: 16px;
+    }
+
+
