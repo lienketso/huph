@@ -38,7 +38,7 @@
         <script src="lib/video/video.js"></script>
     </head>
     <body>
-        <header class="py-2 mb-2 fixed-header">
+        <header class="py-2 mb-2 fixed-header desktop">
             <div
                 class="container d-flex flex-wrap justify-content-center hot-line"
             >
@@ -82,6 +82,28 @@
                         tuyển sinh</a
                     >
                 </nav>
+            </div>
+        </header>
+        <header class="fixed-header mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mt-2 text-center">
+                        <a href="/" class="">
+                            <img src="image/logo.svg" width="512" />
+                        </a>
+                    </div>
+                    <div class="col-6 mt-2">
+                        <div class="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:024 62 66 22 99"> 024 62 66 22 99</a>
+                        </div>
+                        <div class="addr mb-3">
+                            <i class="fa-solid fa-location-dot me-2"></i>Số 1A,
+                            đường Đức Thắng, phường Đức Thắng, quận Bắc Từ Liêm,
+                            Hà Nội
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
         <main role="main">
@@ -483,21 +505,29 @@
                         </div>
                         <div class="col-md-6">
                             <div class="right-top-1">
-                                <img src="image/img-top-right.png" class="img-top-right"/>
-                                <img src="image/logo-top-right.png" class="img-logo-top-right"/>
-                                <img src="image/best.png" class="img-best"/>
-                                <div class="video-container" >
+                                <img
+                                    src="image/img-top-right.png"
+                                    class="img-top-right"
+                                />
+                                <img
+                                    src="image/logo-top-right.png"
+                                    class="img-logo-top-right"
+                                />
+                                <img src="image/best.png" class="img-best" />
+                                <div class="video-container">
                                     <video width="555" height="310">
-                                        <source src="video/video.mp4" type="video/mp4" >
-                                      Your browser does not support the video tag.
-                                      </video>
-                                      <div class="video-control">
-                                       <img src="image/136.png" alt="Play">
+                                        <source
+                                            src="video/video.mp4"
+                                            type="video/mp4"
+                                        />
+                                        Your browser does not support the video
+                                        tag.
+                                    </video>
+                                    <div class="video-control">
+                                        <img src="image/136.png" alt="Play" />
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="row mt-5 mb-5">
@@ -872,6 +902,145 @@
                 </div>
             </div>
         </footer>
+        <div class="fixed-bottom">
+            <div class="sub-menu">
+                <span
+                    ><a
+                        class="nav-link"
+                        href="javascript:void(0)"
+                        id="result"
+                        onclick="setSubActive(this,'result')"
+                    >
+                        <img
+                            src="image/mobile/icon/result.png"
+                            class="deactive"
+                            alt="Menu"
+                        />
+                        <img
+                            src="image/mobile/icon/resulta.png"
+                            class="active"
+                            alt="Menu"
+                        /> </a
+                ></span>
+                <span
+                    ><a class="nav-link" href="javascript:void(0)"  onclick="setSubActive(this,'info')" id="info">
+                        <img
+                            src="image/mobile/icon/info.png"
+                            class="deactive"
+                            alt="Menu"
+                        />
+                        <img
+                            src="image/mobile/icon/infoa.png"
+                            class="active"
+                            alt="Menu"
+                        /> </a
+                ></span>
+                <span
+                    ><a class="nav-link" href="javascript:void(0)"  onclick="setSubActive(this,'post')" id="post">
+                        <img
+                            src="image/mobile/icon/post.png"
+                            class="deactive"
+                            alt="Menu"
+                        />
+                        <img
+                            src="image/mobile/icon/posta.png"
+                            class="active"
+                            alt="Menu"
+                        /> </a
+                ></span>
+            </div>
+            <ul class="nav nav-fill mobile flex-sm-row">
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="javascript:void(0)"
+                        onclick="setActive(this)"
+                    >
+                        <img
+                            src="image/mobile/icon/home.png"
+                            class="deactive"
+                            alt="Trang chủ"
+                        />
+                        <img
+                            src="image/mobile/icon/homea.png"
+                            class="active"
+                            alt="Trang chủ"
+                        />
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="javascript:void(0)"
+                        onclick="setActive(this)"
+                    >
+                        <img
+                            src="image/mobile/icon/news.png"
+                            class="deactive"
+                            alt="Tin tức"
+                        />
+                        <img
+                            src="image/mobile/icon/newsa.png"
+                            class="active"
+                            alt="Tin tức"
+                        />
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link fab"
+                        href="javascript:void(0)"
+                        onclick="setActive(this)"
+                        id="fab"
+                    >
+                        <img
+                            src="image/mobile/icon/menu.png"
+                            class="deactive"
+                            alt="Menu"
+                        />
+                        <img
+                            src="image/mobile/icon/menua.png"
+                            class="active"
+                            alt="Menu"
+                        />
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="javascript:void(0)"
+                        onclick="setActive(this)"
+                    >
+                        <img
+                            src="image/mobile/icon/introduce.png"
+                            class="deactive"
+                            alt="Giới thiệu" />
+                        <img
+                            src="image/mobile/icon/introducea.png"
+                            class="active"
+                            alt="Giới thiệu"
+                    /></a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="javascript:void(0)"
+                        onclick="setActive(this)"
+                    >
+                        <img
+                            src="image/mobile/icon/tranning.png"
+                            class="deactive"
+                            alt="Các hệ đào tạo"
+                        />
+                        <img
+                            src="image/mobile/icon/tranninga.png"
+                            class="active"
+                            alt="Các hệ đào tạo"
+                        />
+                    </a>
+                </li>
+            </ul>
+        </div>
         <script>
             $(document).ready(function () {
                 var owl = $(".owl-vendor");
@@ -896,6 +1065,26 @@
                     autoWidth: false,
                 });
             });
+            function setActive(curent) {
+                if (curent.classList.contains("active")) {
+                    $(curent).removeClass("active");
+                } else {
+                    $(curent).addClass("active");
+                }
+                if (curent.classList.contains("active") && curent.id == "fab") {
+                    $(".sub-menu").addClass("active");
+                } else {
+                    $(".sub-menu").removeClass("active");
+                }
+            }
+            function setSubActive(curent,id) {
+                if (curent.classList.contains("active")) {
+                    $(curent).removeClass("active");
+                } else {
+                    $(curent).addClass("active");
+                }
+                $('.sub-menu .nav-link').not('#'+id).removeClass('active');
+            }
         </script>
     </body>
 </html>
