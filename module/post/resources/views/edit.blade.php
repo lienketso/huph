@@ -67,10 +67,16 @@
                         <div class="form-group">
                             <label>Mô tả</label>
                             <textarea id="" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{$data->description}}</textarea>
-                            <p>Số ký tự : {{countStringVietnam($data->description)}}</p>
+
                         </div>
                         <div class="form-group">
-                            <label>Nội dung bài viết</label>
+                            <label>Nội dung bài viết
+                                @if($data->content!='' || countStringVietnam($data->content)>=800)
+                                    <span class="success-seo"><i class="fa fa-check-circle"></i></span>
+                                @else
+                                    <span class="error-seo"><i class="fa fa-close"></i></span>
+                                @endif
+                            </label>
                             <textarea id="editor1" name="content" class="form-control makeMeRichTextarea" rows="3" placeholder="Nội dung bài viết">{{$data->content}}</textarea>
                         </div>
                         <div class="form-group">
@@ -78,7 +84,13 @@
                             <input class="form-control" name="tags" value="{{$data->tags}}" type="text" placeholder="Từ khóa liên quan">
                         </div>
                         <div class="form-group">
-                            <label>Thẻ Meta title</label>
+                            <label>Thẻ Meta title
+                                @if($data->meta_title!='' || countStringVietnam($data->meta_title)>=50)
+                                    <span class="success-seo"><i class="fa fa-check-circle"></i></span>
+                                @else
+                                    <span class="error-seo"><i class="fa fa-close"></i></span>
+                                @endif
+                            </label>
                             <input class="form-control"
                                    name="meta_title"
                                    type="text"
@@ -86,8 +98,23 @@
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Thẻ meta description</label>
+                            <label>Thẻ meta description
+                                @if($data->meta_desc!='' || countStringVietnam($data->meta_desc)>=140)
+                                <span class="success-seo"><i class="fa fa-check-circle"></i></span>
+                                @else
+                                    <span class="error-seo"><i class="fa fa-close"></i></span>
+                                @endif
+                            </label>
                             <textarea id="" name="meta_desc" class="form-control" rows="3" placeholder="Thẻ Meta description">{{$data->meta_desc}}</textarea>
+                            <div class="huph-seo">
+                                <ul>
+                                    <li>Số ký tự : {{countStringVietnam($data->meta_desc)}}</li>
+                                    <li class="">Số ký tự thẻ mô tả nên để từ 150 - 160 ký tự</li>
+                                    @if($data->meta_desc=='' || countStringVietnam($data->meta_desc)<=20)
+                                        <li class="error-seo">Thẻ mô tả meta description chưa được tối ưu <i class="fa fa-close"></i></li>
+                                    @endif
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="form-group">

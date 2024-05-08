@@ -209,3 +209,18 @@ ul.tree1 li span a{
 .ckbox input[type='checkbox']{
     opacity: 1;
 }
+.huph-seo{
+    padding-top: 10px;
+}
+.huph-seo ul{
+    padding-left: 15px
+}
+.huph-seo ul li{
+    font-style: italic;
+}
+.success-seo{
+    color: #0F9E5E;
+}
+.error-seo{
+    color: #c00;
+}
