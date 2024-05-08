@@ -954,6 +954,18 @@ video {
         transform: translatex(-60vw);
     }
 }
+.sub-menu {
+    position: absolute;
+    width: 1000px;
+    max-width: 100%;
+    text-align: center;
+    z-index: 1031;
+    top: -94px;
+    display: none;
+}
+.nav.mobile{
+    display: none;
+}
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
     header.desktop {
@@ -1041,6 +1053,7 @@ video {
         padding: 10px 0;
         box-shadow: 0px 0px 5px 3px #e0e0e0e0;
         height: 84px;
+        display: flex;
     }
     .nav.mobile .nav-link img.deactive,
     .sub-menu .nav-link img.deactive {
@@ -1062,15 +1075,7 @@ video {
         position: relative;
         top: -50px;
     }
-    .sub-menu {
-        position: absolute;
-        width: 1000px;
-        max-width: 100%;
-        text-align: center;
-        z-index: 1031;
-        top: -94px;
-        display: none;
-    }
+
     .sub-menu.active {
         display: block;
     }
@@ -1092,4 +1097,10 @@ video {
 .sub-menu a#info {
     position: relative;
     top: -60px;
+}
+section#detail .title h1{
+    font-size: 18px;
+}
+section#detail .title h4 {
+    font-size: 16px;
 }
