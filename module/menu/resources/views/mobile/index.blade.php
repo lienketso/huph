@@ -47,6 +47,7 @@
                         <th>Hình ảnh</th>
                         <th>Tên menu</th>
                         <th>Link</th>
+                        <th>Vị trí</th>
                         <th>Thứ tự</th>
                         <th class="">Trạng thái</th>
                         <th></th>
@@ -62,6 +63,7 @@
                             </td>
                             <td>{{$d->name}}</td>
                             <td>{{$d->link}}</td>
+                            <td>{{$d->type}}</td>
                             <td>{{$d->sort_order}}</td>
                             <td><a href="#"
                                    class="btn btn-sm {{($d->status=='active') ? 'btn-success' : 'btn-warning'}} radius-30">

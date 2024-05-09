@@ -51,63 +51,57 @@
     </div>
 </footer>
 <div class="fixed-bottom">
+    @php
+        $menuLeft = getMenuMobile('left');
+        $menuRight= getMenuMobile('right');
+        $menuTop= getMenuMobile('top');
+    @endphp
     <div class="sub-menu">
-                <span
-                ><a
+                <span>
+                    <a
                         class="nav-link"
                         href="javascript:void(0)"
                         id="result"
-                        onclick="setSubActive(this,'result')"
-                    >
+                        onclick="setSubActive(this,'result')">
                         <img
                             src="{{asset('frontend/assets/image/mobile/icon/result.png')}}"
                             class="deactive"
-                            alt="Menu"
-                        />
+                            alt="Menu" />
                         <img
                             src="{{asset('frontend/assets/image/mobile/icon/resulta.png')}}"
                             class="active"
-                            alt="Menu"
-                        /> </a
-                    ></span>
-        <span
-        ><a class="nav-link" href="javascript:void(0)"  onclick="setSubActive(this,'info')" id="info">
+                            alt="Menu"/>
+                    </a>
+                </span>
+        @foreach($menuTop as $key=>$d)
+        <span>
+            <a class="nav-link" href="{{$d->link}}"  onclick="setSubActive(this,'info')" id="{{($key==0) ? 'info' : 'post'}}">
                         <img
-                            src="{{asset('frontend/assets/image/mobile/icon/info.png')}}"
+                            src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/mobile/icon/home.png')}}"
                             class="deactive"
-                            alt="Menu"
+                            alt="{{$d->name}}"
                         />
                         <img
                             src="{{asset('frontend/assets/image/mobile/icon/infoa.png')}}"
                             class="active"
-                            alt="Menu"
-                        /> </a
-            ></span>
-        <span
-        ><a class="nav-link" href="javascript:void(0)"  onclick="setSubActive(this,'post')" id="post">
-                        <img
-                            src="{{asset('frontend/assets/image/mobile/icon/post.png')}}"
-                            class="deactive"
-                            alt="Menu"
-                        />
-                        <img
-                            src="{{asset('frontend/assets/image/mobile/icon/posta.png')}}"
-                            class="active"
-                            alt="Menu"
-                        /> </a
-            ></span>
+                            alt="{{$d->name}}"
+                        /> </a>
+        </span>
+        @endforeach
+        
     </div>
     <ul class="nav nav-fill mobile flex-sm-row">
+        @foreach($menuLeft as $d)
         <li class="nav-item">
             <a
                 class="nav-link"
-                href="javascript:void(0)"
+                href="{{$d->link}}"
                 onclick="setActive(this)"
             >
                 <img
-                    src="{{asset('frontend/assets/image/mobile/icon/home.png')}}"
+                    src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/mobile/icon/home.png')}}"
                     class="deactive"
-                    alt="Trang chủ"
+                    alt="{{$d->name}}"
                 />
                 <img
                     src="{{asset('frontend/assets/image/mobile/icon/homea.png')}}"
@@ -116,24 +110,8 @@
                 />
             </a>
         </li>
-        <li class="nav-item">
-            <a
-                class="nav-link"
-                href="javascript:void(0)"
-                onclick="setActive(this)"
-            >
-                <img
-                    src="{{asset('frontend/assets/image/mobile/icon/news.png')}}"
-                    class="deactive"
-                    alt="Tin tức"
-                />
-                <img
-                    src="{{asset('frontend/assets/image/mobile/icon/newsa.png')}}"
-                    class="active"
-                    alt="Tin tức"
-                />
-            </a>
-        </li>
+        @endforeach
+
         <li class="nav-item">
             <a
                 class="nav-link fab"
@@ -153,39 +131,24 @@
                 />
             </a>
         </li>
-        <li class="nav-item">
-            <a
-                class="nav-link"
-                href="javascript:void(0)"
-                onclick="setActive(this)"
-            >
-                <img
-                    src="{{asset('frontend/assets/image/mobile/icon/introduce.png')}}"
-                    class="deactive"
-                    alt="Giới thiệu" />
-                <img
-                    src="{{asset('frontend/assets/image/mobile/icon/introducea.png')}}"
-                    class="active"
-                    alt="Giới thiệu"
-                /></a>
-        </li>
-        <li class="nav-item">
-            <a
-                class="nav-link"
-                href="javascript:void(0)"
-                onclick="setActive(this)"
-            >
-                <img
-                    src="{{asset('frontend/assets/image/mobile/icon/tranning.png')}}"
-                    class="deactive"
-                    alt="Các hệ đào tạo"
-                />
-                <img
-                    src="{{asset('frontend/assets/image/mobile/icon/tranninga.png')}}"
-                    class="active"
-                    alt="Các hệ đào tạo"
-                />
-            </a>
-        </li>
+            @foreach($menuRight as $d)
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="{{$d->link}}"
+                        onclick="setActive(this)"
+                    >
+                        <img
+                            src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/mobile/icon/home.png')}}"
+                            class="deactive"
+                            alt="Giới thiệu" />
+                        <img
+                            src="{{asset('frontend/assets/image/mobile/icon/introducea.png')}}"
+                            class="active"
+                            alt="Giới thiệu"
+                        /></a>
+                </li>
+            @endforeach
+
     </ul>
 </div>
