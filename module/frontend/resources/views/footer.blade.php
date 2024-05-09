@@ -61,6 +61,8 @@
                     <a
                         class="nav-link"
                         href="javascript:void(0)"
+                        data-bs-toggle="modal"
+                        data-bs-target="#formModal"
                         id="result"
                         onclick="setSubActive(this,'result')">
                         <img
@@ -88,7 +90,7 @@
                         /> </a>
         </span>
         @endforeach
-        
+
     </div>
     <ul class="nav nav-fill mobile flex-sm-row">
         @foreach($menuLeft as $d)
