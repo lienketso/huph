@@ -88,6 +88,7 @@ main {
     color: #fff;
     border: 1px solid #205c40;
 }
+
 #nav-tabContent {
     padding: 10px;
 }
@@ -317,6 +318,7 @@ h5.card-title {
     line-height: 22px;
     font-size: 16px;
     min-height: 44px;
+    font-weight: 500;
 }
 section#hot-new {
     margin: 50px 0;
@@ -850,12 +852,15 @@ section#package h2 span {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-
+    max-width: 100%;
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 4%;
     margin-bottom: 60px;
     padding: 30px;
+}
+.form-result table {
+    width: 884px;
 }
 .form-rejected {
     background-image: url("../image/Rejected.png");
@@ -946,6 +951,12 @@ video {
 .tab-control {
     display: block;
 }
+#nav-program {
+    display: block;
+}
+#nav-program-mobile {
+    display: none;
+}
 @keyframes scrolling {
     0% {
         transform: translateX(0);
@@ -963,7 +974,7 @@ video {
     top: -94px;
     display: none;
 }
-.nav.mobile{
+.nav.mobile {
     display: none;
 }
 /* For mobile phones: */
@@ -973,6 +984,31 @@ video {
     }
     header.mobile {
         display: block;
+    }
+    #nav-program {
+        display: none;
+    }
+    #nav-program-mobile {
+        display: block;
+    }
+    #nav-program-mobile .dropdown-toggle::after {
+        position: relative;
+        float: inline-end;
+        top: 12px;
+    }
+    #nav-program-mobile > button {
+        width: 100%;
+        height: 66px;
+        background-color: #fff;
+        box-shadow: 0 4px 10px #bbbec7;
+        border: 1px solid #fff;
+        color: #7b7b7b;
+        font-size: 24px;
+        font-weight: 600;
+        border-radius: 24px;
+    }
+    #nav-program-mobile ul {
+        width: 100%;
     }
     .phone {
         font-size: 20px;
@@ -1034,10 +1070,16 @@ video {
         padding: 0;
     }
     footer {
-        padding: 40px 0 50px;
+        padding: 40px 0 100px;
+    }
+    footer a.f-logo {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
     }
     footer img {
-        width: 512px;
+        width: 80%;
         max-width: 100%;
     }
     footer h4 {
@@ -1054,6 +1096,9 @@ video {
         box-shadow: 0px 0px 5px 3px #e0e0e0e0;
         height: 84px;
         display: flex;
+    }
+    .nav.mobile .nav-link {
+        display: contents;
     }
     .nav.mobile .nav-link img.deactive,
     .sub-menu .nav-link img.deactive {
@@ -1085,7 +1130,7 @@ video {
     .sub-menu span {
         display: inline;
     }
-    section#detail .title h1{
+    section#detail .title h1 {
         font-size: 18px;
     }
     section#detail .title h4 {
@@ -1103,11 +1148,34 @@ video {
         position: relative;
         top: -60px;
     }
-    section#header-tuyensinh .title h1{
-        font-size: 24px;
+    section#header-tuyensinh .title h1 {
+        font-size: 20px;
     }
-    section#header-tuyensinh .title h5{
+    section#header-tuyensinh .title h5 {
         font-size: 16px;
     }
-
-
+    #nav-tabContent .home-tab-1 .content h1 {
+        font-size: 20px;
+    }
+    #nav-tabContent .home-tab-1 .content p {
+        font-size: 16px;
+    }
+    section#about h2 {
+        font-size: 40px;
+    }
+    section#about .content-top-1 .top-title span {
+        margin-left: 20px;
+    }
+    section#about .content-top-1 h2 {
+        padding: 0;
+    }
+    section#about .content-top-1 p {
+        margin: 20px 0;
+    }
+    h5.card-title {
+        font-weight: 600;
+    }
+    #nav-tabContent {
+        padding: 0;
+    }
+}

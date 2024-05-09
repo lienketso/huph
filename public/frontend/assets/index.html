@@ -89,11 +89,11 @@
                 <div class="row">
                     <div class="col-6 mt-2 text-center">
                         <a href="/" class="">
-                            <img src="image/logo.svg" width="512" />
+                            <img src="image/mobile/logo.svg" width="512" />
                         </a>
                     </div>
                     <div class="col-6 mt-2">
-                        <div class="phone">
+                        <!-- <div class="phone">
                             <i class="fa-solid fa-phone"></i>
                             <a href="tel:024 62 66 22 99"> 024 62 66 22 99</a>
                         </div>
@@ -101,7 +101,12 @@
                             <i class="fa-solid fa-location-dot me-2"></i>Số 1A,
                             đường Đức Thắng, phường Đức Thắng, quận Bắc Từ Liêm,
                             Hà Nội
-                        </div>
+                        </div> -->
+                        <a href="tel:024 62 66 22 99"
+                            ><img src="image/mobile/icon/phone.png"
+                        /></a>
+
+                        <img src="image/mobile/icon/addr.png" class="mb-2" />
                     </div>
                 </div>
             </div>
@@ -136,8 +141,94 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                            <div id="nav-program-mobile" class="dropdown" >
+                                <button
+                                    class="btn btn-secondary dropdown-toggle"
+                                    type="button"
+                                    id="dropdownMenu2"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Đại học chính quy
+                                </button>
+                                <ul
+                                    class="dropdown-menu"
+                                    id="nav-tab"
+                                    role="tablist"
+                                    aria-labelledby="dropdownMenuButton1"
+                                >
+                                    <li
+                                        class="dropdown-item"
+                                        role="presentation"
+                                    >
+                                        <button
+                                            class="nav-link active"
+                                            id="tab-1"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#nav-1"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="nav-1"
+                                            aria-selected="true"
+                                        >
+                                            Đại học chính quy
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="dropdown-item"
+                                        role="presentation"
+                                    >
+                                        <button
+                                            class="nav-link"
+                                            id="tab-2"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#nav-2"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="nav-2"
+                                            aria-selected="true"
+                                        >
+                                            Đại học vừa làm vừa học
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="dropdown-item"
+                                        role="presentation"
+                                    >
+                                        <button
+                                            class="nav-link"
+                                            id="tab-3"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#nav-3"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="nav-3"
+                                            aria-selected="false"
+                                        >
+                                            Sau đại học
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="dropdown-item"
+                                        role="presentation"
+                                    >
+                                        <button
+                                            class="nav-link"
+                                            id="tab-4"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#nav-4"
+                                            type="button"
+                                            role="tab"
+                                            aria-controls="nav-5"
+                                            aria-selected="false"
+                                        >
+                                            Ngắn hạn
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
                             <nav id="nav-program">
-                                <div
+                                <ul
                                     class="nav nav-tabs"
                                     id="nav-tab"
                                     role="tablist"
@@ -190,7 +281,7 @@
                                     >
                                         Ngắn hạn
                                     </button>
-                                </div>
+                                </ul>
                             </nav>
                             <div class="tab-control">
                                 <a href="#">
@@ -557,16 +648,16 @@
                         </div>
                     </div>
                     <div class="row mt-5 mb-5">
-                        <div class="col-md-6">
+                        <div class="col-md-6 order-md-2">
                             <img
-                                src="image/img2.jpg"
+                                src="image/Group 137.png"
                                 width="100%"
                                 class="mt-3"
                             />
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 order-md-1">
                             <img
-                                src="image/Group 137.png"
+                                src="image/img2.jpg"
                                 width="100%"
                                 class="mt-3"
                             />
@@ -856,14 +947,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="#" title="footer">
+                        <a href="#" title="footer" class="f-logo">
                             <img
                                 src="image/section.png"
                                 title="Trường Đại học Y tế Công cộng"
                             />
                         </a>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-6">
                         <h4>Linh nhanh</h4>
                         <ul class="list-group list-custom">
                             <li class="list-group-item">
@@ -880,7 +971,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-6">
                         <h4>Liên hệ</h4>
                         <ul class="list-group list-custom">
                             <li class="list-group-item">
@@ -923,7 +1014,12 @@
                         /> </a
                 ></span>
                 <span
-                    ><a class="nav-link" href="javascript:void(0)"  onclick="setSubActive(this,'info')" id="info">
+                    ><a
+                        class="nav-link"
+                        href="javascript:void(0)"
+                        onclick="setSubActive(this,'info')"
+                        id="info"
+                    >
                         <img
                             src="image/mobile/icon/info.png"
                             class="deactive"
@@ -936,7 +1032,12 @@
                         /> </a
                 ></span>
                 <span
-                    ><a class="nav-link" href="javascript:void(0)"  onclick="setSubActive(this,'post')" id="post">
+                    ><a
+                        class="nav-link"
+                        href="javascript:void(0)"
+                        onclick="setSubActive(this,'post')"
+                        id="post"
+                    >
                         <img
                             src="image/mobile/icon/post.png"
                             class="deactive"
@@ -1077,13 +1178,15 @@
                     $(".sub-menu").removeClass("active");
                 }
             }
-            function setSubActive(curent,id) {
+            function setSubActive(curent, id) {
                 if (curent.classList.contains("active")) {
                     $(curent).removeClass("active");
                 } else {
                     $(curent).addClass("active");
                 }
-                $('.sub-menu .nav-link').not('#'+id).removeClass('active');
+                $(".sub-menu .nav-link")
+                    .not("#" + id)
+                    .removeClass("active");
             }
         </script>
     </body>
