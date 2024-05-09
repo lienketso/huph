@@ -35,7 +35,7 @@ class MenuController extends BaseController
 
     public function getIndex(Request $request){
         $menus = Menu::orderBy('sort_order','asc')->where('parent', '=', 0)
-            ->where('lang_code',$this->langcode)->get();
+            ->where('lang_code',$this->langcode)->where('is_mobile',0)->get();
         $menuModel = $this->model;
         //danh sách danh mục bài viết
         $listBlog = $this->blog->orderBy('sort_order','asc')
