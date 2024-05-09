@@ -88,8 +88,27 @@
             autoWidth: false,
         });
     });
-
-
+    //menu mobile
+    function setActive(curent) {
+        if (curent.classList.contains("active")) {
+            $(curent).removeClass("active");
+        } else {
+            $(curent).addClass("active");
+        }
+        if (curent.classList.contains("active") && curent.id == "fab") {
+            $(".sub-menu").addClass("active");
+        } else {
+            $(".sub-menu").removeClass("active");
+        }
+    }
+    function setSubActive(curent,id) {
+        if (curent.classList.contains("active")) {
+            $(curent).removeClass("active");
+        } else {
+            $(curent).addClass("active");
+        }
+        $('.sub-menu .nav-link').not('#'+id).removeClass('active');
+    }
 </script>
 
 <script type="text/javascript">

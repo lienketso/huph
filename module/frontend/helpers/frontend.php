@@ -6,11 +6,22 @@ use Product\Models\Catproduct;
 function getAllmenu(){
     $lang = session('lang');
     $menuWise = Menu::orderBy('sort_order','asc')
-        ->where('lang_code',$lang)->where('status','active')->where('parent',0)
+        ->where('lang_code',$lang)->where('status','active')->where('is_mobile',0)->where('parent',0)
         ->get();
     return $menuWise;
 }
 
+function getMenuMobile($type){
+    $lang = session('lang');
+    $menuWise = Menu::orderBy('sort_order','asc')
+        ->where('lang_code',$lang)
+        ->where('status','active')
+        ->where('is_mobile',1)
+        ->where('parent',0)
+        ->where('type',$type)
+        ->get();
+    return $menuWise;
+}
 function sub($str,$num){
     return mb_substr(strip_tags($str), 0, $num);
 }

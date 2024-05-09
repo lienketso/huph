@@ -1,7 +1,7 @@
 @php
     $menus = getAllmenu();
 @endphp
-<header class="py-2 mb-2 fixed-header">
+<header class="py-2 mb-2 fixed-header desktop">
     <div class="container d-flex flex-wrap justify-content-center hot-line">
         <a
             href="{{route('frontend::home')}}"
@@ -37,6 +37,27 @@
 
         </nav>
 
+    </div>
+</header>
+
+<header class="fixed-header mobile">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mt-2 text-center">
+                <a href="/" class="">
+                    <img src="{{asset('frontend/assets/image/logo.svg')}}" width="512" />
+                </a>
+            </div>
+            <div class="col-6 mt-2">
+                <div class="phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:tel:{{str_replace(' ','',$setting['site_hotline_'.$lang])}}"> {{$setting['site_hotline_'.$lang]}}</a>
+                </div>
+                <div class="addr mb-3">
+                    <i class="fa-solid fa-location-dot me-2"></i>{{$setting['site_address_'.$lang]}}
+                </div>
+            </div>
+        </div>
     </div>
 </header>
 

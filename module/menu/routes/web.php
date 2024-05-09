@@ -5,6 +5,7 @@ use Illuminate\Routing\Router;
 
 $adminRoute = config('base.admin_route');
 $moduleRoute = 'menu';
+$moduleMobileRoute = 'menu-mobile';
 
 Route::group(['prefix'=>$adminRoute],function(Router $router) use($adminRoute,$moduleRoute){
     $router->group(['prefix'=>$moduleRoute],function(Router $router) use ($adminRoute,$moduleRoute){
@@ -26,3 +27,18 @@ Route::group(['prefix'=>$adminRoute],function(Router $router) use($adminRoute,$m
             ->name('wadmin::menu.change.get');
     });
 });
+
+Route::group(['prefix'=>$adminRoute],function(Router $router) use($adminRoute,$moduleMobileRoute){
+    $router->group(['prefix'=>$moduleMobileRoute],function(Router $router) use ($adminRoute,$moduleMobileRoute){
+        $router->get('index','MobileMenuController@getIndex')
+            ->name('wadmin::menu-mobile.index.get')->middleware('permission:menu_index');
+        $router->post('index','MobileMenuController@postIndex')
+            ->name('wadmin::menu-mobile.index.post')->middleware('permission:menu_index');
+        $router->get('edit/{id}','MobileMenuController@getEdit')
+            ->name('wadmin::menu-mobile.edit.get')->middleware('permission:menu_edit');
+        $router->post('edit/{id}','MobileMenuController@postEdit')
+            ->name('wadmin::menu-mobile.edit.post')->middleware('permission:menu_edit');
+
+    });
+});
+
