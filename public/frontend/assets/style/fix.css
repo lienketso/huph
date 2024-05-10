@@ -114,33 +114,51 @@ footer ul.list-custom li a, .list-group-item{
 
 .wrapper-slider .item-partner:nth-child(1) {
     left: 100%;
-    animation-delay: -12s;
+    animation-delay: -20s;
 }
 
 .wrapper-slider .item-partner:nth-child(2) {
     left: 100%;
-    animation-delay: -10s;
+    animation-delay: -18s;
 }
 
 .wrapper-slider .item-partner:nth-child(3) {
     left: 100%;
-    animation-delay: -8s;
+    animation-delay: -16s;
 }
 
 .wrapper-slider .item-partner:nth-child(4) {
     left: 100%;
-    animation-delay: -6s;
+    animation-delay: -14s;
 }
 
 .wrapper-slider .item-partner:nth-child(5) {
     left: 100%;
-    animation-delay: -4s;
+    animation-delay: -12s;
 }
 
 .wrapper-slider .item-partner:nth-child(6) {
     left: 100%;
+    animation-delay: -10s;
+}
+.wrapper-slider .item-partner:nth-child(7) {
+    left: 100%;
+    animation-delay: -8s;
+}
+.wrapper-slider .item-partner:nth-child(8) {
+    left: 100%;
+    animation-delay: -6s;
+}
+.wrapper-slider .item-partner:nth-child(9) {
+    left: 100%;
+    animation-delay: -4s;
+}
+.wrapper-slider .item-partner:nth-child(10) {
+    left: 100%;
     animation-delay: -2s;
 }
+
+
 .item-partner img{
     filter: grayscale(1);
 }
