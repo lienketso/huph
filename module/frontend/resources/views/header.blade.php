@@ -49,13 +49,17 @@
                 </a>
             </div>
             <div class="col-6 mt-2">
-                <div class="phone">
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:tel:{{str_replace(' ','',$setting['site_hotline_'.$lang])}}"> {{$setting['site_hotline_'.$lang]}}</a>
-                </div>
-                <div class="addr mb-3">
-                    <i class="fa-solid fa-location-dot me-2"></i>{{$setting['site_address_'.$lang]}}
-                </div>
+{{--                <div class="phone">--}}
+{{--                    <i class="fa-solid fa-phone"></i>--}}
+{{--                    <a href="tel:{{str_replace(' ','',$setting['site_hotline_'.$lang])}}"> {{$setting['site_hotline_'.$lang]}}</a>--}}
+{{--                </div>--}}
+{{--                <div class="addr mb-3">--}}
+{{--                    <i class="fa-solid fa-location-dot me-2"></i>{{$setting['site_address_'.$lang]}}--}}
+{{--                </div>--}}
+                <a href="tel:{{str_replace(' ','',$setting['site_hotline_'.$lang])}}">
+                    <img src="{{asset('frontend/assets/image/mobile/icon/phone.png')}}"/>
+                </a>
+                <img src="{{asset('frontend/assets/image/mobile/icon/addr.png')}}" class="mb-2" />
             </div>
         </div>
     </div>
@@ -69,7 +73,7 @@
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
 >
-    <div class="modal-dialog modal-md">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row">
@@ -137,8 +141,7 @@
                     </div>
                     <div class="col-12">
                         <div id="frmResult" class="form-result">
-                            <div class="row">
-                                <div class="col-12">
+                            <div class="table-responsive">
                                     <table class="table-content">
                                         <tbody>
                                         <tr>
@@ -211,11 +214,13 @@
                                         </tr>
                                         </tbody>
                                     </table>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
         </div>
     </div>

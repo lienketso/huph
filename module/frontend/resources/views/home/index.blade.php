@@ -33,6 +33,45 @@
             </div>
             <div class="row mt-3">
                 <div class="col">
+                    <div id="nav-program-mobile" class="dropdown" >
+                        <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="dropdownMenu2"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Đại học chính quy
+                        </button>
+                        <ul
+                            class="dropdown-menu"
+                            id="nav-tab"
+                            role="tablist"
+                            aria-labelledby="dropdownMenuButton1"
+                        >
+                            @foreach($categoryTuyensinh as $key=>$d)
+                            <li
+                                class="dropdown-item"
+                                role="presentation"
+                            >
+                                <button
+                                    class="nav-link {{($key==0)?'active':''}}"
+                                    id="tab-{{$key}}"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#nav-{{$key}}"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="nav-{{$key}}"
+                                    aria-selected="true"
+                                >
+                                    {{$d->name}}
+                                </button>
+                            </li>
+                            @endforeach
+
+                        </ul>
+                    </div>
+
                     <nav id="nav-program">
                         <div
                             class="nav nav-tabs"

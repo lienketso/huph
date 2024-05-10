@@ -189,10 +189,12 @@
                         //add class
                         if(response.status==='approved'){
                             $('#frmResult').addClass('form-approved');
+                            $('#frmResult').removeClass('form-rejected');
                             $('#contentApproved').show();
                             $('#contentRejected').hide();
                         }else{
                             $('#frmResult').addClass('form-rejected');
+                            $('#frmResult').removeClass('form-approved');
                             $('#contentRejected').show();
                             $('#contentApproved').hide();
                         }

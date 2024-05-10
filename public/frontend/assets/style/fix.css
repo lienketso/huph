@@ -130,4 +130,7 @@ footer ul.list-custom li a, .list-group-item{
     .no-mobile{
         display: none;
     }
+    section#carousel{
+        padding-top: 0;
+    }
 }
