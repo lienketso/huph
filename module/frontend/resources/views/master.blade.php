@@ -75,6 +75,17 @@
             autoplayTimeout: 1000,
             autoplayHoverPause: true,
             autoWidth: true,
+            responsive: {
+                0: {
+                    items: 6
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 6
+                }
+            }
         });
 
         var top = $(".owl-top");
