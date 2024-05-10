@@ -134,8 +134,8 @@ footer ul.list-custom li a, .list-group-item{
         padding-top: 0;
     }
     .section-about-home img{
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
     }
     section#about p{
         padding: 0;
@@ -167,5 +167,8 @@ footer ul.list-custom li a, .list-group-item{
     }
     section#about h5 {
         margin: 0 0 20px;
+    }
+    .marquee-item{
+        margin: 0 7vw;
     }
 }
