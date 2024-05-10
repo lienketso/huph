@@ -133,4 +133,39 @@ footer ul.list-custom li a, .list-group-item{
     section#carousel{
         padding-top: 0;
     }
+    .section-about-home img{
+        width: 100%;
+        height: auto;
+    }
+    section#about p{
+        padding: 0;
+    }
+    .img-top-right {
+        width: 40%;
+        height: auto;
+    }
+    .img-logo-top-right {
+        width: 80px;
+    }
+    .img-best {
+        transform: rotate(2deg) !important;
+        width: 170px;
+    }
+    .img-top-right{
+        border: 2px solid #fff;
+    }
+    video{
+        max-width: 300px;
+        height: 168px;
+    }
+    .video-control img{
+        width: 50px;
+    }
+    section#about a.show-more{
+        margin: 0;
+        font-size: 16px;
+    }
+    section#about h5 {
+        margin: 0 0 20px;
+    }
 }
