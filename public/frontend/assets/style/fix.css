@@ -157,8 +157,6 @@ footer ul.list-custom li a, .list-group-item{
     left: 100%;
     animation-delay: -2s;
 }
-
-
 .item-partner img{
     filter: grayscale(1);
 }
@@ -182,6 +180,11 @@ footer ul.list-custom li a, .list-group-item{
         visibility: hidden;
     }
 }
+
+.sodotochuc img{
+    height: auto !important;
+}
+
 @media (min-width: 768px) {
     .map-company{
         width: 50%;

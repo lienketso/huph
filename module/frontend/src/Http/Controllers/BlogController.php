@@ -145,7 +145,14 @@ class BlogController extends BaseController
         $category = $request->input('category');
         $infoCategory = $this->cat->find($category);
         if($infoCategory){
-            $data = $infoCategory->posts()->offset($start)->limit(4)->get();
+            $data = $infoCategory->posts()->offset($start)->limit(4)->get()->map(function ($m){
+                $m->description = ($m->description!='') ? cut_string($m->description,150) : cut_string(strip_tags($m->content),150);
+                $m->thumbnail = ($m->thumbnail!='') ? upload_url($m->thumbnail) : asset('admin/themes/images/no-image.png');
+                $m->author = ($m->user()->exists()) ? $m->user->full_name : 'admin';
+//                $m->created_at = datetoString($m->created_at);
+                return $m;
+            });
+
             return response()->json([
                 'data' => $data,
                 'next' => $start + 4
