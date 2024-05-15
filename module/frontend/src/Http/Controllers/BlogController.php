@@ -108,7 +108,7 @@ class BlogController extends BaseController
                         ->orWhere('content', 'like', '%'.$search.'%');
                 });
             }
-            $post = $postQuery->paginate(16);
+            $post = $postQuery->orderBy('created_at','desc')->paginate(16);
         } else {
             return response()->json([
                 'error' => 'Category not found'

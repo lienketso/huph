@@ -99,7 +99,7 @@
                         <div class="tab-content" id="nav-tabContent">
                             @foreach($categoryTuyensinh as $key=>$d)
                                 @php
-                                    $postHome = $d->posts()->where('display', 1)->take(1)->get();
+                                    $postHome = $d->posts()->orderBy('created_at','desc')->where('display', 1)->take(1)->get();
                                 @endphp
                             <div
                                 class="tab-pane fade {{($key==0) ? 'show active' : ''}}"
