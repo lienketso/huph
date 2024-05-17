@@ -188,8 +188,8 @@ main {
     background-color: #205c40;
 }
 .snip1135 a:after {
-    left: 0;
-    top: 0;
+    right: 5px;
+    top: 13px;
     padding: 0.5em 0;
     position: absolute;
     content: attr(data-hover);

@@ -94,6 +94,12 @@ footer ul.list-custom li a, .list-group-item{
     padding: 12px 30px;
     margin-right: 20px;
 }
+.dropdown-menu a{
+    padding: 5px 10px;
+}
+.dropdown-menu{
+    min-width: 250px;
+}
 .slider-area{
     padding: 40px 0;
 }

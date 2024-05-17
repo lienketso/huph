@@ -19,14 +19,28 @@
     </div>
     <div class="container">
         <nav class="nav navbar nav-fill snip1135">
+
             @foreach($menus as $key=>$menu)
+                @if(count($menu->childs))
+                    <li class="nav-item dropdown">
+                        <a href="{{$menu->link}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> @if($menu->thumbnail!='')
+                                <i class="{{$menu->thumbnail}}"></i>@endif
+                            {{$menu->name}}</a>
+                        <div class="dropdown-menu">
+                            @foreach($menu->childs as $c)
+                            <a href="{{$c->link}}" class="dropdown-item">{{$c->name}}</a>
+                            @endforeach
+                        </div>
+                    </li>
+                @else
                 <a class="nav-link item-menu" aria-current="" href="{{$menu->link}}">
                     @if($menu->thumbnail!='')
                         <i class="{{$menu->thumbnail}}"></i>
                     @endif
                         {{$menu->name}}</a>
+                @endif
+               @endforeach
 
-            @endforeach
                 <a
                     class="nav-link"
                     href="#"
@@ -34,6 +48,9 @@
                     data-bs-target="#formModal"
                 ><i class="fa-regular fa-calendar-check"></i>Kết quả
                     tuyển sinh</a>
+
+
+
 
         </nav>
 
