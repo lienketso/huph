@@ -27,7 +27,7 @@
                         @foreach($menus as $key=>$menu)
                             @if(count($menu->childs))
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="{{$menu->link}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         @if($menu->thumbnail!='')
                                             <i class="{{$menu->thumbnail}}"></i>
                                         @endif

@@ -230,14 +230,31 @@
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
         var currentUrls = window.location.href;
-        var menuLinks = document.querySelectorAll('.item-menu');
+        var menuLinks = document.querySelectorAll('.nav-item a');
         menuLinks.forEach(function(link) {
             if (link.getAttribute('href') === currentUrls) {
                 link.classList.add('active');
             }
         });
+
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+        dropdownToggles.forEach(function (toggle) {
+            toggle.addEventListener('click', function (event) {
+                const isDropdownShown = this.nextElementSibling.classList.contains('show');
+                if (!isDropdownShown) {
+                    event.preventDefault();
+                    const dropdown = new bootstrap.Dropdown(this);
+                    dropdown.show();
+                } else {
+                    window.location.href = this.href;
+                }
+            });
+        });
+
     });
 </script>
+
 
 @yield("js")
 @yield("js-init")
