@@ -44,7 +44,24 @@
 
                                                     <ul class="dropdown-menu">
                                                         @foreach($subone->childs as $subtwo)
+                                                            @if(count($subtwo->childs))
+                                                                <li class="nav-item dropend">
+
+                                                                    <a class="nav-link dropdown-toggle" href="{{$subtwo->link}}" role="button"
+                                                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        {{$subtwo->name}}
+                                                                    </a>
+
+                                                                    <ul class="dropdown-menu">
+                                                                        @foreach($subtwo->childs as $subthree)
+                                                                        <li><a class="dropdown-item" href="{{$subthree->link}}">{{$subthree->name}}</a></li>
+                                                                        @endforeach
+
+                                                                    </ul>
+                                                                </li>
+                                                            @else
                                                         <li><a class="dropdown-item" href="{{$subtwo->link}}">{{$subtwo->name}}</a></li>
+                                                            @endif
                                                         @endforeach
 
                                                     </ul>
