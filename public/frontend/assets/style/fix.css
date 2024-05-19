@@ -141,7 +141,9 @@ footer ul.list-custom li a, .list-group-item{
     font-size: 10px;
     display: none;
 }
-
+.title-news-home{
+    padding: 20px 0;
+}
 @media screen and (min-width:769px) {
     .dropend:hover>.dropdown-menu {
         position: absolute;
