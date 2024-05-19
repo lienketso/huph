@@ -204,7 +204,7 @@ main {
 .snip1135 a:hover:before,
 .snip1135 a.active:before {
     opacity: 1;
-    width: 100%;
+    width: 90%;
     color: #205c40;
 }
 .snip1135 a:hover:after,
