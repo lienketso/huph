@@ -22,10 +22,10 @@ class Category extends Model
         'meta_tags'
     ];
 
-    public function setSlugAttribute($value)
-    {
-        $this->attributes['slug'] = str_slug($value,'-','');
-    }
+//    public function setSlugAttribute($value)
+//    {
+//        $this->attributes['slug'] = str_slug($value,'-','');
+//    }
 
     public function childs()
     {

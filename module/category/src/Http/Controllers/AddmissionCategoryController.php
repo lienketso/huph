@@ -46,7 +46,9 @@ class AddmissionCategoryController extends BaseController
             $input['banner'] = replace_thumbnail($input['banner']);
             $input['lang_code'] = $this->langcode;
             //cấu hình seo
-            $input['slug'] = $request->name;
+            if(is_null($input['slug'])){
+                $input['slug'] = str_slug($request->name,'-','vn');
+            }
             if($request->meta_title==''){
                 $input['meta_title'] = $request->name;
             }
@@ -80,7 +82,9 @@ class AddmissionCategoryController extends BaseController
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['banner'] = replace_thumbnail($input['banner']);
             //cấu hình seo
-            $input['slug'] = $request->name;
+            if(is_null($input['slug'])){
+                $input['slug'] = str_slug($request->name,'-','vn');
+            }
             if($request->meta_title==''){
                 $input['meta_title'] = $request->name;
             }

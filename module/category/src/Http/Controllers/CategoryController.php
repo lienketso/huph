@@ -55,7 +55,10 @@ class CategoryController extends BaseController
             $input['banner_3'] = replace_thumbnail($input['banner_3']);
             $input['lang_code'] = $this->langcode;
             //cấu hình seo
-            $input['slug'] = $request->name;
+            if(is_null($input['slug'])){
+                $input['slug'] = str_slug($request->name,'-','vn');
+            }
+
             if($request->meta_title==''){
                 $input['meta_title'] = $request->name;
             }
@@ -92,7 +95,9 @@ class CategoryController extends BaseController
             $input['banner_2'] = replace_thumbnail($input['banner_2']);
             $input['banner_3'] = replace_thumbnail($input['banner_3']);
             //cấu hình seo
-            $input['slug'] = $request->name;
+            if(is_null($input['slug'])){
+                $input['slug'] = str_slug($request->name,'-','vn');
+            }
             if($request->meta_title==''){
                 $input['meta_title'] = $request->name;
             }
