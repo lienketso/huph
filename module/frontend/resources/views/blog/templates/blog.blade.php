@@ -107,72 +107,7 @@
                         />
                     </form>
                     <div class="d-flex flex-row mb-3 mt-3 flex-wrap">
-                        <div class="p-2">
-                            <input
-                                type="checkbox"
-                                class="btn-check"
-                                id="btn-check-1"
-                                autocomplete="off"
-                            />
-                            <label class="btn btn-outline-tag" for="btn-check-1"
-                            >Tin tức</label
-                            >
-                        </div>
-                        <div class="p-2">
-                            <input
-                                type="checkbox"
-                                class="btn-check"
-                                id="btn-check-2"
-                                autocomplete="off"
-                            />
-                            <label class="btn btn-outline-tag" for="btn-check-2"
-                            >Bài báo</label
-                            >
-                        </div>
-                        <div class="p-2">
-                            <input
-                                type="checkbox"
-                                class="btn-check"
-                                id="btn-check-3"
-                                autocomplete="off"
-                            />
-                            <label class="btn btn-outline-tag" for="btn-check-3"
-                            >Học bổng</label
-                            >
-                        </div>
-                        <div class="p-2">
-                            <input
-                                type="checkbox"
-                                class="btn-check"
-                                id="btn-check-4"
-                                autocomplete="off"
-                            />
-                            <label class="btn btn-outline-tag" for="btn-check-4"
-                            >Công tác xã hội</label
-                            >
-                        </div>
-                        <div class="p-2">
-                            <input
-                                type="checkbox"
-                                class="btn-check"
-                                id="btn-check-5"
-                                autocomplete="off"
-                            />
-                            <label class="btn btn-outline-tag" for="btn-check-5"
-                            >Kỹ thuật xét nghiệm</label
-                            >
-                        </div>
-                        <div class="p-2">
-                            <input
-                                type="checkbox"
-                                class="btn-check"
-                                id="btn-check-6"
-                                autocomplete="off"
-                            />
-                            <label class="btn btn-outline-tag" for="btn-check-6"
-                            >Dinh dưỡng</label
-                            >
-                        </div>
+                        {!! getTags(route('frontend::home'),'btn-outline-tag',$data->meta_tags) !!}
 
                     </div>
                 </div>

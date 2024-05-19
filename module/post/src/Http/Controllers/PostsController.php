@@ -104,6 +104,7 @@ class PostsController extends BaseController
             $input['lang_code'] = $this->langcode;
             $input['created_at'] = input_format_date($request->created_at);
             $category = $request->input('category');
+            $input['cat_tags'] = convertToSlugWithDiacritics($input['tags']);
             //cấu hình seo
             if($request->meta_title==''){
                 $input['meta_title'] = $request->name;
@@ -178,6 +179,7 @@ class PostsController extends BaseController
             $input['user_edit'] = Auth::id();
 
             $input['created_at'] = input_format_date($request->created_at);
+            $input['cat_tags'] = convertToSlugWithDiacritics($input['tags']);
             // dd($input['created_at']);
             //cấu hình seo
             if($request->meta_title==''){

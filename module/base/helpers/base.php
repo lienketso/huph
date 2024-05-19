@@ -121,7 +121,6 @@ if (! function_exists('str_slug')) {
         return convert_vi_to_en(Str::slug($title, $separator, $language));
     }
 }
-
 if (! function_exists('cut_string')) {
 
     function cut_string($str, $int)
@@ -267,4 +266,17 @@ function calculateSEOScore($content, $metaDescription)
 function countStringVietnam($string){
     $numberOfCharacters = mb_strlen($string, 'UTF-8');
     return $numberOfCharacters;
+}
+
+function convertToSlugWithDiacritics($string) {
+    // Chuyển sang chữ thường
+    $string = mb_strtolower($string, 'UTF-8');
+
+    // Thay thế khoảng trắng bằng dấu gạch ngang
+    $string = preg_replace('/\s+/', '-', $string);
+
+    // Loại bỏ dấu gạch ngang ở đầu và cuối chuỗi
+    $string = trim($string, '-');
+
+    return convert_vi_to_en($string);
 }

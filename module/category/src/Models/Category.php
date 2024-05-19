@@ -19,6 +19,7 @@ class Category extends Model
         'banner_1',
         'banner_2',
         'banner_3',
+        'meta_tags'
     ];
 
     public function setSlugAttribute($value)

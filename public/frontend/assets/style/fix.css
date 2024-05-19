@@ -100,6 +100,12 @@ footer ul.list-custom li a, .list-group-item{
 .dropdown-menu{
     min-width: 250px;
 }
+.tag-section{
+    padding-top: 20px;
+}
+.title-tags{
+    padding-bottom: 20px;
+}
 .slider-area{
     padding: 40px 0;
 }

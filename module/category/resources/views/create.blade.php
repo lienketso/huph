@@ -52,7 +52,14 @@
                             <label>Thẻ meta description</label>
                             <textarea id="" name="meta_desc" class="form-control" rows="3" placeholder="Thẻ Meta description">{{old('meta_desc')}}</textarea>
                         </div>
-
+                        <div class="form-group">
+                            <label>Tags Name ( Cách nhau bởi dấu phẩy )</label>
+                            <input class="form-control"
+                                   name="meta_tags"
+                                   type="text"
+                                   value="{{old('meta_tags')}}"
+                                   placeholder="Cách nhau bởi dấu phẩy">
+                        </div>
                         <div class="form-group">
                             <button class="btn btn-primary">Lưu lại</button>
                             <button class="btn btn-success" name="continue_post" value="1">Lưu và tiếp tục thêm</button>

@@ -49,6 +49,15 @@ Route::group(['prefix'=>'blog'],function(Router $router){
         ->name('frontend::blog.load-more.get');
 });
 
+//tags
+Route::group(['prefix'=>'tags'],function(Router $router){
+    $router->get('{slug}','BlogController@tags')
+        ->name('frontend::tags.index.get');
+    //ajax load more
+    $router->get('{slug}/load-more-blog','BlogController@loadMoreData')
+        ->name('frontend::blog.load-more.get');
+});
+
 Route::group(['prefix'=>'search'],function(Router $router){
     $router->get('/','BlogController@search')
         ->name('frontend::blog.search.get');

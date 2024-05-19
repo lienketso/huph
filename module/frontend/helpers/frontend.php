@@ -37,3 +37,14 @@ function stringDate($time){
     $time = strtotime($time);
     return date('d',$time) .' tháng '.date('m',$time).' ,'.date('Y',$time);
 }
+
+function getTags($url,$class,$str){
+    $name = (explode(",",$str));
+    $total = count($name);
+    $html="";
+    for($i=0;$i<$total;$i++){
+        $slug = str_slug($name[$i],'-','en');
+        $html.="<a class='$class' href='".$url."/tags/".$slug."/' title='".$name[$i]."' itemprop='keywords'>".$name[$i]."</a>";
+    }
+    return $html;
+}

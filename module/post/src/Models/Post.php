@@ -14,14 +14,17 @@ class Post extends Model
 {
     protected $table = 'post';
     protected $fillable = ['name','slug','address','price_value','end_date','description','content','thumbnail','banner','file_attach','meta_desc','meta_title','meta_keyword','display','is_slider','is_hot','is_home','count_view','tags','user_post'
-    ,'user_edit','status','post_type','lang_code','created_at'];
+    ,'user_edit','status','post_type','lang_code','created_at','cat_tags'];
 
 
     public function setSlugAttribute($value)
     {
         $this->attributes['slug'] = str_slug($value,'-','');
     }
-
+    public function setCat_tagAttribute($value)
+    {
+        $this->attributes['cat_tags'] = str_slug($value,'-','');
+    }
     public function getUserPost(){
         return $this->belongsTo(Users::class,'user_post','id');
     }

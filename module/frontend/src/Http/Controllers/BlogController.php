@@ -140,6 +140,11 @@ class BlogController extends BaseController
         ]);
     }
 
+    public function tags($slug){
+        $post = $this->model->where('cat_tags','LIKE','%'.$slug.'%')->get();
+        return view('frontend::blog.tags.index',compact('post'));
+    }
+
     public function loadMoreData(Request $request){
         $start = $request->input('start');
         $category = $request->input('category');
