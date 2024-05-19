@@ -148,8 +148,8 @@
         <div class="container">
             <div class="row" id="items_container">
                 @foreach($post as $d)
-                    <div class="col-md-3">
-                        <div class="card">
+                    <div class="col-md-12">
+                        <div class="card list-card">
                             <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
                             <div class="border-img">
                                 <div class="border-tag">

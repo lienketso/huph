@@ -141,6 +141,7 @@ footer ul.list-custom li a, .list-group-item{
     font-size: 10px;
     display: none;
 }
+
 @media screen and (min-width:769px) {
     .dropend:hover>.dropdown-menu {
         position: absolute;
@@ -149,6 +150,9 @@ footer ul.list-custom li a, .list-group-item{
     }
     .dropend .dropdown-toggle {
         margin-left: .5em;
+    }
+    .list-card a{
+        display: flex;
     }
 }
 
