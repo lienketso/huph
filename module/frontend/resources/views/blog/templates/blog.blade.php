@@ -38,7 +38,7 @@
                             for (var i = 0; i < data.data.length; i++) {
                                 let img = data.data[i].thumbnail;
                                 let link = '/post/'+data.data[i].slug;
-                                html += '<div class="col-md-12"><div class="card list-card"><div class="border-img"><a href="'+link+'"><img src="'+img+'" class="card-img-top" alt="" /></a></div><div  class="card-body"><h5 class="card-title">'+ data.data[i].name + '</h5><h6 class="card-subtitle mb-2 text-body-secondary">by <strong>'+data.data[i].author+'</strong></h6><p>'+ data.data[i].description + '</p></div></div></div>';
+                                html += '<div class="col-md-12"><div class="card list-card"><a href="'+link+'"><div class="border-img"><img src="'+img+'" class="card-img-top" alt="" /></div><div  class="card-body"><h5 class="card-title">'+ data.data[i].name + '</h5><h6 class="card-subtitle mb-2 text-body-secondary">by <strong>'+data.data[i].author+'</strong></h6><p>'+ data.data[i].description + '</p></div></a></div></div>';
                             }
                             //append data with fade in effect
                             $('#items_container').append($(html).hide().fadeIn(1000));
