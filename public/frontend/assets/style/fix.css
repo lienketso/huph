@@ -223,7 +223,7 @@ footer ul.list-custom li a, .list-group-item{
     animation-delay: -2s;
 }
 .item-partner img{
-    filter: grayscale(1);
+    /*filter: grayscale(1);*/
 }
 .item-partner img:hover{
     filter: grayscale(0);

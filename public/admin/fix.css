@@ -224,3 +224,13 @@ ul.tree1 li span a{
 .error-seo{
     color: #c00;
 }
+.preview-post{
+    padding-top: 10px;
+}
+.preview-post a{
+    border: 1px solid #0F9E5E;
+    background: #0a90eb;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fff;
+}

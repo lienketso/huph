@@ -86,7 +86,7 @@
                         <th class="">Trạng thái</th>
                         <th class="">Nhân bản</th>
                         <th>Seo</th>
-                        <th style="width: 90px"></th>
+                        <th style="width: 100px"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -97,7 +97,10 @@
                                     <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : public_url('admin/themes/images/no-image.png')}}" width="100" alt="">
                                 </div>
                             </td>
-                            <td>{{$d->name}}</td>
+                            <td>
+                                {{$d->name}}
+                                <p class="preview-post"><a target="_blank" href="{{route('frontend::blog.detail.get',$d->slug)}}"><i class="fa fa-eye"></i> Xem trước</a></p>
+                            </td>
                             <td>
                                 @if($d->categories()->exists())
                                     @foreach($d->categories as $c)

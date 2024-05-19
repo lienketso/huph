@@ -96,7 +96,9 @@
                                     <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : public_url('admin/themes/images/no-image.png')}}" width="100" alt="">
                                 </div>
                             </td>
-                            <td>{{$d->name}}</td>
+                            <td>
+                                {{$d->name}}
+                                <p class="preview-post"><a target="_blank" href="{{route('frontend::blog.detail.get',$d->slug)}}"><i class="fa fa-eye"></i> Xem trước</a></p></td>
                             <td>
                                 @if($d->categories()->exists())
                                     @foreach($d->categories as $c)
