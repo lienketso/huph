@@ -188,14 +188,14 @@ main {
     background-color: #205c40;
 }
 .snip1135 a:after {
-    right: 5px;
+    right: 20px;
     top: 13px;
     padding: 0.5em 0;
     position: absolute;
     content: attr(data-hover);
     color: #205c40;
     white-space: nowrap;
-    max-width: 0%;
+    max-width: 0;
     overflow: hidden;
 }
 .snip1135 a.active {

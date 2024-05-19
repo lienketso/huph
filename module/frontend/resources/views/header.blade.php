@@ -18,40 +18,67 @@
         </span>
     </div>
     <div class="container">
-        <nav class="nav navbar nav-fill snip1135">
-
-            @foreach($menus as $key=>$menu)
-                @if(count($menu->childs))
-                    <li class="nav-item dropdown">
-                        <a href="{{$menu->link}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> @if($menu->thumbnail!='')
-                                <i class="{{$menu->thumbnail}}"></i>@endif
-                            {{$menu->name}}</a>
-                        <div class="dropdown-menu">
-                            @foreach($menu->childs as $c)
-                            <a href="{{$c->link}}" class="dropdown-item">{{$c->name}}</a>
-                            @endforeach
-                        </div>
-                    </li>
-                @else
-                <a class="nav-link item-menu" aria-current="" href="{{$menu->link}}">
-                    @if($menu->thumbnail!='')
-                        <i class="{{$menu->thumbnail}}"></i>
-                    @endif
-                        {{$menu->name}}</a>
-                @endif
-               @endforeach
-
-                <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="modal"
-                    data-bs-target="#formModal"
-                ><i class="fa-regular fa-calendar-check"></i>Kết quả
-                    tuyển sinh</a>
 
 
+        <nav class="navbar navbar-expand-lg nav-fill snip1135">
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        @foreach($menus as $key=>$menu)
+                            @if(count($menu->childs))
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        @if($menu->thumbnail!='')
+                                            <i class="{{$menu->thumbnail}}"></i>
+                                        @endif
+                                        {{$menu->name}}
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        @foreach($menu->childs as $subone)
+                                            @if(count($subone->childs))
+                                                <li class="nav-item dropend">
+                                                    <a class="nav-link dropdown-toggle" href="{{$subone->link}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                       {{$subone->name}}
+                                                    </a>
+
+                                                    <ul class="dropdown-menu">
+                                                        @foreach($subone->childs as $subtwo)
+                                                        <li><a class="dropdown-item" href="{{$subtwo->link}}">{{$subtwo->name}}</a></li>
+                                                        @endforeach
+
+                                                    </ul>
+                                                </li>
+                                            @else
+                                        <li><a class="dropdown-item" href="{{$subone->link}}">{{$subone->name}}</a></li>
+                                            @endif
+                                        @endforeach
 
 
+                                    </ul>
+                                </li>
+                            @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{$menu->link}}">
+                                @if($menu->thumbnail!='')
+                                    <i class="{{$menu->thumbnail}}"></i>
+                                @endif
+                                {{$menu->name}}</a>
+                        </li>
+                            @endif
+                        @endforeach
+
+                            <a
+                                class="nav-link"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#formModal"
+                            ><i class="fa-regular fa-calendar-check"></i>Kết quả
+                                tuyển sinh</a>
+
+                    </ul>
+
+                </div>
         </nav>
 
     </div>

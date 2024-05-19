@@ -96,6 +96,7 @@ footer ul.list-custom li a, .list-group-item{
 }
 .dropdown-menu a{
     padding: 5px 10px;
+    display: block;
 }
 .dropdown-menu{
     min-width: 250px;
@@ -106,6 +107,52 @@ footer ul.list-custom li a, .list-group-item{
 .title-tags{
     padding-bottom: 20px;
 }
+.sub-dropdown-menu{
+    position: absolute;
+    right: -185px;
+    background: #fff;
+    border-radius: 5px;
+    top: 0;
+}
+.dropdown-menu a:hover .sub-dropdown-menu{
+    display: block;
+}
+.dropdown-menu{
+    border: 0;
+}
+
+.dropdown .dropdown-menu {
+    display: none;
+}
+.dropdown:hover>.dropdown-menu,
+.dropend:hover>.dropdown-menu {
+    display: block;
+    margin-top: .1em;
+    margin-left: .1em;
+}
+.nav-fill .nav-item, .nav-fill>li>.nav-link{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.navbar-expand-lg .navbar-nav{
+    width: 100%;
+}
+.dropend .nav-link::after, .dropend .nav-link::before{
+    font-size: 10px;
+    display: none;
+}
+@media screen and (min-width:769px) {
+    .dropend:hover>.dropdown-menu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .dropend .dropdown-toggle {
+        margin-left: .5em;
+    }
+}
+
+
 .slider-area{
     padding: 40px 0;
 }

@@ -107,8 +107,9 @@
                         />
                     </form>
                     <div class="d-flex flex-row mb-3 mt-3 flex-wrap">
+                       @if($data->meta_tags!='')
                         {!! getTags(route('frontend::home'),'btn-outline-tag',$data->meta_tags) !!}
-
+                        @endif
                     </div>
                 </div>
 

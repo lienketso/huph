@@ -63,7 +63,7 @@
                             <textarea id="editor1" name="content" class="form-control makeMeRichTextarea" rows="3" placeholder="Nội dung bài viết">{{old('content')}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Tags (Từ khóa)</label>
+                            <label>Tags (Từ khóa cách nhau bởi dấu phẩy, không có khoảng trống)</label>
                             <input class="form-control" name="tags" type="text" placeholder="Từ khóa liên quan">
                         </div>
                         <div class="form-group">
@@ -124,7 +124,7 @@
                                         @if($row->childs()->exists())
                                             @foreach($row->childs as $child)
                                             <tr>
-                                                <td style="padding-left: 30px">{{$child->name}}</td>
+                                                <td style="padding-left: 30px">- {{$child->name}}</td>
                                                 <td class="text-center">
                                                     <label class="ckbox-primary">
                                                         <input type="checkbox" name="category[]"
@@ -133,6 +133,20 @@
                                                     </label>
                                                 </td>
                                             </tr>
+                                                @if($child->childs()->exists())
+                                                    @foreach($child->childs as $ch)
+                                                        <tr>
+                                                            <td style="padding-left: 50px">-- {{$ch->name}}</td>
+                                                            <td class="text-center">
+                                                                <label class="ckbox-primary">
+                                                                    <input type="checkbox" name="category[]"
+                                                                           value="{{$ch->id}}" >
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endif
                                             @endforeach
                                         @endif
                                     <?php endforeach; ?>
