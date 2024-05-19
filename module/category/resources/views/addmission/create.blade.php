@@ -36,6 +36,14 @@
                                    placeholder="Nhập tên danh mục">
                         </div>
                         <div class="form-group">
+                            <label>Url ( sử dụng khi các đường dẫn danh mục trùng nhau )</label>
+                            <input class="form-control"
+                                   name="slug"
+                                   type="text"
+                                   value="{{old('slug')}}"
+                                   placeholder="VD : tieu-de-danh-muc">
+                        </div>
+                        <div class="form-group">
                             <label>Mô tả danh mục</label>
                             <textarea id="" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{old('description')}}</textarea>
                         </div>
