@@ -158,6 +158,20 @@
                                                             </label>
                                                         </td>
                                                     </tr>
+                                                    @if($ch->childs()->exists())
+                                                        @foreach($ch->childs as $chs)
+                                                            <tr>
+                                                                <td style="padding-left: 60px">--- {{$chs->name}}</td>
+                                                                <td class="text-center">
+                                                                    <label class="ckbox-primary">
+                                                                        <input type="checkbox" name="category[]"
+                                                                               value="{{$chs->id}}" >
+                                                                        <span></span>
+                                                                    </label>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endif
                                                 @endforeach
                                             @endif
                                         @endforeach
