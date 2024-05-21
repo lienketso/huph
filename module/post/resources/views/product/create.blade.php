@@ -126,7 +126,7 @@
                                     @if($row->childs()->exists())
                                         @foreach($row->childs as $child)
                                             <tr>
-                                                <td style="padding-left: 30px">- {{$child->name}}</td>
+                                                <td style="padding-left: 30px"><b>1.1 - </b> {{$child->name}}</td>
                                                 <td class="text-center">
                                                     <label class="ckbox-primary">
                                                         <input type="checkbox" name="category[]"
@@ -138,7 +138,7 @@
                                             @if($child->childs()->exists())
                                                 @foreach($child->childs as $ch)
                                                     <tr>
-                                                        <td style="padding-left: 50px">-- {{$ch->name}}</td>
+                                                        <td style="padding-left: 50px"><b>1.2 - </b> {{$ch->name}}</td>
                                                         <td class="text-center">
                                                             <label class="ckbox-primary">
                                                                 <input type="checkbox" name="category[]"
@@ -150,7 +150,7 @@
                                                     @if($ch->childs()->exists())
                                                         @foreach($ch->childs as $chs)
                                                             <tr>
-                                                                <td style="padding-left: 60px">--- {{$chs->name}}</td>
+                                                                <td style="padding-left: 60px"><b>1.3 - </b>{{$chs->name}}</td>
                                                                 <td class="text-center">
                                                                     <label class="ckbox-primary">
                                                                         <input type="checkbox" name="category[]"
