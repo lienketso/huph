@@ -80,7 +80,8 @@ class HomeController extends BaseController
         //tuyển sinh trang chủ
         $categoryTuyensinh = $this->catnews->orderBy('sort_order','asc')
             ->where('cat_type','tuyensinh')
-            ->where('parent','>',0)->get();
+            ->where('status','active')
+            ->where('parent',0)->get();
         //Tin Slider
 
 
@@ -212,5 +213,23 @@ class HomeController extends BaseController
             return response()->json($e->getMessage());
         }
     }
+
+    //load tuyển sinh home
+    public function loadTuyenSinhHome(Request $request){
+        $id = $request->categoryid;
+        $category = $this->catnews->find($id);
+        if($category){
+            $data = $category->posts()->where('display',1)->limit(3)->get()->map(function ($m){
+                $m->author = ($m->user()->exists()) ? $m->user->full_name : 'admin';
+                return $m;
+            });
+            return response()->json($data);
+        }else{
+            return response()->json([
+                'error' => 'post not found'
+            ], 404);
+        }
+    }
+
 
 }

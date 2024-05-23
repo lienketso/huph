@@ -1,4 +1,43 @@
 @extends('frontend::master')
+@section('js-init')
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.sl-ts-home').on('change',function (e){
+               e.preventDefault();
+                var selectedOption = $(this).find(':selected');
+               let _this = $(e.currentTarget);
+               let categoryid = _this.val();
+               var parent = selectedOption.attr('data-parent');
+                $.ajax({
+                    url: "{{ route('ajax.load.tuyensinh.get') }}",
+                    method: "GET",
+                    data: {
+                        categoryid
+                    },
+                    dataType: "json",
+                    beforeSend: function() {
+
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.length > 0) {
+                            var html = '';
+                            for (var i = 0; i < data.length; i++) {
+                                let link = '/post/'+data[i].slug;
+                                html += '<div class="item-news-ts"><p><a href="'+link+'">'+data[i].name+'</a></p><p class="date-ts">by <strong>'+data[i].author+'</strong></p></div>';
+                            }
+                            //append data with fade in effect
+                            $('#TS_'+parent).html(html);
+
+                        } else {
+
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+@endsection
 @section('content')
 
     @if($gallery)
@@ -33,46 +72,9 @@
             </div>
             <div class="row mt-3">
                 <div class="col">
-                    <div id="nav-program-mobile" class="dropdown" >
-                        <button
-                            class="btn btn-secondary dropdown-toggle"
-                            type="button"
-                            id="dropdownMenu2"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            Đại học chính quy
-                        </button>
-                        <ul
-                            class="dropdown-menu"
-                            id="nav-tab"
-                            role="tablist"
-                            aria-labelledby="dropdownMenuButton1"
-                        >
-                            @foreach($categoryTuyensinh as $key=>$d)
-                            <li
-                                class="dropdown-item"
-                                role="presentation"
-                            >
-                                <button
-                                    class="nav-link {{($key==0)?'active':''}}"
-                                    id="tab-{{$key}}"
-                                    data-bs-toggle="tab"
-                                    data-bs-target="#nav-{{$key}}"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="nav-{{$key}}"
-                                    aria-selected="true"
-                                >
-                                    {{$d->name}}
-                                </button>
-                            </li>
-                            @endforeach
 
-                        </ul>
-                    </div>
 
-                    <nav id="nav-program">
+                    <nav id="nav-program-fix">
                         <div
                             class="nav nav-tabs"
                             id="nav-tab"
@@ -96,10 +98,11 @@
                     </nav>
                     <div class="clearfix"></div>
                     <div class="col">
-                        <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-content" id="nav-tabContent-fix">
                             @foreach($categoryTuyensinh as $key=>$d)
                                 @php
-                                    $postHome = $d->posts()->orderBy('created_at','desc')->where('display', 1)->take(1)->get();
+                                    $postHome = $d->posts()->orderBy('created_at','desc')->where('display', 2)->take(1)->get();
+                                    $postLienquan = $d->posts()->orderBy('created_at','desc')->where('display', 1)->take(3)->get();
                                 @endphp
                             <div
                                 class="tab-pane fade {{($key==0) ? 'show active' : ''}}"
@@ -109,30 +112,63 @@
                                 tabindex="0"
                             >
                                 <div class="home-tab-1">
-                                    @foreach($postHome as $p)
-                                        <div class="item-tuyen-sinh-home">
-                                            <div class="logo-am">
-                                                <img src="{{asset('frontend/assets/image/am-ban.png')}}" alt="Logo âm bản">
-                                            </div>
-                                                <a class="img-hot-new" href="{{route('frontend::blog.detail.get',$p->slug)}}">
-                                                    <img src="{{ ($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('admin/themes/images/no-image.png')}}" />
-                                                </a>
-                                                <div class="content">
-                                                    <h1>
-                                                        {{$p->name}}
-                                                    </h1>
-                                                    <p>
-                                                       {!! cut_string($p->description,300) !!}
-                                                    </p>
-                                                    <a href="{{route('frontend::blog.index.get',$d->slug)}}" class="show-more"
-                                                    >Xem thêm các tin liên quan
-                                                        -></a>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="list-item-ts-home">
+                                                <div class="select-child-ts">
+                                                    <select name="category" class="sl-ts-home">
+                                                        <option value="">Chọn thông tin</option>
+                                                        @if($d->childs()->exists())
+                                                            @foreach($d->childs as $child)
+                                                                <option data-parent="{{$d->id}}" value="{{$child->id}}">{{$child->name}}</option>
+                                                            @endforeach
+                                                        @endif
+                                                    </select>
                                                 </div>
-                                            <div class="let-go">
-                                                " {!! $setting['keyword_3_'.$lang] !!} "
+                                                <div class="list-news-ts">
+                                                    <h4>Các tin liên quan</h4>
+                                                    <div class="bg-ts" id="TS_{{$d->id}}">
+                                                        @foreach($postLienquan as $l)
+                                                        <div class="item-news-ts">
+                                                            <p><a href="{{route('frontend::blog.detail.get',$l->slug)}}">{{$l->name}}</a></p>
+                                                            <p class="date-ts">by <strong>{{($l->user()->exists()) ? $l->user->full_name : 'admin'}}</strong> - {{datetoString($l->created_at)}}</p>
+                                                        </div>
+                                                        @endforeach
+                                                    </div>
+
+
+                                                </div>
                                             </div>
                                         </div>
-                                    @endforeach
+                                        <div class="col-lg-8">
+                                            @foreach($postHome as $p)
+                                                <div class="item-tuyen-sinh-home-fix">
+                                                    <h4>Thông báo nổi bật</h4>
+                                                    <div class="content">
+                                                        <h3>
+                                                            {{$p->name}}
+                                                        </h3>
+
+                                                        <div class="desc-ts-home">
+                                                            {!! cut_string($p->description,500) !!}
+                                                        </div>
+
+
+                                                        <div class="let-go">
+                                                            <a href="#">
+                                                                <img src="{{asset('frontend/assets/image/btn-dang-ky.png')}}" alt="Đăng ký ứng tuyển huph">
+                                                            </a>
+                                                            <a href="{{route('frontend::blog.detail.get',$p->slug)}}" class="show-more"
+                                                            >Xem thêm thông tin chi tiết
+                                                                -></a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                             @endforeach

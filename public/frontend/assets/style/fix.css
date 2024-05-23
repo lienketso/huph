@@ -249,7 +249,123 @@ footer ul.list-custom li a, .list-group-item{
 .sodotochuc img{
     height: auto !important;
 }
-
+#nav-program-fix .nav-tabs{
+    border-bottom: 0;
+}
+#nav-program-fix button{
+    width: calc(100%/3);
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 32px;
+    color: #0D5F41;
+    border-radius: 15px 15px 0 0;
+}
+#nav-program-fix button.active{
+    background: #205C40;
+    color: #fff;
+    border-bottom: 0;
+}
+#nav-tabContent-fix{
+    background: #205C40;
+    border-radius: 0 0 15px 15px;
+}
+#nav-tabContent-fix .tab-pane{
+    padding: 30px;
+}
+.item-tuyen-sinh-home-fix .content{
+    background: #fff;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+}
+.item-tuyen-sinh-home-fix h4{
+    background: #81CF28;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding: 10px 20px;
+    border-radius: 15px 15px 0 0;
+}
+.desc-ts-home{
+    padding: 20px 0;
+}
+.item-tuyen-sinh-home-fix .content .let-go{
+    position: relative;
+}
+.item-tuyen-sinh-home-fix .content .let-go a.show-more{
+    color: #393D40;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    text-decoration: none;
+}
+.item-tuyen-sinh-home-fix .content .let-go a.show-more:hover{
+    color: #81CF28;
+}
+.item-tuyen-sinh-home-fix .content h3{
+    font-size: 30px;
+    color: #0D5F41;
+    font-weight: 700;
+    line-height: 33px;
+}
+.sl-ts-home{
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #0D5F41;
+    outline: none;
+    font-size: 18px;
+}
+.list-news-ts{
+    padding-top: 20px;
+}
+.list-news-ts h4{
+    background: #81CF28;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
+    padding: 10px 20px;
+}
+.bg-ts{
+    background: #fff;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+}
+.item-news-ts{
+    border-bottom: 1px solid #393D40;
+    padding: 10px 0;
+}
+.item-news-ts:last-child{
+    border-bottom: 0;
+}
+.item-news-ts p{
+    margin-bottom: 0;
+    line-height: 20px;
+}
+.item-news-ts p a{
+    color: #205C40;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-decoration: none;
+}
+.item-news-ts p a:hover{
+    text-decoration: underline;
+}
+.item-news-ts p.date-ts{
+    font-size: 9px;
+    color: #393D40;
+    padding-top: 5px;
+}
+.item-news-ts p.date-ts strong{
+    text-decoration: underline;
+}
 @media (min-width: 768px) {
     .map-company{
         width: 50%;
@@ -337,5 +453,28 @@ footer ul.list-custom li a, .list-group-item{
     }
     .wrapper-slider div {
         width: 45%;
+    }
+    #nav-program-fix .nav-tabs {
+        display: block;
+        width: 100%;
+    }
+    #nav-program-fix button{
+        width: 100%;
+        background: #81CF28;
+        color: #fff;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+    .list-news-ts{
+        margin-bottom: 20px;
+    }
+    .item-tuyen-sinh-home-fix .content .let-go{
+        text-align: center;
+    }
+    .item-tuyen-sinh-home-fix .content .let-go a.show-more{
+        position: relative;
+    }
+    #nav-tabContent-fix .tab-pane{
+        padding: 10px;
     }
 }

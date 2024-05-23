@@ -49,6 +49,7 @@ Route::group(['prefix'=>'blog'],function(Router $router){
         ->name('frontend::blog.load-more.get');
 });
 
+
 //tags
 Route::group(['prefix'=>'tags'],function(Router $router){
     $router->get('{slug}','BlogController@tags')

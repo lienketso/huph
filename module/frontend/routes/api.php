@@ -6,3 +6,6 @@ Route::get('create-newsletter','HomeController@createNewletter')->name('ajax.new
 Route::get('create-partner','HomeController@createPartner')->name('ajax.create.partner.get');
 Route::get('submit-contact-form','HomeController@submitForm')->name('ajax.submit.form.get');
 Route::get('find-result-admissions','HomeController@findAdmission')->name('ajax.result.admissions.get');
+//ajax load tuyển sinh home
+Route::get('load-tuyen-sinh-home','HomeController@loadTuyenSinhHome')
+    ->name('ajax.load.tuyensinh.get');
