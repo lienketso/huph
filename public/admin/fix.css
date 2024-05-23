@@ -227,10 +227,13 @@ ul.tree1 li span a{
 .preview-post{
     padding-top: 10px;
 }
-.preview-post a{
+.preview-post a, .view-post{
     border: 1px solid #0F9E5E;
     background: #0a90eb;
     border-radius: 5px;
     padding: 5px 10px;
     color: #fff;
+}
+.view-post:hover{
+    color: #fde3e7;
 }

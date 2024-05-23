@@ -7,6 +7,7 @@ use Acl\Models\RoleUser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Config;
+use Post\Models\Post;
 
 class Users extends Authenticatable
 {
@@ -57,6 +58,10 @@ class Users extends Authenticatable
         } else {
             return null;
         }
+    }
+
+    public function posts(){
+        return $this->hasMany(Post::class,'user_post','id');
     }
 
 }

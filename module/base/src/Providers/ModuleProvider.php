@@ -83,6 +83,7 @@ class ModuleProvider extends ServiceProvider
         $this->app->register(\Order\Providers\ModuleProvider::class);
         $this->app->register(\Location\Providers\ModuleProvider::class);
         $this->app->register(\Scores\Providers\ModuleProvider::class);
+        $this->app->register(\Reports\Providers\ModuleProvider::class);
     }
 
 }

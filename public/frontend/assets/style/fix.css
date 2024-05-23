@@ -262,7 +262,8 @@ footer ul.list-custom li a, .list-group-item{
         padding-bottom: 10px;
     }
     .border-img{
-        height: 260px;
+        height: 220px;
+        width: 300px;
     }
     .border-img img{
         width: 100%;

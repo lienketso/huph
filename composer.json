@@ -66,7 +66,8 @@
             "Frontend\\": "module/frontend/src",
             "Order\\": "module/order/src",
             "Location\\": "module/location/src",
-            "Scores\\": "module/scores/src"
+            "Scores\\": "module/scores/src",
+            "Reports\\": "module/reports/src"
         },
         "classmap": [
             "database/seeds",
