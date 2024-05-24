@@ -264,11 +264,14 @@ footer ul.list-custom li a, .list-group-item{
 #nav-program-fix button.active{
     background: #205C40;
     color: #fff;
-    border-bottom: 0;
+    border: 0;
 }
 #nav-tabContent-fix{
     background: #205C40;
     border-radius: 0 0 15px 15px;
+    /*border-left: 2px solid #81CF28;*/
+    /*border-right: 2px solid #81CF28;*/
+    /*border-bottom: 2px solid #81CF28;*/
 }
 #nav-tabContent-fix .tab-pane{
     padding: 30px;
