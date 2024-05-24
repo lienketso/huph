@@ -81,7 +81,7 @@ class HomeController extends BaseController
         $categoryTuyensinh = $this->catnews->orderBy('sort_order','asc')
             ->where('cat_type','tuyensinh')
             ->where('status','active')
-            ->where('parent',0)->get();
+            ->where('parent',10)->get();
         //Tin Slider
 
 
