@@ -87,10 +87,17 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
+                            <label>Loại danh mục </label>
+                            <select id="" name="cat_type" class="form-control" style="width: 100%" data-placeholder="">
+                                <option value="post" {{(old('cat_type')=='post') ? 'selected' : ''}}>Tin tức (default)</option>
+                                <option value="daotao" {{(old('cat_type')=='daotao') ? 'selected' : ''}}>Ngành đào tạo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Danh mục cha</label>
                             <select id="" name="parent" class="form-control" style="width: 100%" data-placeholder="">
                                 <option value="0">--Là danh mục cha--</option>
-                                {{$model->optionCategoryTS(0,1,4,0,0,'post')}}
+                                {{$model->optionCategory(0,1,4,0,0)}}
                             </select>
                         </div>
                         <div class="form-group">

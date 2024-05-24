@@ -73,10 +73,10 @@ class ModuleProvider extends \Illuminate\Support\ServiceProvider
                 $views->with(['quicklinksFooter'=>$quicklinksFooter]);
             }
             //video
-            if(!$views->offsetExists('videoHome')){
+            if(!$views->offsetExists('latestBlog')){
                 $lang = \session('lang');
-                $videoHome = $postRepository->findWhere(['status'=>'active','display'=>1,'post_type'=>'video','lang_code'=>$lang])->take(6);
-                $views->with(['videoHome'=>$videoHome]);
+                $latestBlog = $postRepository->findWhere(['status'=>'active','display'=>1,'post_type'=>'blog','lang_code'=>$lang])->take(6);
+                $views->with(['latestBlog'=>$latestBlog]);
             }
             // partner
             if(!$views->offsetExists('partners')){

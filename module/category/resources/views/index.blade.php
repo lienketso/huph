@@ -65,7 +65,7 @@
                                         data-url="{{route('ajax.parent.get')}}"
                                 >
                                     <option value="0">--Là nhóm cha--</option>
-                                    {{$model->optionCategoryTS(0,1,4,$d->parent,$d->id,'post')}}
+                                    {{$model->optionCategory(0,1,4,$d->parent,$d->id)}}
                                 </select>
                             </td>
                             <td><input type="number" min="0" name="sort_order" id="sortID_{{$d->id}}"

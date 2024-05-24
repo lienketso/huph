@@ -366,6 +366,26 @@ footer ul.list-custom li a, .list-group-item{
 .item-news-ts p.date-ts strong{
     text-decoration: underline;
 }
+.child-category-page{
+    padding: 50px 0;
+    text-align: center;
+}
+.title-dao-tao{
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+.item-category-nganh a{
+    background: #81CF28;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 10px;
+    display: block;
+    padding: 10px;
+}
 @media (min-width: 768px) {
     .map-company{
         width: 50%;

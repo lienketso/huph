@@ -35,7 +35,7 @@ class CategoryController extends BaseController
         }
         $data = $q->orderBy('created_at','desc')
             ->where('lang_code',$this->langcode)
-            ->where('cat_type','post')
+            ->where('cat_type','!=','tuyensinh')
             ->paginate(15);
         $model = $this->model;
         return view('wadmin-category::index',['data'=>$data,'model'=>$model]);

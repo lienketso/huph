@@ -18,7 +18,7 @@ class CategoryRepository extends BaseRepository
     public function optionCategory($id, $level,$max, $selected,$ids){
         $language = session('lang');
         $category = $this->scopeQuery(function ($e) use($id,$level,$max,$selected,$ids,$language){
-           return $e->where('parent',$id)->where('lang_code',$language);
+           return $e->where('parent',$id)->where('cat_type','!=','tuyensinh')->where('lang_code',$language);
         })->all();
         if($category){
             foreach ($category as $row){
