@@ -155,7 +155,7 @@
 
 
                                                         <div class="let-go">
-                                                            <a href="#">
+                                                            <a href="https://tuyensinhdaihoc.huph.edu.vn/" target="_blank">
                                                                 <img src="{{asset('frontend/assets/image/btn-dang-ky.png')}}" alt="Đăng ký ứng tuyển huph">
                                                             </a>
                                                             <a href="{{route('frontend::blog.detail.get',$p->slug)}}" class="show-more"

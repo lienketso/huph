@@ -78,8 +78,7 @@ class PostsController extends BaseController
         $lang = $this->langcode;
         $catMeta = CategoryMeta::all();
         $factory = $this->fac->orderBy('sort_order','asc')->findWhere(['status'=>'active','lang_code'=>$this->langcode])->all();
-        $allCategory = $this->cat->orderBy('name','asc')
-            ->findWhere(['parent'=>0,'lang_code'=>$this->langcode,'cat_type'=>'post'])->all();
+        $allCategory = $this->cat->where('parent',0)->where('lang_code',$this->langcode)->where('cat_type','!=','tuyensinh')->get();
 
         return view('wadmin-post::create',[
             'allCategory'=>$allCategory,
@@ -138,7 +137,7 @@ class PostsController extends BaseController
     }
 
     function getEdit($id){
-        $allCategory = $this->cat->orderBy('name','asc')->findWhere(['parent'=>0,'lang_code'=>$this->langcode,'cat_type'=>'post'])->all();
+        $allCategory = $this->cat->where('parent',0)->where('lang_code',$this->langcode)->where('cat_type','!=','tuyensinh')->get();
         $data = $this->model->find($id);
         $userLog = Auth::user();
         $roles = $userLog->load('roles.perms');

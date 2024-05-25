@@ -396,6 +396,84 @@ footer ul.list-custom li a, .list-group-item{
     background: rgba(0,0,0,0.3);
     content: '';
 }
+.heading-nganh{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.line-title-nganh{
+    height: 30px;
+    flex: 1;
+    background: url("../image/line-title.png");
+    display: block;
+}
+.title-nganh-page{
+    font-size: 40px;
+    font-weight: 900;
+    font-style: italic;
+    color: #81CF28;
+    text-transform: uppercase;
+    flex: 0 0 auto;
+}
+.myTabNganh{
+    padding: 10px 0;
+    box-shadow: 1px 1px 10px 1px #bbbec7;
+}
+.myTabNganh .nav-item .nav-link{
+    color: #7B7B7B;
+    font-size: 18px;
+    font-weight: 600;
+}
+.myTabNganh .nav-item .nav-link.active{
+    color: #393D40;
+    border: 0;
+}
+.myTabNganh .nav-item .nav-link.active span{
+    border-bottom: 2px solid #0D5F41;
+    padding-bottom: 6px;
+}
+.tab-content-nganh{
+    margin-bottom: 20px;
+}
+.list-post-nganh{
+    padding: 20px;
+    box-shadow: 1px 1px 10px 1px #bbbec7;
+    margin: 10px 0;
+}
+.list-post-nganh .item-post-nganh{
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-flex;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 900;
+    color: #81CF28;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: italic;
+    -webkit-text-stroke: 1px #fff;
+}
+.list-post-nganh .item-post-nganh:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    border-radius: 15px;
+}
+.list-post-nganh .item-post-nganh:hover{
+    color: #fff;
+}
+.list-post-nganh .item-post-nganh span{
+    width: 100%;
+    z-index: 1;
+}
 @media (min-width: 768px) {
     .map-company{
         width: 50%;

@@ -38,62 +38,64 @@
     <section class="child-category-page">
         <div class="container">
             <h1 class="title-dao-tao">GIỚI THIỆU VỀ CÁC NGÀNH ĐÀO TẠO</h1>
+            @foreach($data->childs as $child)
             <div class="row">
-                @foreach($data->childs as $child)
-                <div class="col-lg-4">
-                    <div class="item-category-nganh">
-                        <a href="{{route('frontend::blog.index.get',$child->slug)}}">{{$child->name}}</a>
+                <div class="heading-nganh">
+                    <span class="title-nganh-page">{{$child->name}}</span>
+                    <div class="line-title-nganh">
                     </div>
                 </div>
-                @endforeach
+
+                <div class="con-lg-12">
+                    <ul class="nav nav-tabs myTabNganh" id="" role="tablist">
+                        @if($child->childs()->exists())
+                            @foreach($child->childs as $key=>$c)
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link {{($key==0)?'active':''}}"
+                                    id="home-tab{{$c->id}}" data-bs-toggle="tab"
+                                    data-bs-target="#home-tab-pane{{$c->id}}"
+                                    type="button" role="tab"
+                                    aria-controls="home-tab-pane{{$c->id}}"
+                                    aria-selected="true"><span>{{$c->name}}</span></button>
+                        </li>
+                            @endforeach
+                        @endif
+
+                    </ul>
+                    <div class="tab-content tab-content-nganh" id="">
+                        @if($child->childs()->exists())
+                            @foreach($child->childs as $key=>$c)
+                        <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
+                             tabindex="{{$key}}">
+                            @if($c->childs()->exists())
+                            <div class="list-post-nganh">
+                                <div class="row">
+                                    @foreach($c->childs as $three)
+                                    <div class="col-lg-3">
+                                        <a class="item-post-nganh"
+                                           href="{{route('frontend::blog.index.get',$three->slug)}}"
+                                           style="background-image: url('{{($three->thumbnail!='') ? upload_url($three->thumbnail) : asset('admin/themes/images/no-image.png')}}')">
+                                            <span>{{$three->name}}</span>
+                                        </a>
+                                    </div>
+                                    @endforeach
+
+                                </div>
+                            </div>
+                                @endif
+                        </div>
+                            @endforeach
+                        @endif
+
+                    </div>
+                </div>
+
             </div>
+            @endforeach
         </div>
     </section>
     @endif
-
-    <section id="news">
-        <div class="container">
-            <div class="row" id="items_container">
-                @foreach($post as $d)
-                    <div class="col-md-12">
-                        <div class="card list-card">
-                            <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
-                                <div class="border-img">
-                                    <div class="border-tag">
-                                        @if($d->categories()->exists())
-                                            @foreach($d->categories as $c)
-                                                <span class="badge rounded-pill text-bg-tag">{{$c->name}}</span>
-                                            @endforeach
-                                        @endif
-
-                                    </div>
-
-                                    <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
-                                         class="card-img-top" alt="{{$d->name}}" />
-                                </div>
-
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        {{cut_string($d->name,100)}}
-                                    </h5>
-
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">
-                                        by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
-                                    </h6>
-
-                                    <p>
-                                        {!! ($d->description!='') ? cut_string($d->description,150) : cut_string(strip_tags($d->content),150) !!}
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-
-            </div>
-        </div>
-    </section>
-
+    
     @include('frontend::form')
     @include('frontend::latest')
 @endsection

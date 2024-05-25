@@ -14,14 +14,15 @@ class CategoryCreateRequest extends FormRequest
 
     public function rules(){
         return [
-            'name'=> 'required|unique:category,name'
+            'name'=>'required',
+            'slug'=> 'unique:category,slug'
         ];
     }
 
     public function messages(){
         return [
             'name.required'=>'Bạn chưa nhập tên danh mục',
-            'name.unique'=>'Danh mục đã tồn tại'
+            'slug.unique'=>'Danh mục đã tồn tại'
         ];
     }
 }

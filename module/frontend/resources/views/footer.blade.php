@@ -10,7 +10,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <h4>{!! $setting['keyword_9_'.$lang] !!}</h4>
+{{--                <h4>{!! $setting['keyword_9_'.$lang] !!}</h4>--}}
                 <ul class="list-group list-custom">
                     @foreach($quicklinks as $d)
                     <li class="list-group-item"><a href="{{$d->link}}">{{$d->name}}</a></li>
