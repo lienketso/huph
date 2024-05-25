@@ -473,6 +473,7 @@ footer ul.list-custom li a, .list-group-item{
 .list-post-nganh .item-post-nganh span{
     width: 100%;
     z-index: 1;
+    padding: 0 10px;
 }
 @media (min-width: 768px) {
     .map-company{
