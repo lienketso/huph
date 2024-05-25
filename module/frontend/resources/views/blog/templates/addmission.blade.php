@@ -157,9 +157,9 @@
                                                 >
                                                     by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
                                                 </h6>
-                                                <p>
+                                                <div class="desc-tin">
                                                     {!! ($d->description!='') ? cut_string($d->description,150) : cut_string(strip_tags($d->content),150) !!}
-                                                </p>
+                                                </div>
                                             </div>
                                             </a>
                                         </div>
