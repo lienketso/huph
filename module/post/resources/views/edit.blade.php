@@ -193,7 +193,9 @@
                                                                 <td class="text-center">
                                                                     <label class="ckbox-primary">
                                                                         <input type="checkbox" name="category[]"
-                                                                               value="{{$chs->id}}" >
+                                                                               value="{{$chs->id}}"
+                                                                            {!! (in_array($chs->id, $currentCategories)) ? 'checked' : '' !!}
+                                                                        >
                                                                         <span></span>
                                                                     </label>
                                                                 </td>
