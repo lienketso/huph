@@ -150,7 +150,7 @@
                                                         </h3>
 
                                                         <div class="desc-ts-home">
-                                                            {!! cut_string($p->description,500) !!}
+                                                            {!! ($p->description!='') ? cut_string($p->description,600) : cut_string(strip_tags($p->content),600) !!}
                                                         </div>
 
 
