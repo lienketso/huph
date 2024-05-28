@@ -402,6 +402,10 @@ footer ul.list-custom li a, .list-group-item{
     background: rgba(0,0,0,0.3);
     content: '';
 }
+.snip1135 a.active{
+    color: #205c40 !important;
+    font-weight: 900;
+}
 .heading-nganh{
     display: flex;
     align-items: center;
@@ -437,6 +441,8 @@ footer ul.list-custom li a, .list-group-item{
 .myTabNganh .nav-item .nav-link.active span{
     border-bottom: 2px solid #0D5F41;
     padding-bottom: 6px;
+    color: #0D5F41;
+    font-weight: 900;
 }
 .tab-content-nganh{
     margin-bottom: 20px;
@@ -480,6 +486,19 @@ footer ul.list-custom li a, .list-group-item{
     width: 100%;
     z-index: 1;
     padding: 0 10px;
+}
+.edit-post-admin{
+    text-align: right;
+    position: relative;
+    top: -20px;
+    font-size: 14px;
+}
+.edit-post-admin a, .edit-post-admin-fix a{
+    color: #666;
+}
+.edit-post-admin-fix{
+    font-size: 14px;
+    padding-top: 10px;
 }
 @media (min-width: 768px) {
     .bg-ts{

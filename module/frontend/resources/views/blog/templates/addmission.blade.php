@@ -161,6 +161,11 @@
                                             </div>
                                             </a>
                                         </div>
+                                        @if(auth()->check())
+                                            <div class="edit-post-admin">
+                                                <a href="{{route('wadmin::tuyen-sinh.edit.get',$d->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                            </div>
+                                        @endif
                                     </div>
                                     @endforeach
 

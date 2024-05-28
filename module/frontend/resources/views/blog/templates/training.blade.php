@@ -90,6 +90,11 @@
                                                            style="background-image: url('{{($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('admin/themes/images/no-image.png')}}')">
                                                             <span>{{cut_string($p->name,35)}}</span>
                                                         </a>
+                                                        @if(auth()->check())
+                                                            <div class="edit-post-admin-fix">
+                                                                <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 @endforeach
                                             @endif

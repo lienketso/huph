@@ -167,10 +167,18 @@
 
                                 <p>
                                     {!! ($d->description!='') ? cut_string($d->description,150) : cut_string(strip_tags($d->content),150) !!}
+
                                 </p>
+
                             </div>
                             </a>
                         </div>
+                        @if(auth()->check())
+                        <div class="edit-post-admin">
+                            <a href="{{route('wadmin::post.edit.get',$d->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                        </div>
+                        @endif
+
                     </div>
                 @endforeach
 
