@@ -98,7 +98,9 @@ class PostsController extends BaseController
             $input['file_attach'] = replace_thumbnail($input['file_attach']);
             $input['banner'] = replace_thumbnail($input['banner']);
             $input['post_type'] = 'blog';
-            $input['slug'] = $request->name;
+            if($request->slug=='' || is_null($request->slug)){
+                $input['slug'] = $request->name;
+            }
             $input['user_post'] = Auth::id();
             $input['lang_code'] = $this->langcode;
             $input['created_at'] = input_format_date($request->created_at);
@@ -174,7 +176,9 @@ class PostsController extends BaseController
             $input['file_attach'] = replace_thumbnail($input['file_attach']);
             $input['banner'] = replace_thumbnail($input['banner']);
             $input['post_type'] = 'blog';
-            $input['slug'] = $request->name;
+            if($request->slug=='' || is_null($request->slug)){
+                $input['slug'] = $request->name;
+            }
             $input['user_edit'] = Auth::id();
 
             $input['created_at'] = input_format_date($request->created_at);

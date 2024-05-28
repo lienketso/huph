@@ -75,7 +75,9 @@ class AdmissionController extends BaseController
             $input = $request->except(['_token','continue_post']);
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['banner'] = replace_thumbnail($input['banner']);
-            $input['slug'] = $request->name;
+            if($request->slug=='' || is_null($request->slug)){
+                $input['slug'] = $request->name;
+            }
             $input['user_post'] = Auth::id();
             $input['lang_code'] = $this->langcode;
             $input['post_type'] = 'tuyensinh';
@@ -125,7 +127,9 @@ class AdmissionController extends BaseController
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['banner'] = replace_thumbnail($input['banner']);
             $input['post_type'] = 'tuyensinh';
-            $input['slug'] = $request->name;
+            if($request->slug=='' || is_null($request->slug)){
+                $input['slug'] = $request->name;
+            }
             $input['user_edit'] = Auth::id();
             //cấu hình seo
             if($request->meta_title==''){

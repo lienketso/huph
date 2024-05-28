@@ -139,13 +139,11 @@
                                         <div class="card">
                                             <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
                                             <div class="border-img">
-
                                                     <img
                                                         src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
                                                         class="card-img-top"
                                                         alt="{{$d->name}}"
                                                     />
-
                                             </div>
 
                                             <div class="card-body">

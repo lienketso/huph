@@ -152,15 +152,6 @@
                         <div class="card list-card">
                             <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
                             <div class="border-img">
-                                <div class="border-tag">
-                                    @if($d->categories()->exists())
-                                        @foreach($d->categories as $c)
-                                            <span class="badge rounded-pill text-bg-tag">{{$c->name}}</span>
-                                        @endforeach
-                                    @endif
-
-                                </div>
-
                                     <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
                                          class="card-img-top" alt="{{$d->name}}" />
                             </div>

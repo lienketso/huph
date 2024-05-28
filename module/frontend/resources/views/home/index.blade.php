@@ -102,7 +102,7 @@
                             @foreach($categoryTuyensinh as $key=>$d)
                                 @php
                                     $postHome = $d->posts()->orderBy('created_at','desc')->where('display', 2)->take(1)->get();
-                                    $postLienquan = $d->posts()->orderBy('created_at','desc')->where('display', 1)->take(3)->get();
+                                    $postLienquan = $d->posts()->orderBy('created_at','desc')->where('display', 1)->take(4)->get();
                                 @endphp
                             <div
                                 class="tab-pane fade {{($key==0) ? 'show active' : ''}}"

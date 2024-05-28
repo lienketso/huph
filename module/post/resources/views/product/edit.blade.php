@@ -32,6 +32,27 @@
         }
     </script>
 
+    <script type="text/javascript">
+        function removeVietnameseTones(str) {
+            str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+            str = str.replace(/đ/g, 'd').replace(/Đ/g, 'D');
+            return str;
+        }
+        function generateSlug(str) {
+            str = removeVietnameseTones(str); // Loại bỏ dấu tiếng Việt
+            str = str.trim().toLowerCase();  // Chuyển thành chữ thường và loại bỏ khoảng trắng ở đầu và cuối
+            str = str.replace(/[^a-z0-9\s-]/g, '');  // Loại bỏ các ký tự đặc biệt
+            str = str.replace(/\s+/g, '-');  // Thay khoảng trắng bằng dấu gạch ngang
+            str = str.replace(/-+/g, '-');  // Loại bỏ các dấu gạch ngang thừa
+            return str;
+        }
+        function updateSlug() {
+            const titleInput = document.getElementById('title');
+            const slugInput = document.getElementById('slug');
+            slugInput.value = generateSlug(titleInput.value);
+        }
+    </script>
+
 @endsection
 
 @section('content')
@@ -65,9 +86,20 @@
                             <label>Tiêu đề</label>
                             <input class="form-control"
                                    name="name"
+                                   id="title"
                                    type="text"
                                    value="{{$data->name}}"
-                                   placeholder="Tên sản phẩm">
+                                   onkeyup="updateSlug()"
+                                   placeholder="Tiêu đề tuyển sinh">
+                        </div>
+                        <div class="form-group">
+                            <label>Url ( Tự động lấy theo tiêu đề hoặc nhập form dưới )</label>
+                            <input class="form-control"
+                                   name="slug"
+                                   type="text"
+                                   id="slug"
+                                   value="{{$data->slug}}"
+                                   placeholder="Ex : tieu-de-bai-viet">
                         </div>
                         <div class="form-group">
                             <label>Mô tả</label>
