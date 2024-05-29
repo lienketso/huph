@@ -70,7 +70,8 @@ class AdmissionController extends BaseController
         $permissionPost = $roles->roles->first()->perms;
         return view('wadmin-post::product.create',['categories'=>$categories,'permissionPost'=>$permissionPost]);
     }
-    public function postCreateProduct(PostCreateRequest $request){
+    public function postCreateProduct(Request $request){
+
         try{
             $input = $request->except(['_token','continue_post']);
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
@@ -90,7 +91,14 @@ class AdmissionController extends BaseController
             }
             //create TS data
             $category = $request->category;
-            $data = $this->model->create($input);
+            if(!is_null($request->post_id) || $request->post_id!=''){
+                $data = Post::updateOrCreate(
+                    ['id' => $request->post_id],$input
+                );
+            }else{
+                $data = $this->model->create($input);
+            }
+//            $data = $this->model->create($input);
             $this->model->sync($data->id,'categories',$category);
 
             if($request->has('continue_post')){

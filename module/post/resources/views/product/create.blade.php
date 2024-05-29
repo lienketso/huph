@@ -43,6 +43,42 @@
         }
     </script>
 
+    <script type="text/javascript">
+            $(document).ready(function() {
+            function autoSave() {
+                let post_id = $('#post_id').val();
+                let title = $('#title').val();
+                let post_type = $('#post_type').val();
+                let slug = $('#slug').val();
+                let description = CKEDITOR.instances.editor1.getData();
+                let contents = CKEDITOR.instances.editor2.getData();
+                if (title.length >= 1) {
+                    $.ajax({
+                        url: "{{ route('ajax.save-post.get') }}",
+                        method: "POST",
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content'),
+                            post_id: post_id,
+                            title: title,
+                            description: description,
+                            contents: contents,
+                            post_type: post_type,
+                            slug:slug
+                        },
+                        success: function (response) {
+                            $('#post_id').val(response.post_id);
+                            let UrlPreview = response.newUrl;
+                            $('#PreviewPost').attr('href', UrlPreview);
+                        }
+                    });
+                }
+            }
+
+            setInterval(autoSave, 20000); // Lưu bản nháp mỗi 20 giây
+
+        });
+    </script>
+
 @endsection
 
 @section('content')
@@ -74,6 +110,8 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <label>Tiêu đề</label>
+                            <input type="hidden" name="post_id" id="post_id">
+                            <input type="hidden" name="post_type" id="post_type" value="tuyensinh">
                             <input class="form-control"
                                    name="name"
                                    type="text"
@@ -132,6 +170,9 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">Tùy chọn thêm</h4>
                         <p>Thông tin các tùy chọn thêm </p>
+                        <div class="btn-preview">
+                            <a id="PreviewPost" target="_blank" href=""><i class="fa fa-eye"></i> Preview post</a>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <div class="form-group">

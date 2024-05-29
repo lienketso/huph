@@ -91,7 +91,7 @@ class PostsController extends BaseController
             'factory'=>$factory
         ]);
     }
-    public function postCreate(PostCreateRequest $request){
+    public function postCreate(Request $request){
         try{
             $input = $request->except(['_token','continue_post']);
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
@@ -113,17 +113,15 @@ class PostsController extends BaseController
             if($request->meta_desc==''){
                 $input['meta_desc'] = $request->description;
             }
-            $data = $this->model->create($input);
+            if(!is_null($request->post_id) || $request->post_id!=''){
+                $data = Post::updateOrCreate(
+                    ['id' => $request->post_id],$input
+                );
+            }else{
+                $data = $this->model->create($input);
+            }
+//            $data = $this->model->create($input);
             $this->model->sync($data->id,'categories',$category);
-
-            //set meta for post
-//            if(!is_null($request->meta)){
-//                $arr = [];
-//                foreach($request->meta as $key=>$m){
-//                    $arr += [$key=>json_encode($m,JSON_UNESCAPED_UNICODE)];
-//                }
-//                $this->model->setMeta($arr,$data->id);
-//            }
 
             if($request->has('continue_post')){
                 return redirect()

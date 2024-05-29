@@ -237,3 +237,11 @@ ul.tree1 li span a{
 .view-post:hover{
     color: #fde3e7;
 }
+.btn-preview{
+    padding-top: 20px;
+}
+.btn-preview a{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+}

@@ -6,6 +6,8 @@ use Barryvdh\Debugbar\Controllers\BaseController;
 use Category\Models\CategoryMeta;
 use Category\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Post\Models\Post;
 
 class ApiPostController extends BaseController
 {
@@ -25,4 +27,23 @@ class ApiPostController extends BaseController
 
         return $category;
     }
+
+    public function saveDraft(Request $request)
+    {
+        $post = Post::updateOrCreate(
+            ['id' => $request->post_id],
+            [
+                'name' => $request->title,
+                'slug'=>$request->slug,
+                'description' => $request->description,
+                'content' => $request->contents,
+                'post_type'=>$request->post_type,
+                'user_post'=>Auth::id(),
+                'status' => 'disable',
+            ]
+        );
+
+        return response()->json(['success' => true, 'post_id' => $post->id,'newUrl'=>route('frontend::blog.detail.get',$post->slug)]);
+    }
+
 }

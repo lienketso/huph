@@ -65,13 +65,15 @@
                     <div class="tab-content tab-content-nganh" id="">
                         @if($child->childs()->exists())
                             @php
-                                $postsNganh = $child->posts()->where('status','active')->limit(16)->get();
+                                $postsNganh = $child->posts()->where('status','active')->where('is_hot','!=',1)->limit(16)->get();
+                                $postNoibat = $child->posts()->where('status','active')->where('is_hot',1)->limit(1)->get();
                             @endphp
                             @foreach($child->childs as $key=>$c)
                                 <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
                                      tabindex="{{$key}}">
                                     <div class="list-post-nganh">
                                         <div class="row">
+
                                             @if($c->childs()->exists())
                                                 @foreach($c->childs as $three)
                                                 <div class="col-lg-3">
@@ -83,6 +85,22 @@
                                                 </div>
                                                 @endforeach
                                                 @else
+                                                    @if($postNoibat)
+                                                        @foreach($postNoibat as $p)
+                                                            <div class="col-lg-3">
+                                                                <a class="item-post-nganh"
+                                                                   href="{{route('frontend::blog.detail.get',$p->slug)}}"
+                                                                   style="background-image: url('{{($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('admin/themes/images/no-image.png')}}')">
+                                                                    <span>{{cut_string($p->name,35)}}</span>
+                                                                </a>
+                                                                @if(auth()->check())
+                                                                    <div class="edit-post-admin-fix">
+                                                                        <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+                                                        @endforeach
+                                                    @endif
                                                 @foreach($postsNganh as $p)
                                                     <div class="col-lg-3">
                                                         <a class="item-post-nganh"
