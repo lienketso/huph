@@ -97,7 +97,7 @@ class HomeController extends BaseController
             return $e->orderBy('sort_order','asc')
                 ->where('parent',0)
                 ->where('status','active')
-                ->where('cat_type','post')
+                ->where('cat_type','daotao')
                 ->where('lang_code',$this->lang)
                 ->where('display',1);
         })->first();

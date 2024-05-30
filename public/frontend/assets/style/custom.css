@@ -722,7 +722,7 @@ section#package h2 span {
     background-color: #fff;
     left: -5px;
     padding: 5px 10px;
-    transform: rotate(5deg);
+    /*transform: rotate(5deg);*/
 }
 .marquee-item:nth-child(2n) figure figcaption::before {
     content: "\A";
@@ -742,7 +742,7 @@ section#package h2 span {
     left: -5px;
     padding: 5px 10px;
     bottom: -20px;
-    transform: rotate(5deg);
+    /*transform: rotate(5deg);*/
 }
 .marquee-item:nth-child(2n + 1) figure figcaption::before {
     content: "\A";
@@ -755,10 +755,10 @@ section#package h2 span {
 }
 
 .marquee-item img {
-    border-radius: 30px 80px 30px 80px;
+    border-radius: 30px;
     max-width: 300px;
     height: 400px;
-    transform: rotate(5deg);
+    /*transform: rotate(5deg);*/
 }
 .timeline {
     text-align: end;

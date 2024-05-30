@@ -197,9 +197,12 @@
             </div>
         </div>
         @if($catTT->posts()->exists())
+            @php
+                $postCat = $catTT->posts()->where('status','active')->where('is_home',1)->get();
+            @endphp
         <div class="marquee">
             <div class="marquee-content">
-                @foreach($catTT->posts as $d)
+                @foreach($postCat as $d)
                 <div class="marquee-item">
                     <figure class="item">
                         <div class="inner">
