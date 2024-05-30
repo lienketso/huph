@@ -81,118 +81,121 @@
         </div>
     </div>
 </section>
-<section id="enrollment">
-    <div class="container mt-5">
-        <div class="row ">
-            <div class="col">
-                <div class="sologan mb-3">
-                    {!! $setting['keyword_2_'.$lang] !!}
-                </div>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col">
-                <nav id="nav-program">
-                    <div
-                        class="nav nav-tabs"
-                        id="nav-tab"
-                        role="tablist"
-                    >
-                        @if($data->childs()->exists())
-                            @foreach($data->childs as $key=>$child)
-                                <button
-                                    class="nav-link {{($key==0) ? 'active' : ''}}"
-                                    id="tab-{{$child->id}}"
-                                    data-bs-toggle="tab"
-                                    data-bs-target="#nav-{{$child->id}}"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="nav-{{$child->id}}"
-                                    aria-selected="true"
-                                >
-                                    {{$child->name}}
-                                </button>
-                            @endforeach
-                        @endif
 
 
+@if($data->childs()->exists())
+    <section class="child-category-page" id="enrollment">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="sologan mb-3">
+                        <h1 class="title-tuyen-sinh">THÔNG TIN TUYỂN SINH</h1>
+                        {!! $setting['keyword_2_'.$lang] !!}
                     </div>
-                </nav>
-                <div class="clearfix"></div>
-
-                <div class="tab-content mt-3" id="nav-tabContent">
-                    @if($data->childs()->exists())
-                        @foreach($data->childs as $key=>$child)
-                            @php
-                                $postChild = $child->posts()->where('status','active')->paginate(8);
-                            @endphp
-                            <div
-                                class="tab-pane fade {{($key==0) ? 'show active' : ''}}"
-                                id="nav-{{$child->id}}"
-                                role="tabpanel"
-                                aria-labelledby="nav-{{$child->id}}-tab"
-                                tabindex="0"
-                            >
-                                <div class="row" id="items_container_{{$child->id}}">
-                                    @foreach($postChild as $d)
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
-                                            <div class="border-img">
-                                                    <img
-                                                        src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
-                                                        class="card-img-top"
-                                                        alt="{{$d->name}}"
-                                                    />
-                                            </div>
-
-                                            <div class="card-body">
-                                                <h5 class="card-title">
-                                                    {{cut_string($d->name,100)}}
-                                                </h5>
-                                                <h6
-                                                    class="card-subtitle mb-2 text-body-secondary"
-                                                >
-                                                    by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
-                                                </h6>
-                                                <div class="desc-tin">
-                                                    {!! ($d->description!='') ? cut_string($d->description,150) : cut_string(strip_tags($d->content),150) !!}
-                                                </div>
-                                            </div>
-                                            </a>
-                                        </div>
-                                        @if(auth()->check())
-                                            <div class="edit-post-admin">
-                                                <a href="{{route('wadmin::tuyen-sinh.edit.get',$d->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
-                                            </div>
-                                        @endif
-                                    </div>
-                                    @endforeach
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <button
-                                            type="button"
-                                            class="btn btn-light btn-show btn_load_more"
-                                            id="load_more_button_{{$child->id}}" data-category="{{$child->id}}" data-page="{{ $postChild->currentPage() + 4 }}"
-                                        >
-                                            Xem thêm
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        @endforeach
-                    @endif
-
                 </div>
             </div>
+            @foreach($data->childs as $child)
+                <div class="row">
+                    <div class="heading-nganh">
+                        <span class="title-nganh-page">{{$child->name}}</span>
+                        <div class="line-title-nganh">
+                        </div>
+                    </div>
+
+                    <div class="con-lg-12">
+                        <ul class="nav nav-tabs myTabNganh" id="" role="tablist">
+                            @if($child->childs()->exists())
+                                @foreach($child->childs as $key=>$c)
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link {{($key==0)?'active':''}}"
+                                                id="home-tab{{$c->id}}" data-bs-toggle="tab"
+                                                data-bs-target="#home-tab-pane{{$c->id}}"
+                                                type="button" role="tab"
+                                                aria-controls="home-tab-pane{{$c->id}}"
+                                                aria-selected="true"><span>{{$c->name}}</span></button>
+                                    </li>
+                                @endforeach
+                            @endif
+
+                        </ul>
+                        <div class="tab-content tab-content-nganh" id="">
+                            @if($child->childs()->exists())
+                                @php
+                                    $postsNganh = $child->posts()->where('status','active')->where('display','!=',2)->limit(4)->get();
+                                    $postNoibat = $child->posts()->where('status','active')->where('display',2)->limit(1)->get();
+                                @endphp
+                                @foreach($child->childs as $key=>$c)
+                                    <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
+                                         tabindex="{{$key}}">
+                                        <div class="list-post-nganh">
+                                            <div class="row">
+
+                                                @if($c->childs()->exists())
+                                                    @foreach($c->childs as $three)
+                                                        <div class="col-lg-3">
+                                                            <a class="item-post-nganh"
+                                                               href="{{route('frontend::blog.index.get',$three->slug)}}"
+                                                               style="background-image: url('{{($three->thumbnail!='') ? upload_url($three->thumbnail) : asset('admin/themes/images/no-image.png')}}')">
+                                                                <span>{{$three->name}}</span>
+                                                            </a>
+                                                        </div>
+                                                    @endforeach
+                                                @else
+                                                    @if($postNoibat)
+                                                        @foreach($postNoibat as $p)
+                                                            <div class="col-lg-12">
+                                                                <div class="item-post-ts">
+                                                                    <p><a href="{{route('frontend::blog.detail.get',$p->slug)}}">
+                                                                            {{$p->name}}
+                                                                        </a></p>
+                                                                    <h6 class="card-subtitle mb-2 text-body-secondary">
+                                                                        by <strong>{{($p->user()->exists()) ? $p->user->full_name : 'admin'}}</strong> - {{datetoString($p->created_at)}}
+                                                                    </h6>
+                                                                    @if(auth()->check())
+                                                                        <div class="edit-post-admin-fix ts-edit">
+                                                                            <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                                        </div>
+                                                                    @endif
+                                                                </div>
+
+                                                            </div>
+                                                        @endforeach
+                                                    @endif
+                                                    @foreach($postsNganh as $p)
+                                                        <div class="col-lg-12">
+                                                            <div class="item-post-ts">
+                                                                <p><a href="{{route('frontend::blog.detail.get',$p->slug)}}">
+                                                                        {{$p->name}}
+                                                                    </a></p>
+                                                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                                                    by <strong>{{($p->user()->exists()) ? $p->user->full_name : 'admin'}}</strong> - {{datetoString($p->created_at)}}
+                                                                </h6>
+                                                                @if(auth()->check())
+                                                                    <div class="edit-post-admin-fix ts-edit">
+                                                                        <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                @endforeach
+                            @endif
+
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
         </div>
-    </div>
-</section>
+    </section>
+@endif
+
 
 @include('frontend::form')
 @include('frontend::partner')

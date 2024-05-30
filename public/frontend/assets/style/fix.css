@@ -385,6 +385,10 @@ footer ul.list-custom li a, .list-group-item{
     font-weight: 700;
     padding-bottom: 30px;
 }
+.title-tuyen-sinh{
+    font-size: 24px;
+    font-weight: 700;
+}
 .item-category-nganh a{
     background: #81CF28;
     color: #fff;
@@ -501,6 +505,27 @@ footer ul.list-custom li a, .list-group-item{
 .edit-post-admin-fix{
     font-size: 14px;
     padding-top: 10px;
+}
+.item-post-ts{
+    text-align: left;
+    border-bottom: 1px solid #828282;
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.item-post-ts p{
+    margin-bottom: 5px;
+}
+.item-post-ts p a{
+    font-size: 24px;
+    font-weight: 600;
+    color: #205C40;
+    text-decoration: none;
+}
+.ts-edit{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
 }
 @media (min-width: 768px) {
     .bg-ts{
