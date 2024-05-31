@@ -64,11 +64,12 @@
                     </ul>
                     <div class="tab-content tab-content-nganh" id="">
                         @if($child->childs()->exists())
-                            @php
-                                $postsNganh = $child->posts()->where('status','active')->where('is_hot','!=',1)->limit(16)->get();
-                                $postNoibat = $child->posts()->where('status','active')->where('is_hot',1)->limit(1)->get();
-                            @endphp
+
                             @foreach($child->childs as $key=>$c)
+                                @php
+                                    $postsNganh = $c->posts()->where('status','active')->where('is_hot','!=',1)->limit(16)->get();
+                                    $postNoibat = $c->posts()->where('status','active')->where('is_hot',1)->limit(1)->get();
+                                @endphp
                                 <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
                                      tabindex="{{$key}}">
                                     <div class="list-post-nganh">
