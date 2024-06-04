@@ -53,7 +53,7 @@ class CategoryRepository extends BaseRepository
                 }
                 echo">".str_repeat("<span>&brvbar;---</span>",$level-1).$row->name."</option>";
                 if($level<$max){
-                    $this->optionCategory($row->id, $level+1,$max=5, $selected,$ids,$type);
+                    $this->optionCategoryTS($row->id, $level+1,$max=5, $selected,$ids,$type);
                 }
             }
         }
