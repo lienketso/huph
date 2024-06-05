@@ -131,7 +131,7 @@
                                                         @foreach($postLienquan as $l)
                                                         <div class="item-news-ts">
                                                             <p><a href="{{route('frontend::blog.detail.get',$l->slug)}}">{{$l->name}}</a></p>
-                                                            <p class="date-ts">by <strong>{{($l->user()->exists()) ? $l->user->full_name : 'admin'}}</strong> - {{datetoString($l->created_at)}}</p>
+                                                            <p class="date-ts">by <strong>{{($l->user()->exists()) ? $l->user->full_name : 'admin'}}</strong></p>
                                                         </div>
                                                         @endforeach
                                                     </div>
@@ -327,7 +327,7 @@
                         </h5>
 
                         <h6 class="card-subtitle mb-2 text-body-secondary">
-                            by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
+                            by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong>
                         </h6>
 
                         <p>

@@ -9,7 +9,7 @@
                             <h1>
                                 {{$data->name}}
                             </h1>
-                            <h4>by <span>{{($data->user()->exists()) ? $data->user->full_name : 'admin'}}</strong></span> - {{datetoString($data->created_at)}}</h4>
+                            <h4>by <span>{{($data->user()->exists()) ? $data->user->full_name : 'admin'}}</strong></span> </h4>
                             <div class="border-tag">
                                 @if($data->categories()->exists())
                                     @foreach($data->categories as $c)
@@ -56,13 +56,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="border-img">
-                            <div class="border-tag">
-                                @if($d->categories()->exists())
-                                    @foreach($d->categories as $c)
-                                        <span class="badge rounded-pill text-bg-tag">{{$c->name}}</span>
-                                    @endforeach
-                                @endif
-                            </div>
+                           
                             <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
                                 <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
                                      class="card-img-top" alt="{{$d->name}}" /></a>
@@ -73,7 +67,7 @@
                                 {{cut_string($d->name,100)}}
                             </h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">
-                                by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
+                                by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong>
                             </h6>
                             <p>
                                 {!! ($d->description!='') ? cut_string($d->description,150) : cut_string(strip_tags($d->content),150) !!}

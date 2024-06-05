@@ -162,7 +162,7 @@
                                 </h5>
 
                                 <h6 class="card-subtitle mb-2 text-body-secondary">
-                                    by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong> - {{datetoString($d->created_at)}}
+                                    by <strong>{{($d->user()->exists()) ? $d->user->full_name : 'admin'}}</strong>
                                 </h6>
 
                                 <p>

@@ -152,7 +152,7 @@
                                                                             {{$p->name}}
                                                                         </a></p>
                                                                     <h6 class="card-subtitle mb-2 text-body-secondary">
-                                                                        by <strong>{{($p->user()->exists()) ? $p->user->full_name : 'admin'}}</strong> - {{datetoString($p->created_at)}}
+                                                                        by <strong>{{($p->user()->exists()) ? $p->user->full_name : 'admin'}}</strong>
                                                                     </h6>
                                                                     @if(auth()->check())
                                                                         <div class="edit-post-admin-fix ts-edit">
@@ -171,7 +171,7 @@
                                                                         {{$p->name}}
                                                                     </a></p>
                                                                 <h6 class="card-subtitle mb-2 text-body-secondary">
-                                                                    by <strong>{{($p->user()->exists()) ? $p->user->full_name : 'admin'}}</strong> - {{datetoString($p->created_at)}}
+                                                                    by <strong>{{($p->user()->exists()) ? $p->user->full_name : 'admin'}}</strong>
                                                                 </h6>
                                                                 @if(auth()->check())
                                                                     <div class="edit-post-admin-fix ts-edit">
