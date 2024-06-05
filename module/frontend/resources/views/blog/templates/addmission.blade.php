@@ -84,6 +84,7 @@
 
 
 @if($data->childs()->exists())
+
     <section class="child-category-page" id="enrollment">
         <div class="container">
             <div class="row">
@@ -95,6 +96,9 @@
                 </div>
             </div>
             @foreach($data->childs as $child)
+                @php
+                    $postsParent = $child->posts()->where('status','active')->where('display','!=',2)->limit(10)->get();
+                @endphp
                 <div class="row">
                     <div class="heading-nganh">
                         <span class="title-nganh-page">{{$child->name}}</span>
@@ -122,7 +126,7 @@
                             @if($child->childs()->exists())
                                 @foreach($child->childs as $key=>$c)
                                     @php
-                                        $postsNganh = $c->posts()->where('status','active')->where('display','!=',2)->limit(4)->get();
+                                        $postsNganh = $c->posts()->where('status','active')->where('display','!=',2)->limit(10)->get();
                                         $postNoibat = $c->posts()->where('status','active')->where('display',2)->limit(1)->get();
                                     @endphp
                                     <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
@@ -185,6 +189,25 @@
 
                                     </div>
                                 @endforeach
+                                @else
+                                    @foreach($postsParent as $p)
+                                        <div class="col-lg-12">
+                                            <div class="item-post-ts">
+                                                <p><a href="{{route('frontend::blog.detail.get',$p->slug)}}">
+                                                        {{$p->name}}
+                                                    </a></p>
+                                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                                    by <strong>{{($p->user()->exists()) ? $p->user->full_name : 'admin'}}</strong> - {{datetoString($p->created_at)}}
+                                                </h6>
+                                                @if(auth()->check())
+                                                    <div class="edit-post-admin-fix ts-edit">
+                                                        <a href="{{route('wadmin::tuyen-sinh.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                    </div>
+                                                @endif
+                                            </div>
+
+                                        </div>
+                                    @endforeach
                             @endif
 
                         </div>

@@ -168,7 +168,7 @@ class BlogController extends BaseController
             ], 404);
         }
     }
-    
+
     public function detail($slug){
         $data = $this->model->getSinglePost($slug);
 
