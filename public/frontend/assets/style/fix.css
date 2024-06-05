@@ -505,6 +505,13 @@ footer ul.list-custom li a, .list-group-item{
     font-size: 14px;
     padding-top: 10px;
 }
+.col-get-go{
+    display: inline-flex;
+    align-items: center;
+}
+.col-get-go a{
+    color: #828282;
+}
 .item-post-ts{
     text-align: left;
     border-bottom: 1px solid #828282;
