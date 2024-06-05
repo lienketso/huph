@@ -541,6 +541,23 @@ footer ul.list-custom li a, .list-group-item{
     border: 1px solid #ccc;
     padding: 10px;
 }
+.view-all-post{
+    padding-top:40px;
+    text-align: center;
+}
+.view-all-post a{
+    color: #81CF28;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: 1px solid #81CF28;
+    font-weight: 700;
+}
+.view-all-post a:hover{
+    color: #205C40;
+    border: 1px solid #205C40;
+}
 @media (min-width: 768px) {
     .bg-ts{
         min-height: 351px;

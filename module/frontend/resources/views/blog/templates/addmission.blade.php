@@ -182,6 +182,11 @@
 
                                                         </div>
                                                     @endforeach
+                                                        @if(count($postsNganh)>=10)
+                                                            <div class="view-all-post">
+                                                                <a href="{{route('frontend::blog.index.get',$c->slug)}}">Xem tất cả</a>
+                                                            </div>
+                                                        @endif
                                                 @endif
                                             </div>
                                         </div>
@@ -207,6 +212,12 @@
 
                                         </div>
                                     @endforeach
+                                @if(count($postsParent)>=10)
+                                <div class="view-all-post">
+                                    <a href="{{route('frontend::blog.index.get',$child->slug)}}">Xem tất cả</a>
+                                </div>
+                                        @endif
+
                             @endif
 
                         </div>

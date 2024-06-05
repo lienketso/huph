@@ -39,6 +39,9 @@
         <div class="container">
             <h1 class="title-dao-tao">GIỚI THIỆU VỀ CÁC NGÀNH ĐÀO TẠO</h1>
             @foreach($data->childs as $child)
+                @php
+                    $postsParent = $child->posts()->where('status','active')->where('is_hot','!=',1)->limit(16)->get();
+                @endphp
             <div class="row">
                 <div class="heading-nganh">
                     <span class="title-nganh-page">{{$child->name}}</span>
@@ -47,8 +50,9 @@
                 </div>
 
                 <div class="con-lg-12">
+                    @if($child->childs()->exists())
                     <ul class="nav nav-tabs myTabNganh" id="" role="tablist">
-                        @if($child->childs()->exists())
+
                             @foreach($child->childs as $key=>$c)
                         <li class="nav-item" role="presentation">
                             <button class="nav-link {{($key==0)?'active':''}}"
@@ -59,9 +63,8 @@
                                     aria-selected="true"><span>{{$c->name}}</span></button>
                         </li>
                             @endforeach
-                        @endif
-
                     </ul>
+                    @endif
                     <div class="tab-content tab-content-nganh" id="">
                         @if($child->childs()->exists())
 
@@ -116,12 +119,56 @@
                                                         @endif
                                                     </div>
                                                 @endforeach
+                                                        @if(count($postsNganh)>=16)
+                                                            <div class="col-lg-3">
+                                                                <a class="item-post-nganh"
+                                                                   href="{{route('frontend::blog.index.get',$child->slug)}}"
+                                                                   style="">
+                                                                    <span>Xem tất cả</span>
+                                                                </a>
+
+                                                            </div>
+                                                        @endif
                                             @endif
                                         </div>
                                     </div>
 
                                 </div>
                             @endforeach
+
+                            @else
+
+                            <div class="post-parent">
+                                <div class="list-post-nganh">
+                                    <div class="row">
+                                        @foreach($postsParent as $p)
+                                            <div class="col-lg-3">
+                                                <a class="item-post-nganh"
+                                                   href="{{route('frontend::blog.detail.get',$p->slug)}}"
+                                                   style="background-image: url('{{($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('frontend/assets/image/no-image.png')}}')">
+                                                    <span>{{cut_string($p->name,35)}}</span>
+                                                </a>
+                                                @if(auth()->check())
+                                                    <div class="edit-post-admin-fix">
+                                                        <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        @endforeach
+                                        @if(count($postsParent)>=16)
+                                            <div class="col-lg-3">
+                                                <a class="item-post-nganh"
+                                                   href="{{route('frontend::blog.index.get',$child->slug)}}"
+                                                   style="">
+                                                    <span>Xem tất cả</span>
+                                                </a>
+
+                                            </div>
+                                            @endif
+                                    </div>
+                                </div>
+                            </div>
+
                         @endif
 
                     </div>
