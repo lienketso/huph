@@ -168,10 +168,7 @@ class BlogController extends BaseController
             ], 404);
         }
     }
-
-
-
-
+    
     public function detail($slug){
         $data = $this->model->getSinglePost($slug);
 
@@ -180,8 +177,7 @@ class BlogController extends BaseController
         $related = $this->model->scopeQuery(function ($e) use ($data){
             return $e->orderBy('created_at','desc')
                 ->where('id','!=',$data->id)
-                ->where('post_type','blog')
-                ->where('slug','LIKE','%'.$data->slug.'%');
+                ->where('tags','LIKE','%'.$data->tags.'%');
         })->limit(6);
         //category
         $listCat = $this->cat->orderBy('sort_order','asc')
