@@ -107,8 +107,8 @@
                     </div>
 
                     <div class="con-lg-12">
+                        @if($child->childs()->exists())
                         <ul class="nav nav-tabs myTabNganh" id="" role="tablist">
-                            @if($child->childs()->exists())
                                 @foreach($child->childs as $key=>$c)
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link {{($key==0)?'active':''}}"
@@ -119,9 +119,8 @@
                                                 aria-selected="true"><span>{{$c->name}}</span></button>
                                     </li>
                                 @endforeach
-                            @endif
-
                         </ul>
+                        @endif
                         <div class="tab-content tab-content-nganh" id="">
                             @if($child->childs()->exists())
                                 @foreach($child->childs as $key=>$c)
