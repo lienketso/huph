@@ -533,6 +533,13 @@ footer ul.list-custom li a, .list-group-item{
     right: 0;
     bottom: 10px;
 }
+.content-blog-single table{
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
+.content-blog-single table tr td{
+    border: 1px solid #ccc;
+}
 @media (min-width: 768px) {
     .bg-ts{
         min-height: 351px;
