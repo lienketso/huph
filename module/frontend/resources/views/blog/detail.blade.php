@@ -32,6 +32,7 @@
                             <a class="" href="{{route('wadmin::post.edit.get',$data->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
                             @else
                                 <a class="" href="{{route('wadmin::tuyen-sinh.edit.get',$data->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                            @endif
                         @endif
                     </div>
                 </div>
