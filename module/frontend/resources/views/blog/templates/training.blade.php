@@ -91,7 +91,7 @@
                                                             <div class="col-lg-3">
                                                                 <a class="item-post-nganh"
                                                                    href="{{route('frontend::blog.detail.get',$p->slug)}}"
-                                                                   style="background-image: url('{{($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('admin/themes/images/no-image.png')}}')">
+                                                                   style="background-image: url('{{($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('frontend/assets/image/no-image.png')}}')">
                                                                     <span>{{cut_string($p->name,35)}}</span>
                                                                 </a>
                                                                 @if(auth()->check())

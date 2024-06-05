@@ -119,7 +119,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <a href="{{route('frontend::blog.detail.get',$hotBlogCategory->slug)}}">
-                                    <img src="{{ ($hotBlogCategory->thumbnail!='') ? upload_url($hotBlogCategory->thumbnail) : asset('admin/themes/images/no-image.png')}}"/>
+                                    <img src="{{ ($hotBlogCategory->thumbnail!='') ? upload_url($hotBlogCategory->thumbnail) : asset('frontend/assets/image/no-image.png')}}"/>
                                 </a>
                             </div>
                             <div class="col-md-6">
@@ -152,7 +152,7 @@
                         <div class="card list-card">
                             <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
                             <div class="border-img">
-                                    <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
+                                    <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
                                          class="card-img-top" alt="{{$d->name}}" />
                             </div>
 

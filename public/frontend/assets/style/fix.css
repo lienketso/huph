@@ -470,11 +470,10 @@ footer ul.list-custom li a, .list-group-item{
     align-items: center;
     font-size: 25px;
     font-weight: 900;
-    color: #81CF28;
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-style: italic;
-    -webkit-text-stroke: 1px #fff;
     margin-bottom: 20px;
 }
 .list-post-nganh .item-post-nganh:before{
