@@ -153,7 +153,7 @@
                                                                     </h6>
                                                                     @if(auth()->check())
                                                                         <div class="edit-post-admin-fix ts-edit">
-                                                                            <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                                            <a href="{{route('wadmin::tuyen-sinh.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
                                                                         </div>
                                                                     @endif
                                                                 </div>
@@ -172,7 +172,7 @@
                                                                 </h6>
                                                                 @if(auth()->check())
                                                                     <div class="edit-post-admin-fix ts-edit">
-                                                                        <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                                                        <a href="{{route('wadmin::tuyen-sinh.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
                                                                     </div>
                                                                 @endif
                                                             </div>

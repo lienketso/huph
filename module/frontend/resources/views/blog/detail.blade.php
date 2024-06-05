@@ -28,7 +28,10 @@
                     <div class="col-get-go">
                         <a href="{{route('frontend::home')}}" class="go-back"><i class="fa-solid fa-arrow-right-from-bracket"></i> Quay lại</a>
                         @if(auth()->check())
+                            @if($data->post_type=='blog')
                             <a class="" href="{{route('wadmin::post.edit.get',$data->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                            @else
+                                <a class="" href="{{route('wadmin::tuyen-sinh.edit.get',$data->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
                         @endif
                     </div>
                 </div>

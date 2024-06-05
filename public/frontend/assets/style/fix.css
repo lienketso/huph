@@ -539,6 +539,7 @@ footer ul.list-custom li a, .list-group-item{
 }
 .content-blog-single table tr td{
     border: 1px solid #ccc;
+    padding: 10px;
 }
 @media (min-width: 768px) {
     .bg-ts{
