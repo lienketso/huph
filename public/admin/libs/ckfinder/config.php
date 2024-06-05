@@ -33,7 +33,7 @@ $config['authentication'] = function () {
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
 $config['licenseName'] = 'tuyensinh.huph.edu.vn';
-$config['licenseKey']  = 'Y3U3PKTGESEPNF1LBU4EMK8RUTJRK';
+$config['licenseKey']  = 'RD2DGFNJVJKREWEE2QYTMKHPLWHM9';
 
 /*============================ CKFinder Internal Directory ============================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir
