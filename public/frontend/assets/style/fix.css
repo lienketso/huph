@@ -558,6 +558,9 @@ footer ul.list-custom li a, .list-group-item{
     color: #205C40;
     border: 1px solid #205C40;
 }
+.content-blog-single img{
+    height: auto !important;
+}
 @media (min-width: 768px) {
     .bg-ts{
         min-height: 351px;
