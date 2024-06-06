@@ -255,6 +255,29 @@
     });
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.navbar-toggler-mobile').on('click', function() {
+            $('.navbar-collapse-mb').toggleClass('show');
+        });
+
+        $(document).on('click', function(event) {
+            var $trigger = $(".navbar-toggler-mobile");
+            if($trigger !== event.target && !$trigger.has(event.target).length){
+                $(".navbar-collapse-mb").removeClass('show');
+            }
+        });
+
+        // Dropdown toggle for nested menus
+        $('.dropdown-submenu a.dropdown-toggle').on("click", function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            $(this).next('.dropdown-menu').toggle();
+            $(this).parent().siblings().find('.dropdown-menu').hide();
+        });
+    });
+</script>
+
 
 @yield("js")
 @yield("js-init")

@@ -18,8 +18,6 @@
         </span>
     </div>
     <div class="container">
-
-
         <nav class="navbar navbar-expand-lg nav-fill snip1135">
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -103,6 +101,54 @@
 
 <header class="fixed-header mobile">
     <div class="container">
+
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+
+                <button class="navbar-toggler-mobile" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="{{asset('frontend/assets/image/menu-toggle.png')}}" alt="Menu toggle">
+                </button>
+                <div class="collapse navbar-collapse-mb justify-content-end" id="navbarNav">
+                    <a class="navbar-brand" href="{{route('frontend::home')}}">
+                        <img src="{{($setting['site_logo']!='') ? upload_url($setting['site_logo']) : asset('frontend/assets/image/logo.png')}}" width="175" />
+                    </a>
+                    <ul class="navbar-nav">
+                        @foreach($menus as $key=>$menu)
+                            @if(count($menu->childs))
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" aria-current="page" href="{{$menu->link}}">
+                                @if($menu->thumbnail!='')
+                                    <i class="{{$menu->thumbnail}}"></i>
+                                @endif {{$menu->name}}</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach($menu->childs as $subone)
+                                    <li><a class="dropdown-item" href="{{$subone->link}}">{{$subone->name}}</a></li>
+                                @endforeach
+
+                            </ul>
+                        </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{$menu->link}}"> @if($menu->thumbnail!='')
+                                            <i class="{{$menu->thumbnail}}"></i>
+                                        @endif {{$menu->name}}</a>
+                                </li>
+                            @endif
+                        @endforeach
+                        <li>
+                            <a
+                                class="nav-link"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#formModal"
+                            ><i class="fa-regular fa-calendar-check"></i>Kết quả
+                                tuyển sinh</a>
+                        </li>
+                    </ul>
+                    <span class="close-menu-mobile"><i class="fa-regular fa-chevron-left"></i></span>
+                </div>
+            </div>
+        </nav>
         <div class="row">
             <div class="col-6 mt-2 text-center">
                 <a href="/" class="">
@@ -110,13 +156,6 @@
                 </a>
             </div>
             <div class="col-6 mt-2">
-{{--                <div class="phone">--}}
-{{--                    <i class="fa-solid fa-phone"></i>--}}
-{{--                    <a href="tel:{{str_replace(' ','',$setting['site_hotline_'.$lang])}}"> {{$setting['site_hotline_'.$lang]}}</a>--}}
-{{--                </div>--}}
-{{--                <div class="addr mb-3">--}}
-{{--                    <i class="fa-solid fa-location-dot me-2"></i>{{$setting['site_address_'.$lang]}}--}}
-{{--                </div>--}}
                 <a href="tel:{{str_replace(' ','',$setting['site_hotline_'.$lang])}}">
                     <img src="{{asset('frontend/assets/image/mobile/icon/phone.png')}}"/>
                 </a>
