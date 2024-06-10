@@ -44,6 +44,7 @@
         rel="stylesheet"
         href="{{asset('frontend/assets/owlcarousel/dist/assets/owl.theme.default.min.css')}}"
     />
+    <link rel="shortcut icon" type="image/png" href="{{asset('frontend/assets/image/favicon.png')}}"/>
     <script
         src="{{asset('frontend/assets/lib/bootstrap/js/bootstrap.bundle.min.js')}}"
     ></script>
