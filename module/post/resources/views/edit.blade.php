@@ -267,13 +267,6 @@
                                     <option value="1" {{($data->display==1) ? 'selected' : ''}}>Hiển thị tin mới</option>
                                 </select>
                             </div>
-{{--                            <div class="checkbox-inline-s" style="padding-bottom: 10px">--}}
-{{--                            	<label for="is_slider">Hiển thị tại slider</label>--}}
-{{--                                <select name="is_slider" class="form-control">--}}
-{{--                                    <option value="0" {{($data->is_slider==0) ? 'selected' : ''}}>Không hiển thị slider</option>--}}
-{{--                                    <option value="1" {{($data->is_slider==1) ? 'selected' : ''}}>Hiển thị slider</option>--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
                             <div class="checkbox-inline-s" style="padding-bottom: 10px">
 
                             	<label for="is_hot">Hiển thị nổi bật</label>

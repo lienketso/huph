@@ -263,21 +263,27 @@
 
                         <div class="form-group">
                             <p>Vị trí hiển thị</p>
-                            <div class="checkbox-inline">
-                                <input type="checkbox" name="display" id="display" value="1" >
+                            <div class="checkbox-inline-s" style="padding-bottom: 10px">
                                 <label for="display">Tin mới</label>
+                                <select name="display" class="form-control">
+                                    <option value="0" {{(old('display')==0) ? 'selected' : ''}}>Không hiển thị tin mới</option>
+                                    <option value="1" {{(old('display')==1) ? 'selected' : ''}}>Hiển thị tin mới</option>
+                                </select>
                             </div>
-{{--                            <div class="checkbox-inline">--}}
-{{--                                <input type="checkbox" name="is_slider" id="is_slider" value="1" >--}}
-{{--                                <label for="is_slider">Hiển thị tại slider</label>--}}
-{{--                            </div>--}}
-                            <div class="checkbox-inline">
-                                <input type="checkbox" name="is_hot" id="is_hot" value="1" >
+                            <div class="checkbox-inline-s" style="padding-bottom: 10px">
+
                                 <label for="is_hot">Hiển thị nổi bật</label>
+                                <select name="is_hot" class="form-control">
+                                    <option value="0" {{(old('is_hot')==0) ? 'selected' : ''}}>Không hiển thị nổi bật</option>
+                                    <option value="1" {{(old('is_hot')==1) ? 'selected' : ''}}>Hiển thị nổi bật</option>
+                                </select>
                             </div>
-                            <div class="checkbox-inline">
-                                <input type="checkbox" name="is_home" id="is_home" value="1" >
+                            <div class="checkbox-inline-s" style="padding-bottom: 10px">
                                 <label for="is_home">Hiển thị trang chủ</label>
+                                <select name="is_home" class="form-control">
+                                    <option value="0" {{(old('is_home')==0) ? 'selected' : ''}}>Không hiển thị trang chủ</option>
+                                    <option value="1" {{(old('is_home')==1) ? 'selected' : ''}}>Hiển thị trang chủ</option>
+                                </select>
                             </div>
                         </div>
 
