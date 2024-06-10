@@ -198,7 +198,7 @@
         </div>
         @if($catTT->posts()->exists())
             @php
-                $postCat = $catTT->posts()->where('status','active')->where('is_home',1)->get();
+                $postCat = $catTT->posts()->orderBy('id','desc')->where('status','active')->where('is_home',1)->get();
             @endphp
         <div class="marquee">
             <div class="marquee-content">
