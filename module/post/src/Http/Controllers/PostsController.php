@@ -60,7 +60,7 @@ class PostsController extends BaseController
         }
         $data = $q->where('lang_code',$this->langcode)
             ->where('post_type','blog')
-            ->orderBy('created_at','desc')
+            ->orderBy('id','desc')
             ->paginate(20);
 
         $category = $this->cat->orderBy('created_at','desc')

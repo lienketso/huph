@@ -70,7 +70,7 @@
 
                             @foreach($child->childs as $key=>$c)
                                 @php
-                                    $postsNganh = $c->posts()->where('status','active')->where('is_hot','!=',1)->limit(16)->get();
+                                    $postsNganh = $c->posts()->where('status','active')->where('is_hot','!=',1)->limit(4)->get();
                                     $postNoibat = $c->posts()->where('status','active')->where('is_hot',1)->limit(1)->get();
                                 @endphp
                                 <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
@@ -119,7 +119,7 @@
                                                         @endif
                                                     </div>
                                                 @endforeach
-                                                        @if(count($postsNganh)>=16)
+                                                        @if(count($postsNganh)>=4)
                                                             <div class="col-lg-3">
                                                                 <a class="item-post-nganh"
                                                                    href="{{route('frontend::blog.index.get',$child->slug)}}"
@@ -155,7 +155,7 @@
                                                 @endif
                                             </div>
                                         @endforeach
-                                        @if(count($postsParent)>=16)
+                                        @if(count($postsParent)>=4)
                                             <div class="col-lg-3">
                                                 <a class="item-post-nganh"
                                                    href="{{route('frontend::blog.index.get',$child->slug)}}"

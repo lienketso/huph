@@ -51,7 +51,7 @@ class AdmissionController extends BaseController
         }
         $data = $q->where('lang_code',$this->langcode)
             ->where('post_type','tuyensinh')
-            ->orderBy('created_at','desc')->paginate(10);
+            ->orderBy('id','desc')->paginate(20);
         $userLog = Auth::user();
         $roles = $userLog->load('roles.perms');
         $permissionPost = $roles->roles->first()->perms;

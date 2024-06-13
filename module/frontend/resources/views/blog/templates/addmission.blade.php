@@ -125,7 +125,7 @@
                             @if($child->childs()->exists())
                                 @foreach($child->childs as $key=>$c)
                                     @php
-                                        $postsNganh = $c->posts()->where('status','active')->where('display','!=',2)->limit(10)->get();
+                                        $postsNganh = $c->posts()->where('status','active')->where('display','!=',2)->limit(5)->get();
                                         $postNoibat = $c->posts()->where('status','active')->where('display',2)->limit(1)->get();
                                     @endphp
                                     <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
@@ -182,7 +182,7 @@
 
                                                         </div>
                                                     @endforeach
-                                                        @if(count($postsNganh)>=10)
+                                                        @if(count($postsNganh)>=5)
                                                             <div class="view-all-post">
                                                                 <a href="{{route('frontend::blog.index.get',$c->slug)}}">Xem tất cả</a>
                                                             </div>
@@ -212,7 +212,7 @@
 
                                         </div>
                                     @endforeach
-                                @if(count($postsParent)>=10)
+                                @if(count($postsParent)>=5)
                                 <div class="view-all-post">
                                     <a href="{{route('frontend::blog.index.get',$child->slug)}}">Xem tất cả</a>
                                 </div>
