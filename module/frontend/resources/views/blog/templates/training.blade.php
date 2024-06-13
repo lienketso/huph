@@ -40,7 +40,7 @@
             <h1 class="title-dao-tao">GIỚI THIỆU VỀ CÁC NGÀNH ĐÀO TẠO</h1>
             @foreach($data->childs as $child)
                 @php
-                    $postsParent = $child->posts()->where('status','active')->where('is_hot','!=',1)->limit(16)->get();
+                    $postsParent = $child->posts()->where('status','active')->where('is_hot','!=',1)->limit(3)->get();
                 @endphp
             <div class="row">
                 <div class="heading-nganh">
@@ -120,12 +120,14 @@
                                                     </div>
                                                 @endforeach
                                                         @if(count($postsNganh)>=3)
-                                                            <div class="col-lg-3">
-                                                                <a class="item-post-nganh"
-                                                                   href="{{route('frontend::blog.index.get',$child->slug)}}"
-                                                                   style="">
-                                                                    <span>Xem tất cả</span>
-                                                                </a>
+                                                            <div class="col-lg-12">
+                                                                <div class="view-all-button">
+                                                                    <a class="item-xem-tat-ca"
+                                                                       href="{{route('frontend::blog.index.get',$child->slug)}}"
+                                                                       style="">
+                                                                        <span>Xem tất cả</span>
+                                                                    </a>
+                                                                </div>
 
                                                             </div>
                                                         @endif

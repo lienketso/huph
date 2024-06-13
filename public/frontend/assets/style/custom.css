@@ -960,6 +960,24 @@ video {
 #nav-program-mobile {
     display: none;
 }
+.view-all-button{
+    padding: 30px 0;
+}
+.view-all-button a{
+    padding: 15px 20px;
+    border: 1px solid #81CF28;
+    color: #81CF28;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+}
+.view-all-button a:hover{
+    background: #205c40;
+    color: #fff;
+}
 @keyframes scrolling {
     0% {
         transform: translateX(0);
