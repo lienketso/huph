@@ -56,9 +56,9 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="border-img">
-                           
+
                             <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
-                                <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('admin/themes/images/no-image.png')}}"
+                                <img src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
                                      class="card-img-top" alt="{{$d->name}}" /></a>
                         </div>
 
