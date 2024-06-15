@@ -713,18 +713,18 @@ section#package h2 span {
     width: 100%;
     position: relative;
 }
-.marquee-item:nth-child(2n) figure figcaption {
+.owl-item:nth-child(2n) .marquee-item figure figcaption {
     position: absolute;
     box-shadow: 1px 3px 5px;
     border-radius: 12px;
-    top: -20px;
+    top: -0;
     z-index: 2;
     background-color: #fff;
     left: -5px;
     padding: 5px 10px;
     /*transform: rotate(5deg);*/
 }
-.marquee-item:nth-child(2n) figure figcaption::before {
+.owl-item:nth-child(2n)  .marquee-item figure figcaption::before {
     content: "\A";
     border-style: solid;
     border-width: 13px 12px 0 13px;
@@ -733,7 +733,7 @@ section#package h2 span {
     left: 30px;
     bottom: -8px;
 }
-.marquee-item:nth-child(2n + 1) figure figcaption {
+.owl-item:nth-child(2n + 1)  .marquee-item figure figcaption {
     position: absolute;
     box-shadow: 1px 3px 5px;
     border-radius: 12px;
@@ -742,9 +742,8 @@ section#package h2 span {
     left: -5px;
     padding: 5px 10px;
     bottom: -20px;
-    /*transform: rotate(5deg);*/
 }
-.marquee-item:nth-child(2n + 1) figure figcaption::before {
+.owl-item:nth-child(2n + 1)  .marquee-item figure figcaption::before {
     content: "\A";
     border-style: solid;
     border-width: 0 12px 13px 12px;
@@ -753,12 +752,21 @@ section#package h2 span {
     left: 233px;
     top: -11px;
 }
-
+.owl-program .owl-nav{
+    text-align: center;
+    padding-top: 50px;
+}
+.owl-program .owl-nav button{
+    color: #fff !important;
+    font-size: 2rem !important;
+}
+.owl-program .owl-nav button .prev-slide{
+    padding-right: 10px;
+}
 .marquee-item img {
     border-radius: 30px;
-    max-width: 300px;
+    max-width: 100%;
     height: 400px;
-    /*transform: rotate(5deg);*/
 }
 .timeline {
     text-align: end;

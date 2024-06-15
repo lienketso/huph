@@ -37,6 +37,36 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                items: 4,
+                margin: 10,
+                autoplay: false,
+                loop: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true,
+                responsiveClass: true,
+                nav: true,
+                dots: false,
+                navText: [
+                    "<div class='nav-btn prev-slide'><i class='fa-regular fa-circle-left fa-fw'></i></div>",
+                    "<div class='nav-btn next-slide'><i class='fa-regular fa-circle-right fa-fw'></i></div>",
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
 @endsection
 @section('content')
 
@@ -201,27 +231,49 @@
                 $postCat = $catTT->posts()->orderBy('id','desc')->where('status','active')->where('is_home',1)->get();
             @endphp
         <div class="marquee">
-            <div class="marquee-content">
+{{--            <div class="marquee-content">--}}
+{{--                @foreach($postCat as $d)--}}
+{{--                <div class="marquee-item">--}}
+{{--                    <figure class="item">--}}
+{{--                        <div class="inner">--}}
+{{--                            <a href="{{route('frontend::blog.detail.get',$d->slug)}}"><img--}}
+{{--                                src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"--}}
+{{--                                data-src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"--}}
+{{--                                alt="{{$d->name}}"--}}
+{{--                            />--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+
+{{--                        <figcaption>--}}
+{{--                            {{$d->name}}--}}
+{{--                        </figcaption>--}}
+{{--                    </figure>--}}
+{{--                </div>--}}
+{{--                @endforeach--}}
+
+{{--            </div>--}}
+
+            <div class="owl-carousel owl-program">
                 @foreach($postCat as $d)
-                <div class="marquee-item">
-                    <figure class="item">
-                        <div class="inner">
-                            <a href="{{route('frontend::blog.detail.get',$d->slug)}}"><img
-                                src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
-                                data-src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
-                                alt="{{$d->name}}"
-                            />
-                            </a>
-                        </div>
+                    <div class="marquee-item">
+                        <figure class="item">
+                            <div class="inner">
+                                <a href="{{route('frontend::blog.detail.get',$d->slug)}}"><img
+                                        src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
+                                        data-src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
+                                        alt="{{$d->name}}"
+                                    />
+                                </a>
+                            </div>
 
-                        <figcaption>
-                            {{$d->name}}
-                        </figcaption>
-                    </figure>
-                </div>
+                            <figcaption>
+                                {{$d->name}}
+                            </figcaption>
+                        </figure>
+                    </div>
                 @endforeach
-
             </div>
+
         </div>
         @endif
     </section>
