@@ -768,6 +768,9 @@ section#package h2 span {
     max-width: 100%;
     height: 400px;
 }
+.marquee-item .item a{
+    color: #205c40;
+}
 .timeline {
     text-align: end;
 }

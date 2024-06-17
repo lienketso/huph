@@ -257,18 +257,20 @@
                 @foreach($postCat as $d)
                     <div class="marquee-item">
                         <figure class="item">
+                            <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
                             <div class="inner">
-                                <a href="{{route('frontend::blog.detail.get',$d->slug)}}"><img
+                                <img
                                         src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
                                         data-src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
                                         alt="{{$d->name}}"
                                     />
-                                </a>
+
                             </div>
 
                             <figcaption>
                                 {{$d->name}}
                             </figcaption>
+                            </a>
                         </figure>
                     </div>
                 @endforeach
