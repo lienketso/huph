@@ -14,6 +14,7 @@ use Gallery\Repositories\GalleryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Newsletter\Repositories\NewsletterRepository;
 use Post\Repositories\PostRepository;
 use Product\Repositories\CatproductRepository;
@@ -175,6 +176,13 @@ class HomeController extends BaseController
     public function submitForm(Request $request, ContactRepository $contactRepository, SettingRepositories $settingRepositories){
         $name = $request->name;
         $phone = $request->phone;
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'required|captcha',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()->all()]);
+        }
         $data = [
             'name'=>$name,
             'phone'=>$phone,
