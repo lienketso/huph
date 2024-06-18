@@ -27,11 +27,11 @@
                     />
                     <span id="txtPhone"></span>
                 </div>
-{{--                <div class="input-group mb-3">--}}
-{{--                    {!! NoCaptcha::renderJs() !!}--}}
-{{--                    {!! NoCaptcha::display() !!}--}}
-{{--                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>--}}
-{{--                </div>--}}
+                <div class="input-group mb-3">
+                    {!! NoCaptcha::renderJs() !!}
+                    {!! NoCaptcha::display() !!}
+                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                </div>
                 <div class="input-group mb-3">
                     <button
                         id="btnForm"

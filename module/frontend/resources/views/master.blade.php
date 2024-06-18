@@ -53,6 +53,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"
     ></script>
+
 </head>
 <body>
 {{--header--}}
@@ -147,12 +148,15 @@
        }
 
        if(mess.length===0){
+           grecaptcha.ready(function() {
+               grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', {action: 'submit'}).then(function(token) {
            $.ajax({
                    url: url,
                    type: "GET",
                    data: {
                        name: name,
-                       phone: phone
+                       phone: phone,
+                       recaptcha: token
                    },
                    success: function(response) {
                        $('#successForm').show(200);
@@ -163,6 +167,8 @@
                        console.error(xhr.responseText);
                    }
                });
+               });
+           });
        }
     });
 </script>

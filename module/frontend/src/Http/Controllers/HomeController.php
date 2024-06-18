@@ -174,9 +174,13 @@ class HomeController extends BaseController
     }
 
     public function submitForm(Request $request, ContactRepository $contactRepository, SettingRepositories $settingRepositories){
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required|digits:10|numeric',
+            'recaptcha' => 'required|captcha'
+        ]);
         $name = $request->name;
         $phone = $request->phone;
-
         $data = [
             'name'=>$name,
             'phone'=>$phone,
