@@ -28,9 +28,12 @@
                     <span id="txtPhone"></span>
                 </div>
                 <div class="input-group mb-3">
-                    {!! NoCaptcha::renderJs() !!}
-                    {!! NoCaptcha::display() !!}
-                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                    <div class="g-recaptcha" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}">
+                    </div>
+                    @if ($errors->has('g-recaptcha-response'))
+                        <span
+                            class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                    @endif
                 </div>
                 <div class="input-group mb-3">
                     <button
