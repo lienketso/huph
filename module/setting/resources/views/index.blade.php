@@ -236,7 +236,7 @@
                         </div>
 
                         <div class="form-group mb-3">
-                            <label>Banner trang liên hệ</label>
+                            <label>Banner trang giới thiệu</label>
                             <div class="input-group col-xs-12" style="display: flex">
                                 <input type="text" name="banner_contact" value="{{$setting->getSettingMeta('banner_contact')}}"
                                        id="ckfinder-input-3" class="form-control file-upload-info" placeholder="Upload Image">

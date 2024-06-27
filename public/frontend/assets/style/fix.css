@@ -408,8 +408,15 @@ footer ul.list-custom li a, .list-group-item{
     content: '';
 }
 .snip1135 a.active{
-    color: #205c40 !important;
+    color: #fff !important;
     font-weight: 900;
+    background: #81CF28;
+}
+.snip1135 .dropdown-menu a{
+    color: #393d40;
+}
+.snip1135 .dropdown-menu a:hover{
+    color: #205C40;
 }
 .heading-nganh{
     display: flex;

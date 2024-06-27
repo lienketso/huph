@@ -258,7 +258,7 @@
                     <div class="marquee-item">
                         <figure class="item">
                             <a href="{{route('frontend::blog.detail.get',$d->slug)}}">
-                            <div class="inner">
+                            <div class="inner" >
                                 <img
                                         src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"
                                         data-src="{{ ($d->thumbnail!='') ? upload_url($d->thumbnail) : asset('frontend/assets/image/no-image.png')}}"

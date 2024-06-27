@@ -1,7 +1,7 @@
 @php
     $menus = getAllmenu();
 @endphp
-<header class="py-2 mb-2 fixed-header desktop">
+<header class="mb-2 fixed-header desktop">
     <div class="container d-flex flex-wrap justify-content-center hot-line">
         <a
             href="{{route('frontend::home')}}"
@@ -17,8 +17,9 @@
           <a href="tel:{{str_replace(' ','',$setting['site_hotline_'.$lang])}}"> {{$setting['site_hotline_'.$lang]}}</a>
         </span>
     </div>
+    <nav class="navbar navbar-expand-lg nav-fill snip1135">
     <div class="container">
-        <nav class="navbar navbar-expand-lg nav-fill snip1135">
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -94,9 +95,10 @@
                     </ul>
 
                 </div>
-        </nav>
+
 
     </div>
+    </nav>
 </header>
 
 <header class="fixed-header mobile">
