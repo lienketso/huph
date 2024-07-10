@@ -82,6 +82,7 @@ class SettingController extends BaseController
         $data['site_logo'] = replace_thumbnail($data['site_logo']);
         $data['site_profile'] = replace_thumbnail($data['site_profile']);
         $data['banner_contact'] = replace_thumbnail($data['banner_contact']);
+        $data['banner_contact_index'] = replace_thumbnail($data['banner_contact_index']);
         $this->saveSetting($data);
         return redirect()->back()->with('edit','Sửa cấu hình thành công !');
     }

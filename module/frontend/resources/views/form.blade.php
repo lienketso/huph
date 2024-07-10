@@ -1,10 +1,11 @@
-<section id="contact">
+<section id="contact"
+         style="background-image: url('{{($setting['banner_contact_index']) ? upload_url($setting['banner_contact_index']) : asset('frontend/assets/images/bg-section.png')}}')">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>
-                    {!! $setting['keyword_7_'.$lang] !!}
-                </h1>
+{{--                <h1>--}}
+{{--                    {!! $setting['keyword_7_'.$lang] !!}--}}
+{{--                </h1>--}}
             </div>
             <div class="col-md-6">
                 <div class="input-group mb-3">

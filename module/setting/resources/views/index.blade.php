@@ -249,6 +249,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group mb-3">
+                            <label>Banner liên hệ trang chủ</label>
+                            <div class="input-group col-xs-12" style="display: flex">
+                                <input type="text" name="banner_contact_index" value="{{$setting->getSettingMeta('banner_contact_index')}}"
+                                       id="ckfinder-input-4" class="form-control file-upload-info" placeholder="Upload Image">
+                                <span class="input-group-append">
+								<button class="file-upload-browse btn btn-primary" id="ckfinder-popup-4"  type="button">Chọn ảnh</button>
+							</span>
+                            </div>
+                            <div class="thumbnail_w" style="padding-top: 10px">
+                                <img src="{{ ($setting->getSettingMeta('banner_contact_index')!='null') ? upload_url($setting->getSettingMeta('banner_contact_index')) :  public_url('admin/themes/images/no-image.png')}}" width="100" alt="">
+                            </div>
+                        </div>
+
 
                         <div class="form-group">
                             <button class="btn btn-primary">Lưu lại</button>

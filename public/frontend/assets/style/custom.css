@@ -419,7 +419,10 @@ section#hot-new p {
 section#contact {
     padding: 50px 0;
     background-color: #205c40;
-    background-image: url("../image/bg-section.jpg");
+    background-image: url("../image/contact-now.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }
 .btn-confirm,
 .btn-confirm:hover,

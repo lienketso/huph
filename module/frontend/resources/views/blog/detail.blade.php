@@ -18,7 +18,7 @@
                                 @endif
                             </div>
                         </div>
-                        <img src="{{($data->banner!='') ? upload_url($data->banner) : asset('frontend/assets/image/detail.png')}}"
+                        <img src="{{($data->banner!='') ? upload_url($data->banner) : asset('frontend/assets/image/detail-3.png')}}"
                              width="100%" alt="{{$data->name}}" />
                     </div>
                 </div>
