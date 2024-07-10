@@ -246,6 +246,7 @@ section#enrollment .sologan span {
 }
 section#vendor h2 {
     font-size: 24px;
+    padding-top: 20px;
 }
 section#vendor .owl-carousel {
     margin: 20px 0;
