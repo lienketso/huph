@@ -881,6 +881,7 @@ section#package h2 span {
     background-position-y: 4%;
     margin-bottom: 60px;
     padding: 30px;
+    overflow-x: scroll;
 }
 .form-result table {
     width: 884px;
