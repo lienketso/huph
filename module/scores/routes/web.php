@@ -25,5 +25,8 @@ Route::group(['prefix'=>$adminRoute],function(Router $router) use($adminRoute,$m
             ->name('wadmin::scores.edit.post')->middleware('permission:scores_edit');
         $router->get('remove/{id}','ScoresController@remove')
             ->name('wadmin::scores.remove.get')->middleware('permission:scores_delete');
+        //remove all
+        $router->post('delete-mutilple','ScoresController@deleteMultiple')->name('wadmin::score-delete-multiple.post')
+            ->middleware('permission:scores_delete');
     });
 });

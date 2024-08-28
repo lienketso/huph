@@ -177,6 +177,29 @@
     }
 </script>
 
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Khi checkbox "Check All" được chọn
+        $('#checkAll').click(function(){
+            if($(this).prop('checked')){
+                $('.record-checkbox').prop('checked', true);
+            } else {
+                $('.record-checkbox').prop('checked', false);
+            }
+        });
+
+        // Nếu tất cả checkbox được chọn, "Check All" sẽ tự động được chọn
+        $('.record-checkbox').change(function(){
+            if($('.record-checkbox:checked').length == $('.record-checkbox').length){
+                $('#checkAll').prop('checked', true);
+            } else {
+                $('#checkAll').prop('checked', false);
+            }
+        });
+    });
+</script>
+
 @yield("js")
 @yield("js-init")
 @stack("js")

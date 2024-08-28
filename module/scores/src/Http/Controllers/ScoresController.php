@@ -95,5 +95,21 @@ class ScoresController extends BaseController
         }
     }
 
+    public function deleteMultiple(Request $request)
+    {
+        // Lấy danh sách ID từ form
+        $ids = $request->input('ids');
+
+        // Kiểm tra nếu không có ID nào được chọn
+        if(empty($ids)) {
+            return redirect()->back()->with('error', 'Bạn vui lòng chọn ít nhất 1 dòng dữ liệu để xóa !');
+        }
+
+        // Xóa các record theo ID
+        Scores::whereIn('id', $ids)->delete();
+
+        return redirect()->back()->with('delete', 'Xóa dữ liệu thành công');
+    }
+
 
 }

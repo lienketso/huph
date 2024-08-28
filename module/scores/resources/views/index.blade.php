@@ -54,39 +54,48 @@
                 @if (session('delete'))
                     <div class="alert alert-success">{{session('delete')}}</div>
                 @endif
-                <table class="table nomargin">
-                    <thead>
-                    <tr>
-                        <th>Số báo danh</th>
-                        <th>Họ tên</th>
-                        <th>Số CCCD</th>
-                        <th>Ngày sinh</th>
-                        <th>Đối tượng dự thi</th>
-                        <th class="">Tổng điểm</th>
-                        <th>Ghi chú</th>
-                        <th>Cấu hình</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($data as $d)
-                        <tr>
-                            <td>{{$d->identification_number}}</td>
-                            <td>{{$d->name}}</td>
-                            <td>{{$d->cccd_number}}</td>
-                            <td>{{$d->birthday}}</td>
-                            <td>{{$d->test_subject}}</td>
-                            <td>{{$d->total_scores}}</td>
-                            <td>{{$d->comment}}</td>
-                            <td>
-                                <ul class="table-options">
-                                    <li><a class="" href="{{route('wadmin::scores.edit.get',$d->id)}}" title="Sửa điểm thi"><i class="fa fa-edit"></i></a></li>
-                                    <li><a class="example-p-6" data-url="{{route('wadmin::scores.remove.get',$d->id)}}" title="Xóa điểm thi"><i class="fa fa-trash"></i></a></li>
-                                </ul>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                    @if (session('error'))
+                        <div class="alert alert-danger">{{session('error')}}</div>
+                    @endif
+                    <form method="POST" action="{{route('wadmin::score-delete-multiple.post')}}">
+                        @csrf
+                        <button type="submit" class="btnRemoveAll">Xóa tùy chọn</button>
+                        <table class="table nomargin">
+                            <thead>
+                            <tr>
+                                <th> <input type="checkbox" id="checkAll"> chọn tất cả</th>
+                                <th>Số báo danh</th>
+                                <th>Họ tên</th>
+                                <th>Số CCCD</th>
+                                <th>Ngày sinh</th>
+                                <th>Đối tượng dự thi</th>
+                                <th class="">Tổng điểm</th>
+                                <th>Ghi chú</th>
+                                <th>Cấu hình</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($data as $d)
+                                <tr>
+                                    <td><input type="checkbox" name="ids[]" value="{{ $d->id }}" class="record-checkbox"></td>
+                                    <td>{{$d->identification_number}}</td>
+                                    <td>{{$d->name}}</td>
+                                    <td>{{$d->cccd_number}}</td>
+                                    <td>{{$d->birthday}}</td>
+                                    <td>{{$d->test_subject}}</td>
+                                    <td>{{$d->total_scores}}</td>
+                                    <td>{{$d->comment}}</td>
+                                    <td>
+                                        <ul class="table-options">
+                                            <li><a class="" href="{{route('wadmin::scores.edit.get',$d->id)}}" title="Sửa điểm thi"><i class="fa fa-edit"></i></a></li>
+                                            <li><a class="example-p-6" data-url="{{route('wadmin::scores.remove.get',$d->id)}}" title="Xóa điểm thi"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </form>
                 {{$data->links()}}
             </div><!-- table-responsive -->
         </div>
