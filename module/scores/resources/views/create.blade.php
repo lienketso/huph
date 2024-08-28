@@ -110,8 +110,9 @@
                         <div class="form-group">
                             <label>Tình trạng</label>
                             <select name="status" class="form-control">
+                                <option value="pending" {{(old('status')=='pending') ? 'selected' : ''}}>Thông báo điểm</option>
                                 <option value="approved" {{(old('status')=='approved') ? 'selected' : ''}}>Đỗ</option>
-                                <option value="reject" {{((old('status')=='reject') ? 'selected' : ''}}>Trượt</option>
+                                <option value="reject" {{(old('status')=='reject') ? 'selected' : ''}}>Trượt</option>
                             </select>
                         </div>
 
@@ -133,6 +134,22 @@
                         <p>Thông tin các tùy chọn thêm </p>
                     </div>
                     <div class="panel-body">
+                        <div class="form-group">
+                            <label>Điểm môn mới</label>
+                            <input class="form-control"
+                                   name="score_one"
+                                   type="number"
+                                   value="{{old('score_one',null)}}"
+                                   placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Điểm ưu tiên môn mới</label>
+                            <input class="form-control"
+                                   name="priority_score_one"
+                                   type="number"
+                                   value="{{old('priority_score_one',0)}}"
+                                   placeholder="">
+                        </div>
                         <div class="form-group">
                             <label>Điểm môn sinh</label>
                             <input class="form-control"
@@ -240,7 +257,7 @@
                         <div class="form-group">
                             <label>Điểm ưu tiên DD-ATTP</label>
                             <input class="form-control"
-                                   name="priority_biochemistry_hematology_scores"
+                                   name="priority_food_safety_scores"
                                    type="number"
                                    value="{{old('priority_food_safety_scores',0)}}"
                                    placeholder="">

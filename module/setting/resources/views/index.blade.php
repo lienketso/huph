@@ -33,6 +33,13 @@
             filebrowserUploadUrl: '{{route('ckeditor.upload',['_token' => csrf_token() ])}}',
             filebrowserUploadMethod: 'form'
         });
+
+        CKEDITOR.replace( 'editor5', {
+            filebrowserBrowseUrl: '{{asset("admin/libs/ckfinder/ckfinder.html")}}',
+            filebrowserImageBrowseUrl: '{{asset("admin/libs/ckfinder/ckfinder.html?type=Images")}}',
+            filebrowserUploadUrl: '{{route('ckeditor.upload',['_token' => csrf_token() ])}}',
+            filebrowserUploadMethod: 'form'
+        });
     </script>
 
 @endsection
@@ -156,25 +163,31 @@
                                       placeholder="TRƯỜNG ĐẠI HỌC Y TẾ CÔNG CỘNG THÔNG BÁO KẾT QUẢ XÉT TUYỂN ĐẠI HỌC HỆ CHÍNH QUY NĂM HỌC 2023 ĐỢT 2">{{$setting->getSettingMeta('site_p_description_'.$language)}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Nội dung trúng tuyển</label>
+                            <label>Nội dung popup thông báo điểm</label>
+                            <textarea id="editor5" name="site_popup_pending"
+                                      class="form-control makeMeRichTextarea" rows="3"
+                                      placeholder="">{{$setting->getSettingMeta('site_popup_pending')}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung popup trúng tuyển</label>
                             <textarea id="editor4" name="site_contact_info_{{$language}}"
                                       class="form-control makeMeRichTextarea" rows="3"
                                       placeholder="Nội dung trang liên hệ">{{$setting->getSettingMeta('site_contact_info_'.$language)}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Nội dung không trúng tuyển</label>
+                            <label>Nội dung popup không trúng tuyển</label>
                             <textarea id="editor2" name="site_reject_info_{{$language}}"
                                       class="form-control makeMeRichTextarea" rows="3"
                                       placeholder="">{{$setting->getSettingMeta('site_reject_info_'.$language)}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Cấu hình thông tin thời gian nhập học</label>
+                            <label>Cấu hình popup thông tin thời gian nhập học</label>
                             <textarea name="banner_factory_{{$language}}"
                                       class="form-control " rows="3"
                                       placeholder="Từ 8h00 ngày 10/10/2023 đến 17h00 ngày 16/10/2023">{{$setting->getSettingMeta('banner_factory_'.$language)}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Thông tin lưu ý nhập học</label>
+                            <label>Thông tin popup lưu ý nhập học</label>
                             <textarea id="editor3" name="site_footer_info_1_{{$language}}"
                                       class="form-control makeMeRichTextarea" rows="3"
                                       placeholder="Nội dung mục chân trang 2">{{$setting->getSettingMeta('site_footer_info_1_'.$language)}}</textarea>

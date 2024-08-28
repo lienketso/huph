@@ -205,11 +205,91 @@
                             $('#frmResult').removeClass('form-rejected');
                             $('#contentApproved').show();
                             $('#contentRejected').hide();
-                        }else{
+                            $('#contentPending').hide();
+                            $('.showPending').hide();
+                            $('#trNhaphoc').show();
+                            $('#trLuuy').show();
+                        }
+                        if(response.status==='pending'){
+                            $('#frmResult').addClass('form-approved');
+                            $('#frmResult').removeClass('form-rejected');
+                            $('#contentPending').show();
+                            $('#contentRejected').hide();
+                            $('#contentApproved').hide();
+                            $('#trNhaphoc').hide();
+                            $('#trLuuy').hide();
+                            if(response.biology_scores.length>0){
+                                $('#dsDiemSinh').show();
+                                $('#diemSinh').text(response.biology_scores);
+                                $('#utdiemSinh').text(response.priority_biology_scores);
+                            }else{
+                                $('#dsDiemSinh').hide();
+                            }
+                            if(response.math_scores.length>0){
+                                $('#dsToanTK').show();
+                                $('#diemToanTK').text(response.math_scores);
+                                $('#utToanTK').text(response.priority_math_scores);
+                            }else{
+                                $('#dsToanTK').hide();
+                            }
+                            if(response.english_scores.length>0){
+                                $('#dsTiengAnh').show();
+                                $('#diemTienganh').text(response.english_scores);
+                                $('#utTienganh').text(response.priority_english_scores);
+                            }else{
+                                $('#dsTiengAnh').hide();
+                            }
+                            if(response.epidemiological_scores.length>0){
+                                $('#dsDichte').show();
+                                $('#diemDichte').text(response.epidemiological_scores);
+                                $('#utDichte').text(response.priority_epidemiological_scores);
+                            }else{
+                                $('#dsDichte').hide();
+                            }
+                            if(response.health_management_scores.length>0){
+                                $('#dsTochuQLYT').show();
+                                $('#diemTochuQLYT').text(response.health_management_scores);
+                                $('#utTochuQLYT').text(response.priority_health_management_scores);
+                            }else{
+                                $('#dsTochuQLYT').hide();
+                            }
+                            if(response.biochemistry_hematology_scores.length>0){
+                                $('#dsVisinh').show();
+                                $('#diemVisinh').text(response.biochemistry_hematology_scores);
+                                $('#utVisinh').text(response.priority_biochemistry_hematology_scores);
+                            }else{
+                                $('#dsVisinh').hide();
+                            }
+                            if(response.food_safety_scores.length>0){
+                                $('#dsDinhduong').show();
+                                $('#diemDinhduong').text(response.food_safety_scores);
+                                $('#utDinhduong').text(response.priority_food_safety_scores);
+                            }else{
+                                $('#dsDinhduong').hide();
+                            }
+                            if(response.score_one.length>0){
+                                $('#dsmonMoi').show();
+                                $('#diemmonMoi').text(response.score_one);
+                                $('#utmonMoi').text(response.priority_score_one);
+                            }else{
+                                $('#dsmonMoi').hide();
+                            }
+                            if(response.length>0){
+                                $('#tongdiem').show();
+                                $('#diemTongdiem').text(response.total_scores);
+                            }else{
+                                $('#tongdiem').hide();
+                            }
+                        }
+                        if(response.status==='reject'){
                             $('#frmResult').addClass('form-rejected');
                             $('#frmResult').removeClass('form-approved');
                             $('#contentRejected').show();
                             $('#contentApproved').hide();
+                            $('#contentPending').hide();
+                            $('.showPending').hide();
+                            $('#trNhaphoc').show();
+                            $('#trLuuy').show();
                         }
                         //cho thêm vào các id nào
                         $('#resultName').text(response.name);
@@ -218,6 +298,8 @@
                         $('#resultManganh').text(response.identification_number);
                         $('#resultTennganh').text(response.test_subject);
                         $('#resultGender').text(response.gender);
+                        //điểm
+
                     }
                 },
                 error: function(xhr, status, error) {

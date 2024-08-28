@@ -53,7 +53,14 @@ section#hot-new h1{
     right: 10px;
     font-style: italic;
 }
-#contentApproved, #contentRejected{
+.diemcolor{
+    color: #cc0000;
+}
+#dsDiemSinh, #dsToanTK, #dsTiengAnh, #dsDichte, #dsTochuQLYT, #dsVisinh, #dsDinhduong, #dsmonMoi, #tongdiem{
+    display: none;
+}
+
+#contentApproved, #contentRejected, #contentPending{
     display: none;
 }
 #contact h1{

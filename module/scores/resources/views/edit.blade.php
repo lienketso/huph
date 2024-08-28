@@ -111,6 +111,7 @@
                         <div class="form-group">
                             <label>Tình trạng</label>
                             <select name="status" class="form-control">
+                                <option value="pending" {{($data->status=='pending') ? 'selected' : ''}}>Thông báo điểm</option>
                                 <option value="approved" {{($data->status=='approved') ? 'selected' : ''}}>Đỗ</option>
                                 <option value="reject" {{($data->status=='reject') ? 'selected' : ''}}>Trượt</option>
                             </select>
@@ -134,6 +135,22 @@
                         <p>Thông tin các tùy chọn thêm </p>
                     </div>
                     <div class="panel-body">
+                        <div class="form-group">
+                            <label>Điểm môn mới</label>
+                            <input class="form-control"
+                                   name="score_one"
+                                   type="text"
+                                   value="{{$data->score_one}}"
+                                   placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Điểm ưu tiên môn mới</label>
+                            <input class="form-control"
+                                   name="priority_score_one"
+                                   type="text"
+                                   value="{{$data->priority_score_one}}"
+                                   placeholder="">
+                        </div>
                         <div class="form-group">
                             <label>Điểm môn sinh</label>
                             <input class="form-control"
@@ -241,7 +258,7 @@
                         <div class="form-group">
                             <label>Điểm ưu tiên DD-ATTP</label>
                             <input class="form-control"
-                                   name="priority_biochemistry_hematology_scores"
+                                   name="priority_food_safety_scores"
                                    type="text"
                                    value="{{$data->priority_food_safety_scores}}"
                                    placeholder="">

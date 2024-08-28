@@ -278,6 +278,9 @@
                                         </tr>
                                         <tr>
                                             <td colspan="4">
+                                                <div id="contentPending">
+                                                    {!! $setting['site_popup_pending'] !!}
+                                                </div>
                                                 <div id="contentApproved">
                                                     {!! $setting['site_contact_info_'.$lang] !!}
                                                 </div>
@@ -300,13 +303,51 @@
                                                 <strong id="resultTennganh">Công nghệ kỹ thuật môi trường</strong>
                                             </td>
                                         </tr>
-                                        <tr>
+
+                                        <tr id="dsDiemSinh" class="showPending">
+                                            <td colspan="2">Sinh: <strong class="diemcolor" id="diemSinh">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên môn sinh: <strong class="diemcolor" id="utdiemSinh">2</strong></td>
+                                        </tr>
+
+                                        <tr id="dsToanTK" class="showPending">
+                                            <td colspan="2">Toán thống kê: <strong class="diemcolor" id="diemToanTK">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên toán thống kê: <strong class="diemcolor" id="utToanTK">2</strong></td>
+                                        </tr>
+                                        <tr id="dsTiengAnh" class="showPending">
+                                            <td colspan="2">Tiếng Anh: <strong class="diemcolor" id="diemTienganh">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên tiếng anh: <strong class="diemcolor" id="utTienganh">2</strong></td>
+                                        </tr>
+                                        <tr id="dsDichte" class="showPending">
+                                            <td colspan="2">Dịch tễ - SKMT: <strong class="diemcolor" id="diemDichte">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên Dịch tễ - SKMT <strong class="diemcolor" id="utDichte">2</strong></td>
+                                        </tr>
+                                        <tr id="dsTochuQLYT" class="showPending">
+                                            <td colspan="2">Tổ chức quản lý y tế: <strong class="diemcolor" id="diemTochuQLYT">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên tổ chức quản lý y tế <strong class="diemcolor" id="utTochuQLYT">2</strong></td>
+                                        </tr>
+                                        <tr id="dsVisinh" class="showPending">
+                                            <td colspan="2">Vi sinh - Hóa sinh - Huyết học: <strong class="diemcolor" id="diemVisinh">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên Vi sinh - Hóa sinh - Huyết học <strong class="diemcolor" id="utVisinh">2</strong></td>
+                                        </tr>
+                                        <tr id="dsDinhduong" class="showPending">
+                                            <td colspan="2">DD- ATTP: <strong class="diemcolor" id="diemDinhduong">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên DD- ATTP <strong class="diemcolor" id="utDinhduong">2</strong></td>
+                                        </tr>
+                                        <tr id="dsmonMoi" class="showPending">
+                                            <td colspan="2">Điểm môn mới: <strong class="diemcolor" id="diemmonMoi">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên môn mới <strong class="diemcolor" id="utmonMoi">2</strong></td>
+                                        </tr>
+                                        <tr id="tongdiem" class="showPending">
+                                            <td colspan="4"><b>TỔNG ĐIỂM XÉT TUYỂN:</b> <strong class="diemcolor" id="diemTongdiem">1</strong></td>
+                                        </tr>
+
+                                        <tr id="trNhaphoc">
                                             <td colspan="4">
                                                 <strong class="me-3">Thời gian nhập học:</strong>
                                                 {!! $setting['banner_factory_'.$lang] !!}
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="trLuuy">
                                             <td colspan="4">
                                                 <strong class="me-3">Lưu ý:</strong>
                                                 <div class="note-admission">

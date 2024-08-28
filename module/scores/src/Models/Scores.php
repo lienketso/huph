@@ -11,6 +11,8 @@ class Scores extends Model
         'cccd_number',
         'birthday',
         'test_subject',
+        'score_one',
+        'priority_score_one',
         'biology_scores',
         'priority_biology_scores',
         'math_scores',
