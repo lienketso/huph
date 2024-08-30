@@ -274,7 +274,7 @@
                             }else{
                                 $('#dsmonMoi').hide();
                             }
-                            if(response.length>0){
+                            if(response.total_scores.length>0){
                                 $('#tongdiem').show();
                                 $('#diemTongdiem').text(response.total_scores);
                             }else{

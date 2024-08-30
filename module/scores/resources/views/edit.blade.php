@@ -136,7 +136,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <label>Điểm môn mới</label>
+                            <label>Điểm Các PP can thiệp của CTXH</label>
                             <input class="form-control"
                                    name="score_one"
                                    type="text"
@@ -144,7 +144,7 @@
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Điểm ưu tiên môn mới</label>
+                            <label>Điểm ưu tiên Các PP can thiệp của CTXH</label>
                             <input class="form-control"
                                    name="priority_score_one"
                                    type="text"

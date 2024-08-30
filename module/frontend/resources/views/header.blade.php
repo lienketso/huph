@@ -334,8 +334,8 @@
                                             <td colspan="2">Điểm ưu tiên DD- ATTP <strong class="diemcolor" id="utDinhduong">2</strong></td>
                                         </tr>
                                         <tr id="dsmonMoi" class="showPending">
-                                            <td colspan="2">Điểm môn mới: <strong class="diemcolor" id="diemmonMoi">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên môn mới <strong class="diemcolor" id="utmonMoi">2</strong></td>
+                                            <td colspan="2">Điểm Các PP can thiệp của CTXH: <strong class="diemcolor" id="diemmonMoi">1</strong></td>
+                                            <td colspan="2">Điểm ưu tiên Các PP can thiệp của CTXH <strong class="diemcolor" id="utmonMoi">2</strong></td>
                                         </tr>
                                         <tr id="tongdiem" class="showPending">
                                             <td colspan="4"><b>TỔNG ĐIỂM XÉT TUYỂN:</b> <strong class="diemcolor" id="diemTongdiem">1</strong></td>
