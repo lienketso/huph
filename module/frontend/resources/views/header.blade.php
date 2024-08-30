@@ -319,23 +319,23 @@
                                         </tr>
                                         <tr id="dsDichte" class="showPending">
                                             <td colspan="2">Dịch tễ - SKMT: <strong class="diemcolor" id="diemDichte">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên Dịch tễ - SKMT <strong class="diemcolor" id="utDichte">2</strong></td>
+                                            <td colspan="2">Điểm ưu tiên Dịch tễ - SKMT: <strong class="diemcolor" id="utDichte">2</strong></td>
                                         </tr>
                                         <tr id="dsTochuQLYT" class="showPending">
                                             <td colspan="2">Tổ chức quản lý y tế: <strong class="diemcolor" id="diemTochuQLYT">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên tổ chức quản lý y tế <strong class="diemcolor" id="utTochuQLYT">2</strong></td>
+                                            <td colspan="2">Điểm ưu tiên tổ chức quản lý y tế: <strong class="diemcolor" id="utTochuQLYT">2</strong></td>
                                         </tr>
                                         <tr id="dsVisinh" class="showPending">
                                             <td colspan="2">Vi sinh - Hóa sinh - Huyết học: <strong class="diemcolor" id="diemVisinh">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên Vi sinh - Hóa sinh - Huyết học <strong class="diemcolor" id="utVisinh">2</strong></td>
+                                            <td colspan="2">Điểm ưu tiên Vi sinh - Hóa sinh - Huyết học: <strong class="diemcolor" id="utVisinh">2</strong></td>
                                         </tr>
                                         <tr id="dsDinhduong" class="showPending">
                                             <td colspan="2">DD- ATTP: <strong class="diemcolor" id="diemDinhduong">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên DD- ATTP <strong class="diemcolor" id="utDinhduong">2</strong></td>
+                                            <td colspan="2">Điểm ưu tiên DD- ATTP: <strong class="diemcolor" id="utDinhduong">2</strong></td>
                                         </tr>
                                         <tr id="dsmonMoi" class="showPending">
                                             <td colspan="2">Điểm Các PP can thiệp của CTXH: <strong class="diemcolor" id="diemmonMoi">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên Các PP can thiệp của CTXH <strong class="diemcolor" id="utmonMoi">2</strong></td>
+                                            <td colspan="2">Điểm ưu tiên Các PP can thiệp của CTXH: <strong class="diemcolor" id="utmonMoi">2</strong></td>
                                         </tr>
                                         <tr id="tongdiem" class="showPending">
                                             <td colspan="4"><b>TỔNG ĐIỂM XÉT TUYỂN:</b> <strong class="diemcolor" id="diemTongdiem">1</strong></td>
