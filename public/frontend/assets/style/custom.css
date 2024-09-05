@@ -884,7 +884,7 @@ section#package h2 span {
     overflow-x: scroll;
 }
 .form-result table {
-    width: 884px;
+    width: 100%;
 }
 .form-rejected {
     background-image: url("../image/Rejected.png");

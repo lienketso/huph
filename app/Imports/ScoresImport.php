@@ -27,31 +27,23 @@ class ScoresImport implements ToModel
         }
 
         return new Scores([
-            'identification_number'=> (!empty($row[0]) ? $row[0] : "0"),
-            'name'     => (!empty($row[1]) ? $row[1] : "-"),
-            'birthday' => (!empty($row[2]) ? $row[2] : "-"),
-            'test_subject' => (!empty($row[3]) ? $row[3] : "-"),
-            'score_one' => (!empty($row[4]) ? $row[4] : ""),
-            'priority_score_one' => (!empty($row[5]) ? $row[5] : ""),
-            'biology_scores' => (!empty($row[6]) ? $row[6] : ""),
-            'priority_biology_scores' => (!empty($row[7]) ? $row[7] : ""),
-            'math_scores' => (!empty($row[8]) ? $row[8] : ""),
-            'priority_math_scores' => (!empty($row[9]) ? $row[9] : ""),
-            'english_scores' => (!empty($row[10]) ? $row[10] : ""),
-            'priority_english_scores' => (!empty($row[11]) ? $row[11] : ""),
-            'epidemiological_scores' => (!empty($row[12]) ? $row[12] : ""),
-            'priority_epidemiological_scores' => (!empty($row[13]) ? $row[13] : ""),
-            'health_management_scores' => (!empty($row[14]) ? $row[14] : ""),
-            'priority_health_management_scores' => (!empty($row[15]) ? $row[15] : ""),
-            'biochemistry_hematology_scores' => (!empty($row[16]) ? $row[16] : ""),
-            'priority_biochemistry_hematology_scores' => (!empty($row[17]) ? $row[17] : ""),
-            'food_safety_scores' => (!empty($row[18]) ? $row[18] : ""),
-            'priority_food_safety_scores' => (!empty($row[19]) ? $row[19] : ""),
-            'total_scores' => (!empty($row[20]) ? $row[20] : ""),
-            'comment' => (!empty($row[21]) ? $row[21] : "-"),
-            'cccd_number' => (!empty($row[22]) ? $row[22] : "-"),
-            'industry_code' => (!empty($row[23]) ? $row[23] : "-"),
-            'status' => (!empty($row[24]) ? $row[24] : "pending"),
+            'identification_number'=> (!empty($row[0]) ? $row[0] : "0"), // số báo danh
+            'cccd_number' => (!empty($row[1]) ? $row[1] : "-"),
+            'name'     => (!empty($row[2]) ? $row[2] : "-"), // Họ và tên
+            'gender'     => (!empty($row[3]) ? $row[3] : "-"), // Giới tính
+            'birthday' => (!empty($row[4]) ? $row[4] : "-"), // Ngày sinh
+            'test_subject' => (!empty($row[5]) ? $row[5] : "-"), //Đối tượng dự thi
+            'score_one_name' => (!empty($row[6]) ? $row[6] : ""), // Tên môn thi 1
+            'score_one' => (!empty($row[7]) ? $row[7] : ""), // Điểm thi môn 1
+            'priority_score_one' => (!empty($row[8]) ? $row[8] : ""), // Điểm ưu tiên môn 1
+            'total_score_one' => (!empty($row[9]) ? $row[9] : ""), // Tổng điểm môn thi 1
+            'score_two_name' => (!empty($row[10]) ? $row[10] : ""), // Tên môn thi 2
+            'score_two' => (!empty($row[11]) ? $row[11] : ""), //Điểm môn thi 2
+            'priority_score_two' => (!empty($row[12]) ? $row[12] : ""), //Điểm ưu tiên môn 2
+            'total_score_two' => (!empty($row[13]) ? $row[13] : ""), // Tổng điểm môn 2
+            'total_scores' => (!empty($row[14]) ? $row[14] : ""), //Tổng điểm xét tuyển
+            'comment' => (!empty($row[15]) ? $row[15] : "-"), //Ghi chú
+            'status' => (!empty($row[16]) ? $row[16] : "pending"), //Trạng thái
         ]);
     }
 }

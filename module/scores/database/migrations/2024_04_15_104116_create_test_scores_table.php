@@ -15,29 +15,24 @@ class CreateTestScoresTable extends Migration
     {
         Schema::create('test_scores', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
             $table->string('identification_number')->nullable()->comment('số báo danh');
             $table->string('cccd_number')->nullable()->comment('số căn cước công dân');
+            $table->string('name')->nullable();
+            $table->string('gender')->nullable();
             $table->string('birthday')->nullable()->comment('Ngày sinh');
             $table->string('test_subject')->nullable()->comment('Đối tượng dự thi');
-            $table->tinyInteger('biology_scores')->default(0)->comment('Điểm môn sinh');
-            $table->tinyInteger('priority_biology_scores')->default(0)->comment('Điểm ưu tiên môn sinh');
-            $table->tinyInteger('math_scores')->default(0)->comment('Điểm môn toán thống kê');
-            $table->tinyInteger('priority_math_scores')->default(0)->comment('Điểm ưu tiên môn toán thống kê');
-            $table->tinyInteger('english_scores')->default(0)->comment('Điểm môn tiếng anh');
-            $table->tinyInteger('priority_english_scores')->default(0)->comment('Điểm ưu tiên môn tiếng anh');
-            $table->tinyInteger('epidemiological_scores')->default(0)->comment('Điểm dịch tễ');
-            $table->tinyInteger('priority_epidemiological_scores')->default(0)->comment('Điểm ưu tiên dịch tễ');
-            $table->tinyInteger('health_management_scores')->default(0)->comment('Điểm môn Tổ chức Quản lý y tế');
-            $table->tinyInteger('priority_health_management_scores')->default(0)->comment('Điểm ưu Tổ chức Quản lý y tế');
-            $table->tinyInteger('biochemistry_hematology_scores')->default(0)->comment('Điểm Vi sinh - Hóa sinh- Huyết học');
-            $table->tinyInteger('priority_biochemistry_hematology_scores')->default(0)->comment('Điểm ưu tiên Vi sinh - Hóa sinh- Huyết học');
-            $table->tinyInteger('food_safety_scores')->default(0)->comment('Điểm An toàn thực phẩm');
-            $table->tinyInteger('priority_food_safety_scores')->default(0)->comment('Điểm ưu tiên An toàn thực phẩm');
-            $table->tinyInteger('total_scores')->default(0)->comment('Tổng điểm');
-            $table->integer('admission_year')->default(date('Y'))->comment('Năm tuyển sinh');
+            $table->string('score_one_name')->nullable()->comment('Tên môn thi 1');
+            $table->string('score_one')->nullable()->comment('Điểm môn thi 1');
+            $table->string('priority_score_one')->nullable()->comment('Điểm ưu tiên môn thi 1');
+            $table->string('total_score_one')->nullable()->comment('Tổng điểm môn thi 1');
+            $table->string('score_two_name')->nullable()->comment('Tên môn thi 2');
+            $table->string('score_two')->nullable()->comment('Điểm môn thi 2');
+            $table->string('priority_score_two')->nullable()->comment('Điểm ưu tiên môn thi 2');
+            $table->string('total_score_two')->nullable()->comment('Tổng điểm môn thi 2');
+            $table->string('total_scores')->nullable()->comment('Tổng điểm các môn');
+            $table->string('admission_year')->default(date('Y'))->comment('Năm tuyển sinh');
             $table->string('comment')->nullable()->comment('Ghi chú');
-
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

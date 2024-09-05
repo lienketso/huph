@@ -787,3 +787,15 @@ footer ul.list-custom li a, .list-group-item{
     position: relative;
     right: -10px;
 }
+.bangdiem-import{
+    border-collapse: collapse;
+    text-align: center;
+}
+.bangdiem-import tr td, .bangdiem-import tr th{
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    min-width: 130px;
+}
+#bangDiem{
+    display: none;
+}

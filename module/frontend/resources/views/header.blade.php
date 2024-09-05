@@ -304,42 +304,31 @@
                                             </td>
                                         </tr>
 
-                                        <tr id="dsDiemSinh" class="showPending">
-                                            <td colspan="2">Sinh: <strong class="diemcolor" id="diemSinh">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên môn sinh: <strong class="diemcolor" id="utdiemSinh">2</strong></td>
+                                        <tr id="bangDiem">
+                                            <table class="bangdiem-import">
+                                                <tr>
+                                                    <th colspan="2" id="pointOneName">Môn tiếng Anh</th>
+                                                    <th colspan="2" id="pointTwoName">Môn Dịch tễ - Sức khỏe môi trường </th>
+                                                    <th rowspan="2" id="">Tổng điểm xét tuyển (Đã bao gồm điểm ưu tiên nếu có)</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Điểm gốc</td>
+                                                    <td>Điểm ưu tiên</td>
+                                                    <td>Điểm gốc</td>
+                                                    <td>Điểm ưu tiên</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td id="scoreOne">...</td>
+                                                    <td id="PriorityOne">...</td>
+                                                    <td id="scoreTwo">...</td>
+                                                    <td id="priorityTwo">...</td>
+                                                    <td id="totalPoint">...</td>
+                                                </tr>
+                                            </table>
                                         </tr>
 
-                                        <tr id="dsToanTK" class="showPending">
-                                            <td colspan="2">Toán thống kê: <strong class="diemcolor" id="diemToanTK">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên toán thống kê: <strong class="diemcolor" id="utToanTK">2</strong></td>
-                                        </tr>
-                                        <tr id="dsTiengAnh" class="showPending">
-                                            <td colspan="2">Tiếng Anh: <strong class="diemcolor" id="diemTienganh">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên tiếng anh: <strong class="diemcolor" id="utTienganh">2</strong></td>
-                                        </tr>
-                                        <tr id="dsDichte" class="showPending">
-                                            <td colspan="2">Dịch tễ - SKMT: <strong class="diemcolor" id="diemDichte">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên Dịch tễ - SKMT: <strong class="diemcolor" id="utDichte">2</strong></td>
-                                        </tr>
-                                        <tr id="dsTochuQLYT" class="showPending">
-                                            <td colspan="2">Tổ chức quản lý y tế: <strong class="diemcolor" id="diemTochuQLYT">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên tổ chức quản lý y tế: <strong class="diemcolor" id="utTochuQLYT">2</strong></td>
-                                        </tr>
-                                        <tr id="dsVisinh" class="showPending">
-                                            <td colspan="2">Vi sinh - Hóa sinh - Huyết học: <strong class="diemcolor" id="diemVisinh">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên Vi sinh - Hóa sinh - Huyết học: <strong class="diemcolor" id="utVisinh">2</strong></td>
-                                        </tr>
-                                        <tr id="dsDinhduong" class="showPending">
-                                            <td colspan="2">DD- ATTP: <strong class="diemcolor" id="diemDinhduong">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên DD- ATTP: <strong class="diemcolor" id="utDinhduong">2</strong></td>
-                                        </tr>
-                                        <tr id="dsmonMoi" class="showPending">
-                                            <td colspan="2">Điểm Các PP can thiệp của CTXH: <strong class="diemcolor" id="diemmonMoi">1</strong></td>
-                                            <td colspan="2">Điểm ưu tiên Các PP can thiệp của CTXH: <strong class="diemcolor" id="utmonMoi">2</strong></td>
-                                        </tr>
-                                        <tr id="tongdiem" class="showPending">
-                                            <td colspan="4"><b>TỔNG ĐIỂM XÉT TUYỂN:</b> <strong class="diemcolor" id="diemTongdiem">1</strong></td>
-                                        </tr>
+
 
                                         <tr id="trNhaphoc">
                                             <td colspan="4">

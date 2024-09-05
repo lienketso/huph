@@ -21,7 +21,7 @@
     <ol class="breadcrumb breadcrumb-quirk">
         <li><a href="{{route('wadmin::dashboard.index.get')}}"><i class="fa fa-home mr5"></i> Dashboard</a></li>
         <li><a href="{{route('wadmin::scores.index.get')}}">Danh sách điểm thi</a></li>
-        <li class="active">Thêm điểm thi</li>
+        <li class="active">Sửa điểm thi</li>
     </ol>
 
     <div class="row">
@@ -87,14 +87,7 @@
                                    value="{{$data->test_subject}}"
                                    placeholder="">
                         </div>
-                        <div class="form-group">
-                            <label>Mã ngành</label>
-                            <input class="form-control"
-                                   name="industry_code"
-                                   type="text"
-                                   value="{{$data->industry_code}}"
-                                   placeholder="Mã ngành đăng ký tuyển sinh">
-                        </div>
+
                         <div class="form-group">
                             <label>Năm tuyển sinh</label>
                             <input class="form-control"
@@ -105,7 +98,7 @@
                         </div>
                         <div class="form-group">
                             <label>Ghi chú</label>
-                            <textarea id="" name="comment" class="form-control" rows="3" placeholder="Ghi chú">{{old('comment')}}</textarea>
+                            <textarea id="" name="comment" class="form-control" rows="3" placeholder="Ghi chú">{{$data->comment}}</textarea>
                         </div>
 
                         <div class="form-group">
@@ -136,7 +129,15 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <label>Điểm Các PP can thiệp của CTXH</label>
+                            <label>Tên môn thi 1</label>
+                            <input class="form-control"
+                                   name="score_one_name"
+                                   type="text"
+                                   value="{{$data->score_one_name}}"
+                                   placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Điểm môn thi 1</label>
                             <input class="form-control"
                                    name="score_one"
                                    type="text"
@@ -144,7 +145,7 @@
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Điểm ưu tiên Các PP can thiệp của CTXH</label>
+                            <label>Điểm ưu tiên môn thi 1</label>
                             <input class="form-control"
                                    name="priority_score_one"
                                    type="text"
@@ -152,117 +153,46 @@
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Điểm môn sinh</label>
+                            <label>Tổng điểm môn thi 1</label>
                             <input class="form-control"
-                                   name="biology_scores"
+                                   name="total_score_one"
                                    type="text"
-                                   value="{{$data->biology_scores}}"
+                                   value="{{$data->total_score_one}}"
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Điểm ưu tiên môn sinh</label>
+                            <label>Tên môn thi 2</label>
                             <input class="form-control"
-                                   name="priority_biology_scores"
+                                   name="score_two_name"
                                    type="text"
-                                   value="{{$data->priority_biology_scores}}"
+                                   value="{{$data->score_two_name}}"
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Điểm môn toán thống kê</label>
+                            <label>Điểm môn thi 2</label>
                             <input class="form-control"
-                                   name="math_scores"
+                                   name="score_two"
+                                   type="text"
+                                   value="{{$data->score_two}}"
+                                   placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Điểm ưu tiên môn thi 2</label>
+                            <input class="form-control"
+                                   name="priority_score_two"
                                    type="number"
-                                   value="{{$data->math_scores}}"
+                                   value="{{$data->priority_score_two}}"
                                    placeholder="">
                         </div>
                         <div class="form-group">
-                            <label>Điểm ưu tiên môn toán thống kê</label>
+                            <label>Tổng điểm môn thi 2</label>
                             <input class="form-control"
-                                   name="priority_math_scores"
+                                   name="total_score_two"
                                    type="text"
-                                   value="{{$data->priority_math_scores}}"
+                                   value="{{$data->total_score_two}}"
                                    placeholder="">
                         </div>
-                        <div class="form-group">
-                            <label>Điểm tiếng anh</label>
-                            <input class="form-control"
-                                   name="english_scores"
-                                   type="text"
-                                   value="{{$data->english_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm ưu tiên môn tiếng anh</label>
-                            <input class="form-control"
-                                   name="priority_english_scores"
-                                   type="text"
-                                   value="{{$data->priority_english_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm dịch tễ - SKMT</label>
-                            <input class="form-control"
-                                   name="epidemiological_scores"
-                                   type="text"
-                                   value="{{$data->epidemiological_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm ưu tiên dịch tễ - SKMT</label>
-                            <input class="form-control"
-                                   name="priority_epidemiological_scores"
-                                   type="text"
-                                   value="{{$data->priority_epidemiological_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm môn tổ chức QL Y tế</label>
-                            <input class="form-control"
-                                   name="health_management_scores"
-                                   type="text"
-                                   value="{{$data->health_management_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm ưu tiên môn tổ chức QL Y tế</label>
-                            <input class="form-control"
-                                   name="priority_health_management_scores"
-                                   type="text"
-                                   value="{{$data->priority_health_management_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm Vi sinh - Hóa sinh- Huyết học</label>
-                            <input class="form-control"
-                                   name="biochemistry_hematology_scores"
-                                   type="text"
-                                   value="{{$data->biochemistry_hematology_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm ưu tiên Vi sinh - Hóa sinh- Huyết học</label>
-                            <input class="form-control"
-                                   name="priority_biochemistry_hematology_scores"
-                                   type="text"
-                                   value="{{$data->priority_biochemistry_hematology_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm DD-ATTP</label>
-                            <input class="form-control"
-                                   name="food_safety_scores"
-                                   type="text"
-                                   value="{{$data->food_safety_scores}}"
-                                   placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Điểm ưu tiên DD-ATTP</label>
-                            <input class="form-control"
-                                   name="priority_food_safety_scores"
-                                   type="text"
-                                   value="{{$data->priority_food_safety_scores}}"
-                                   placeholder="">
-                        </div>
+
                         <div class="form-group">
                             <label>Tổng điểm xét tuyển ( đã bao gồm điểm ưu tiên )</label>
                             <input class="form-control"
