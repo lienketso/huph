@@ -291,7 +291,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <label>Mã ngành:</label>
+                                                <label>Số báo danh:</label>
                                             </td>
                                             <td>
                                                 <strong id="resultManganh">7510406</strong>

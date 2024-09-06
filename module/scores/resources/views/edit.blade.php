@@ -74,9 +74,9 @@
                         <div class="form-group">
                             <label>Giới tính</label>
                             <select name="gender" class="form-control">
-                                <option value="Nam" {{($data->status=='Nam') ? 'selected' : ''}}>Nam</option>
-                                <option value="Nữ" {{($data->status=='Nữ') ? 'selected' : ''}}>Nữ</option>
-                                <option value="Khác" {{($data->status=='Khác') ? 'selected' : ''}}>Khác</option>
+                                <option value="Nam" {{($data->gender=='Nam') ? 'selected' : ''}}>Nam</option>
+                                <option value="Nữ" {{($data->gender=='Nữ') ? 'selected' : ''}}>Nữ</option>
+                                <option value="Khác" {{($data->gender=='Khác') ? 'selected' : ''}}>Khác</option>
                             </select>
                         </div>
                         <div class="form-group">
