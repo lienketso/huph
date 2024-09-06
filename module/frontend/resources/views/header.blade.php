@@ -307,8 +307,8 @@
                                         <tr id="bangDiem">
                                             <table class="bangdiem-import">
                                                 <tr>
-                                                    <th colspan="2" id="pointOneName">Môn tiếng Anh</th>
-                                                    <th colspan="2" id="pointTwoName">Môn Dịch tễ - Sức khỏe môi trường </th>
+                                                    <th colspan="2" id="pointOneName">...</th>
+                                                    <th colspan="2" id="pointTwoName">...</th>
                                                     <th rowspan="2" id="">Tổng điểm xét tuyển (Đã bao gồm điểm ưu tiên nếu có)</th>
                                                 </tr>
                                                 <tr>
@@ -328,14 +328,22 @@
                                             </table>
                                         </tr>
 
+                                        <tr>
+                                            <td colspan="4">
+                                                <p>Ghi chú: <span id="commentPoint">...</span></p>
+                                            </td>
+                                        </tr>
 
 
+                                        @if($setting['banner_factory_vn']!='')
                                         <tr id="trNhaphoc">
                                             <td colspan="4">
                                                 <strong class="me-3">Thời gian nhập học:</strong>
                                                 {!! $setting['banner_factory_'.$lang] !!}
                                             </td>
                                         </tr>
+                                        @endif
+                                        @if($setting['site_footer_info_1_vn']!='')
                                         <tr id="trLuuy">
                                             <td colspan="4">
                                                 <strong class="me-3">Lưu ý:</strong>
@@ -344,6 +352,8 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endif
+
                                         </tbody>
                                     </table>
                             </div>

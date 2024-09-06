@@ -245,6 +245,7 @@
                         $('#scoreTwo').text(response.score_two);
                         $('#priorityTwo').text(response.priority_score_two);
                         $('#totalPoint').text(response.total_scores);
+                        $('#commentPoint').text(response.comment);
                     }
                 },
                 error: function(xhr, status, error) {

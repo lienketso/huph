@@ -881,7 +881,7 @@ section#package h2 span {
     background-position-y: 4%;
     margin-bottom: 60px;
     padding: 30px;
-    overflow-x: scroll;
+    overflow: auto;
 }
 .form-result table {
     width: 100%;
@@ -890,7 +890,7 @@ section#package h2 span {
     background-image: url("../image/Rejected.png");
 }
 .form-approved {
-    background-image: url("../image/Approved.png");
+    /*background-image: url("../image/Approved.png");*/
 }
 .form-result td {
     padding: 8px 0;
@@ -965,7 +965,6 @@ video {
     position: absolute;
     border-radius: 8px;
     border: 6px solid #fff;
-    width: 245px;
     height: 187px;
     box-shadow: 0 4px 10px #bbbec7;
 }

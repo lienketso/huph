@@ -799,3 +799,6 @@ footer ul.list-custom li a, .list-group-item{
 #bangDiem{
     display: none;
 }
+.table-responsive p{
+    padding-top: 10px;
+}
