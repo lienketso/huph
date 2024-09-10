@@ -15,3 +15,4 @@ yarn-error.log
 .idea
 public/public/upload/.ckfinder
 public/public/upload
+composer.lock
