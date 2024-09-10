@@ -1,6 +1,7 @@
 <?php
 
 namespace Scores\Http\Controllers;
+use App\Exports\ScoresExport;
 use App\Imports\ScoresImport;
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Barryvdh\Debugbar\LaravelDebugbar;
@@ -109,6 +110,12 @@ class ScoresController extends BaseController
         Scores::whereIn('id', $ids)->delete();
 
         return redirect()->back()->with('delete', 'Xóa dữ liệu thành công');
+    }
+
+    //export excel
+    public function export()
+    {
+        return Excel::download(new ScoresExport(), 'danh-sach-diem-thi.xlsx');
     }
 
 

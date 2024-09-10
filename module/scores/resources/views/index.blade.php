@@ -59,7 +59,8 @@
                     @endif
                     <form method="POST" action="{{route('wadmin::score-delete-multiple.post')}}">
                         @csrf
-                        <button type="submit" class="btnRemoveAll">Xóa tùy chọn</button>
+                        <button type="submit" class="btnRemoveAll"><i class="fa fa-remove"></i> Xóa tùy chọn</button>
+                        <a style="margin-left: 20px" href="{{route('wadmin::score-export-excel')}}" class="btnExport"><i class="fa fa-download"></i> Xuất dữ liệu ra Excel</a>
                         <table class="table nomargin">
                             <thead>
                             <tr>

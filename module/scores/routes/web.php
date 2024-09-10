@@ -28,5 +28,7 @@ Route::group(['prefix'=>$adminRoute],function(Router $router) use($adminRoute,$m
         //remove all
         $router->post('delete-mutilple','ScoresController@deleteMultiple')->name('wadmin::score-delete-multiple.post')
             ->middleware('permission:scores_delete');
+        //export excel
+        $router->get('export-score-excel','ScoresController@export')->name('wadmin::score-export-excel');
     });
 });
