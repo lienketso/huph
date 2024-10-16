@@ -128,7 +128,7 @@
                                     by <strong>{{($hotBlogCategory->user()->exists()) ? $hotBlogCategory->user->full_name : 'admin'}}</strong> - {{datetoString($hotBlogCategory->created_at)}}
                                 </h4>
                                 <p>
-                                    {!! ($hotBlogCategory->description!='') ? cut_string($hotBlogCategory->description,200) : cut_string(strip_tags($hotBlogCategory->content),200) !!}
+                                    {{ ($hotBlogCategory->description!='') ? cut_string($hotBlogCategory->description,200) : '' }}
                                 </p>
                                 <div class="show-more"><a href="{{route('frontend::blog.detail.get',$hotBlogCategory->slug)}}">Xem thêm</a></div>
                             </div>
@@ -166,8 +166,7 @@
                                 </h6>
 
                                 <p>
-                                    {!! ($d->description!='') ? cut_string($d->description,150) : cut_string(strip_tags($d->content),150) !!}
-
+                                    {{ ($d->description!='') ? cut_string($d->description,150) : '' }}
                                 </p>
 
                             </div>

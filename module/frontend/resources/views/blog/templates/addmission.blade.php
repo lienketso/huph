@@ -97,7 +97,7 @@
             </div>
             @foreach($data->childs as $child)
                 @php
-                    $postsParent = $child->posts()->where('status','active')->where('display','!=',2)->limit(10)->get();
+                    $postsParent = $child->posts()->orderBy('created_at','desc')->where('status','active')->where('display','!=',2)->limit(10)->get();
                 @endphp
                 <div class="row">
                     <div class="heading-nganh">
@@ -125,8 +125,8 @@
                             @if($child->childs()->exists())
                                 @foreach($child->childs as $key=>$c)
                                     @php
-                                        $postsNganh = $c->posts()->where('status','active')->where('display','!=',2)->limit(5)->get();
-                                        $postNoibat = $c->posts()->where('status','active')->where('display',2)->limit(1)->get();
+                                        $postsNganh = $c->posts()->orderBy('created_at','desc')->where('status','active')->where('display','!=',2)->limit(5)->get();
+                                        $postNoibat = $c->posts()->orderBy('created_at','desc')->where('status','active')->where('display',2)->limit(1)->get();
                                     @endphp
                                     <div class="tab-pane fade {{($key==0)?'show active':''}}" id="home-tab-pane{{$c->id}}" role="tabpanel" aria-labelledby="home-tab{{$c->id}}"
                                          tabindex="{{$key}}">
