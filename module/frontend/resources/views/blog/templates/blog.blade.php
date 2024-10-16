@@ -174,7 +174,13 @@
                         </div>
                         @if(auth()->check())
                         <div class="edit-post-admin">
-                            <a href="{{route('wadmin::post.edit.get',$d->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                            @php
+                                $rou = 'wadmin::post.edit.get';
+                                if($d->post_type=='tuyensinh'){
+                                    $rou = 'wadmin::tuyen-sinh.edit.get';
+                                }
+                            @endphp
+                            <a href="{{route($rou,$d->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
                         </div>
                         @endif
 
