@@ -103,11 +103,11 @@
                         </div>
                         <div class="form-group">
                             <label>Mô tả</label>
-                            <textarea id="editor1" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{$data->description}}</textarea>
+                            <textarea id="" name="description" class="form-control" rows="3" placeholder="Mô tả ngắn">{{$data->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Nội dung tuyển sinh</label>
-                            <textarea id="editor2" name="content" class="form-control makeMeRichTextarea" rows="3" placeholder="Nội dung bài viết">{{$data->content}}</textarea>
+                            <textarea id="editor1" name="content" class="form-control makeMeRichTextarea" rows="3" placeholder="Nội dung bài viết">{{$data->content}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Tags (Từ khóa)</label>
