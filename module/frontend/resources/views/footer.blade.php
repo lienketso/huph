@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="#" title="footer">
+                <a href="https://huph.edu.vn" target="_blank" title="footer">
                     <img
                         src="{{asset('frontend/assets/image/section.png')}}"
                         title="Trường Đại học Y tế Công cộng"

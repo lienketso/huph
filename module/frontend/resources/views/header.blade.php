@@ -4,10 +4,10 @@
 <header class="mb-2 fixed-header desktop">
     <div class="container d-flex flex-wrap justify-content-center hot-line">
         <a
-            href="{{route('frontend::home')}}"
+            href="https://huph.edu.vn"
             class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none"
         >
-            <img src="{{($setting['site_logo']!='') ? upload_url($setting['site_logo']) : asset('frontend/assets/image/logo.png')}}" width="175" />
+            <img src="{{($setting['site_logo']!='') ? upload_url($setting['site_logo']) : asset('frontend/assets/image/logo.png')}}" width="175" alt="Logo huph" />
         </a>
         <span class="me-3">
           <i class="fa-solid fa-location-dot"></i> {{$setting['site_address_'.$lang]}}
