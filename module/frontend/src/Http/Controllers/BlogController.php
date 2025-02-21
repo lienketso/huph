@@ -191,7 +191,7 @@ class BlogController extends BaseController
         if($data->thumbnail!=''){
             $meta_thumbnail = upload_url($data->thumbnail);
         }else{
-            $meta_thumbnail = public_url('admin/themes/images/no-image.png');
+            $meta_thumbnail = asset('frontend/assets/image/no-image.png');
         }
         view()->composer('frontend:*', function($view) use ($meta_title,$meta_desc,$meta_url,$meta_thumbnail){
             $view->with(['meta_title'=>$meta_title,'meta_desc'=>$meta_desc,'meta_url'=>$meta_url,'meta_thumbnail'=>$meta_thumbnail]);
