@@ -144,6 +144,10 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
+                            <div class="form-group">
+                                <label>Ngày viết</label>
+                                <input class="form-control" type="date" name="created_at" value="{{format_date_display($data->created_at)}}">
+                            </div>
                             <label>Chọn chuyên mục</label>
                             <div class="table-responsive table-check">
                                 <table class="table nomargin">

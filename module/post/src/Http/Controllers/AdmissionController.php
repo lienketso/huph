@@ -6,6 +6,7 @@ use Category\Models\CategoryMeta;
 use Category\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Post\Http\Requests\PostCreateRequest;
 use Post\Http\Requests\PostEditRequest;
 use Post\Models\Post;
@@ -37,11 +38,12 @@ class AdmissionController extends BaseController
         $category_id = $request->get('category');
         $user_post = $request->get('user_post');
         $q = Post::query();
+
         if($id){
             $q->where('id',$id);
         }
         if(!is_null($name)){
-            $q->where('name','LIKE','%'.$name.'%');
+            $q->whereRaw("CONVERT(name USING utf8) COLLATE utf8_general_ci LIKE ?", ['%' . $name . '%']);
         }
         if(!is_null($category_id)){
             $q->where('category',$category_id);
@@ -82,6 +84,7 @@ class AdmissionController extends BaseController
             $input['user_post'] = Auth::id();
             $input['lang_code'] = $this->langcode;
             $input['post_type'] = 'tuyensinh';
+            $input['created_at'] = input_format_date($request->created_at);
             //cấu hình seo
             if($request->meta_title==''){
                 $input['meta_title'] = $request->name;
@@ -135,6 +138,7 @@ class AdmissionController extends BaseController
             $input['thumbnail'] = replace_thumbnail($input['thumbnail']);
             $input['banner'] = replace_thumbnail($input['banner']);
             $input['post_type'] = 'tuyensinh';
+            $input['created_at'] = input_format_date($request->created_at);
             if($request->slug=='' || is_null($request->slug)){
                 $input['slug'] = $request->name;
             }

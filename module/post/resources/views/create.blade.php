@@ -168,7 +168,10 @@
                         </div>
                     </div>
                     <div class="panel-body">
-
+                        <div class="form-group">
+                            <label>Ngày post</label>
+                            <input class="form-control" type="date" name="created_at" value="{{format_date_display(now())}}">
+                        </div>
                         <div class="form-group">
                             <label>Chọn chuyên mục</label>
                             <div class="table-responsive table-check">

@@ -9,6 +9,7 @@ use Category\Models\CategoryMeta;
 use Category\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Post\Http\Requests\PostCreateRequest;
 use Post\Http\Requests\PostEditRequest;
 use Post\Models\Post;
@@ -46,11 +47,12 @@ class PostsController extends BaseController
         $permissionPost = $roles->roles->first()->perms;
         $q = Post::query();
 
+
         if(!is_null($id)){
             $q->where('id',$id);
         }
         if(!is_null($name)){
-            $q->where('name','LIKE','%'.$name.'%');
+            $q->whereRaw("CONVERT(name USING utf8) COLLATE utf8_general_ci LIKE ?", ['%' . $name . '%']);
         }
         if(!is_null($category_id)){
             $q->where('category',$category_id);
