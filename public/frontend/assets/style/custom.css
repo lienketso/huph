@@ -746,7 +746,7 @@ section#package h2 span {
     background-color: #fff;
     left: -5px;
     padding: 5px 10px;
-    bottom: -20px;
+    bottom: -10px;
 }
 .owl-item:nth-child(2n + 1)  .marquee-item figure figcaption::before {
     content: "\A";
