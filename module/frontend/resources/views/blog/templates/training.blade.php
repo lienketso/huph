@@ -123,7 +123,7 @@
                                                             <div class="col-lg-12">
                                                                 <div class="view-all-button">
                                                                     <a class="item-xem-tat-ca"
-                                                                       href="{{route('frontend::blog.index.get',$child->slug)}}"
+                                                                       href="{{route('frontend::blog.index.get',$c->slug)}}"
                                                                        style="">
                                                                         <span>Xem tất cả</span>
                                                                     </a>
@@ -182,6 +182,5 @@
     </section>
     @endif
 
-    @include('frontend::form')
-    @include('frontend::latest')
+
 @endsection
