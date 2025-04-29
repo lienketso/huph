@@ -180,6 +180,50 @@
             @endforeach
         </div>
     </section>
+
+    @else
+        <section class="child-category-page">
+            <div class="container">
+                    <div class="row">
+                        <div class="heading-nganh">
+                            <span class="title-nganh-page">{{$data->name}}</span>
+                            <div class="line-title-nganh">
+                            </div>
+                        </div>
+                    </div>
+                <div class="post-parent">
+                    <div class="list-post-nganh">
+                        @php
+                            $postsData = $data->posts()->where('status','active')->where('is_hot','!=',1)->paginate(24);
+                        @endphp
+                        <div class="row">
+                            @foreach($postsData as $p)
+                                <div class="col-lg-3">
+                                    <a class="item-post-nganh"
+                                       href="{{route('frontend::blog.detail.get',$p->slug)}}"
+                                       style="background-image: url('{{($p->thumbnail!='') ? upload_url($p->thumbnail) : asset('frontend/assets/image/no-image.png')}}')">
+                                        <span>{{cut_string($p->name,35)}}</span>
+                                    </a>
+                                    @if(auth()->check())
+                                        <div class="edit-post-admin-fix">
+                                            <a href="{{route('wadmin::post.edit.get',$p->id)}}" target="_blank"><i class="fa fa-edit"></i> Sửa bài viết</a>
+                                        </div>
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <div class="row">
+                            <div class="pagination">
+                                {{$postsData->links()}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     @endif
 
 
