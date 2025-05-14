@@ -287,6 +287,7 @@ footer ul.list-custom li a, .list-group-item{
     background: #fff;
     padding: 20px;
     border-radius: 0 0 15px 15px;
+    position: relative;
 }
 .item-tuyen-sinh-home-fix h4{
     background: #81CF28;
@@ -301,14 +302,13 @@ footer ul.list-custom li a, .list-group-item{
     padding: 20px 0;
 }
 .item-tuyen-sinh-home-fix .content .let-go{
-    position: relative;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 .item-tuyen-sinh-home-fix .content .let-go a.show-more{
     color: #393D40;
     font-size: 14px;
-    position: absolute;
-    right: 0;
-    bottom: 15px;
     text-decoration: none;
 }
 .item-tuyen-sinh-home-fix .content .let-go a.show-more:hover{
